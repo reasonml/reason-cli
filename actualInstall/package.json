@@ -26,7 +26,7 @@
   "homepage": "https://github.com/reasonml/reason-cli#readme",
   "dependencies": {
     "reason": "esy-ocaml/reason#1.6.0-esy",
-    "ocaml": "andreypopp/ocaml#esy",
+    "ocaml": "esy-ocaml/ocaml#esy",
     "@opam/merlin": "*"
   }
 }
