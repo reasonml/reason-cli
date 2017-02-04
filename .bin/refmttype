@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# This could likely be replaced with an included `realpath` implementation
+# ----------------------------------------------------------------------
+SOURCE="${BASH_SOURCE[0]}"
+while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+  SCRIPTDIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+  SOURCE="$(readlink "$SOURCE")"
+  [[ $SOURCE != /* ]] && SOURCE="$SCRIPTDIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+done
+SCRIPTDIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+
+# Now simply call the actual `refmttype` implementation, forwarding args,
+# but making sure we have the right environment setup.
+# ----------------------------------------------------------------------
+cd $SCRIPTDIR/../actualInstall
+../node_modules/.bin/esy refmttype "$@"

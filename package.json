@@ -1,0 +1,40 @@
+{
+  "name": "reason-cli",
+  "version": "1.7.3",
+  "description": "Globally Installed CLI Tools For ReasonML",
+  "main": "index.js",
+  "scripts": {
+    "test": "which refmt && which ocamlmerlin && which rebuild && which ocamlc && which ocamlopt",
+    "postinstall": "cd ./actualInstall/ && ../node_modules/.bin/esy install && ../node_modules/.bin/esy build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reasonml/reason-cli.git"
+  },
+  "keywords": [
+    "ReasonML",
+    "Reason",
+    "OCaml",
+    "Merlin",
+    "ocamlopt",
+    "ocamlc",
+    "refmt"
+  ],
+  "author": "Jordan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/reasonml/reason-cli/issues"
+  },
+  "bin": {
+    "refmt_merlin": "./.bin/refmt_merlin",
+    "refmt": "./.bin/refmt",
+    "refmttype": "./.bin/refmttype",
+    "reopt": "./.bin/reopt",
+    "rebuild": "./.bin/rebuild",
+    "ocamlmerlin": "./.bin/ocamlmerlin"
+  },
+  "homepage": "https://github.com/reasonml/reason-cli#readme",
+  "dependencies": {
+    "esy": "git://github.com/jordwalke/esy.git#beta-v0.0.2"
+  }
+}

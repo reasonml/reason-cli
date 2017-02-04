@@ -1,0 +1,32 @@
+{
+  "name": "reason-cli-actual",
+  "version": "1.7.3",
+  "description": "Globally Installed CLI Tools For ReasonML - actual implementation",
+  "notes": "We can't use a normal package.json because we need `esy` to perform the install",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reasonml/reason-cli.git"
+  },
+  "keywords": [
+    "ReasonML",
+    "Reason",
+    "OCaml",
+    "Merlin",
+    "ocamlopt",
+    "ocamlc",
+    "refmt"
+
+  ],
+  "author": "Jordan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/reasonml/reason-cli/issues"
+  },
+  "homepage": "https://github.com/reasonml/reason-cli#readme",
+  "dependencies": {
+    "reason": "esy-ocaml/reason#1.6.0-esy",
+    "ocaml": "andreypopp/ocaml#esy",
+    "@opam/merlin": "*"
+  }
+}
