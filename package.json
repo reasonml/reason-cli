@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "which refmt && which ocamlmerlin && which rebuild && which ocamlc && which ocamlopt",
-    "postinstall": "cd ./actualInstall/ && ../node_modules/.bin/esy install && ../node_modules/.bin/esy build"
+    "postinstall": "./performActualInstallAndFixLinks.sh"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,12 @@
     "url": "https://github.com/reasonml/reason-cli/issues"
   },
   "bin": {
+    "ocamlmerlin": "./.bin/ocamlrun",
+    "ocamlmerlin": "./.bin/ocamlc",
+    "ocamlmerlin": "./.bin/ocamlopt",
+    "ocamlmerlin": "./.bin/ocaml",
+    "ocamlmerlin": "./.bin/rtop",
+    "ocamlmerlin": "./.bin/utop",
     "refmt_merlin": "./.bin/refmt_merlin",
     "refmt": "./.bin/refmt",
     "refmttype": "./.bin/refmttype",
