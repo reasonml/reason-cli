@@ -26,12 +26,12 @@
     "url": "https://github.com/reasonml/reason-cli/issues"
   },
   "bin": {
-    "ocamlmerlin": "./.bin/ocamlrun",
-    "ocamlmerlin": "./.bin/ocamlc",
-    "ocamlmerlin": "./.bin/ocamlopt",
-    "ocamlmerlin": "./.bin/ocaml",
-    "ocamlmerlin": "./.bin/rtop",
-    "ocamlmerlin": "./.bin/utop",
+    "ocamlrun": "./.bin/ocamlrun",
+    "ocamlc": "./.bin/ocamlc",
+    "ocamlopt": "./.bin/ocamlopt",
+    "ocaml": "./.bin/ocaml",
+    "rtop": "./.bin/rtop",
+    "utop": "./.bin/utop",
     "refmt_merlin": "./.bin/refmt_merlin",
     "refmt": "./.bin/refmt",
     "refmttype": "./.bin/refmttype",
