@@ -5,6 +5,7 @@
 #   # ln -s target_path link_path
 #   ln -s "${2}" "${1}"
 # }
+rm ./.bin/ocamlmerlin-reason
 rm ./.bin/ocamlrun
 rm ./.bin/ocamlc
 rm ./.bin/ocamlopt
@@ -20,6 +21,7 @@ rm ./.bin/reopt
 
 cd ./actualInstall/ && ../node_modules/.bin/esy install && ../node_modules/.bin/esy build
 
+OCAMLMERLIN_REASON_DEST=`../node_modules/.bin/esy which ocamlmerlin-reason`
 OCAMLRUN_DEST=`../node_modules/.bin/esy which ocamlrun`
 OCAMLC_DEST=`../node_modules/.bin/esy which ocamlc`
 OCAMLOPT_DEST=`../node_modules/.bin/esy which ocamlopt`
@@ -34,6 +36,7 @@ REFMT_MERLIN_DEST=`../node_modules/.bin/esy which refmt_merlin`
 REOPT_DEST=`../node_modules/.bin/esy which reopt`
 
 cd ../
+ln -s $OCAMLMERLIN_REASON_DEST ./.bin/ocamlmerlin-reason
 ln -s $OCAMLRUN_DEST ./.bin/ocamlrun
 ln -s $OCAMLC_DEST ./.bin/ocamlc
 ln -s $OCAMLOPT_DEST ./.bin/ocamlopt

@@ -26,6 +26,7 @@
     "url": "https://github.com/reasonml/reason-cli/issues"
   },
   "bin": {
+    "ocamlmerlin-reason": "./.bin/ocamlmerlin-reason",
     "ocamlrun": "./.bin/ocamlrun",
     "ocamlc": "./.bin/ocamlc",
     "ocamlopt": "./.bin/ocamlopt",
