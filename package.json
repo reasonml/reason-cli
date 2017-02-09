@@ -42,6 +42,6 @@
   },
   "homepage": "https://github.com/reasonml/reason-cli#readme",
   "dependencies": {
-    "esy": "git://github.com/jordwalke/esy.git#beta-v0.0.2"
+    "esy": "git://github.com/jordwalke/esy.git#beta-v0.0.2-alpha"
   }
 }
