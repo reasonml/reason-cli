@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/reasonml/reason-cli#readme",
   "dependencies": {
-    "reason": "esy-ocaml/reason#1.6.0-esy",
+    "reason": "facebook/reason#esy",
     "ocaml": "esy-ocaml/ocaml#esy",
     "@opam-alpha/merlin": "*",
     "@opam-alpha/utop": "*"
