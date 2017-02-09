@@ -27,6 +27,7 @@
   "dependencies": {
     "reason": "esy-ocaml/reason#1.6.0-esy",
     "ocaml": "esy-ocaml/ocaml#esy",
-    "@opam/merlin": "*"
+    "@opam-alpha/merlin": "*",
+    "@opam-alpha/utop": "*"
   }
 }
