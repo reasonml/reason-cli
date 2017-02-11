@@ -27,6 +27,8 @@
   "dependencies": {
     "reason": "facebook/reason#esy",
     "ocaml": "esy-ocaml/ocaml#esy",
+    "bs-platform": "esy-ocaml/bucklescript#esy",
+    "ninja-build-system": "reasonml/ninja.git#v1.7.2-esy",
     "@opam-alpha/merlin": "*",
     "@opam-alpha/utop": "*"
   }
