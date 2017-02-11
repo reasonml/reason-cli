@@ -18,6 +18,8 @@ rm ./.bin/refmt
 rm ./.bin/refmttype
 rm ./.bin/refmt_merlin
 rm ./.bin/reopt
+rm ./.bin/bsb
+rm ./.bin/ninja
 
 cd ./actualInstall/ && ../node_modules/.bin/esy install && ../node_modules/.bin/esy build
 
@@ -34,6 +36,8 @@ REFMT_DEST=`../node_modules/.bin/esy which refmt`
 REFMTTYPE_DEST=`../node_modules/.bin/esy which refmttype`
 REFMT_MERLIN_DEST=`../node_modules/.bin/esy which refmt_merlin`
 REOPT_DEST=`../node_modules/.bin/esy which reopt`
+BSB_DEST=`../node_modules/.bin/esy which bsb`
+NINJA_DEST=`../node_modules/.bin/esy which ninja`
 
 cd ../
 ln -s $OCAMLMERLIN_REASON_DEST ./.bin/ocamlmerlin-reason
@@ -49,3 +53,5 @@ ln -s $REFMT_DEST ./.bin/refmt
 ln -s $REFMTTYPE_DEST ./.bin/refmttype
 ln -s $REFMT_MERLIN_DEST ./.bin/refmt_merlin
 ln -s $REOPT_DEST ./.bin/reopt
+ln -s $BSB_DEST ./.bin/bsb
+ln -s $NINJA_DEST ./.bin/ninja

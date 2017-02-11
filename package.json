@@ -38,7 +38,9 @@
     "refmttype": "./.bin/refmttype",
     "reopt": "./.bin/reopt",
     "rebuild": "./.bin/rebuild",
-    "ocamlmerlin": "./.bin/ocamlmerlin"
+    "ocamlmerlin": "./.bin/ocamlmerlin",
+    "bsb": "./.bin/bsb",
+    "ninja": "./.bin/ninja"
   },
   "homepage": "https://github.com/reasonml/reason-cli#readme",
   "dependencies": {
