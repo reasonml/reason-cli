@@ -28,6 +28,7 @@
     "reason": "facebook/reason#esy",
     "ocaml": "esy-ocaml/ocaml#esy",
     "@opam-alpha/merlin": "*",
-    "@opam-alpha/utop": "*"
+    "@opam-alpha/utop": "*",
+    "ninja-build-system": "reasonml/ninja.git#v1.7.2-esy"
   }
 }
