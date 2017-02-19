@@ -38,6 +38,7 @@
     "refmttype": "./.bin/refmttype",
     "reopt": "./.bin/reopt",
     "rebuild": "./.bin/rebuild",
+    "reactjs_jsx_ppx": "./.bin/reactjs_jsx_ppx",
     "ocamlmerlin": "./.bin/ocamlmerlin"
   },
   "homepage": "https://github.com/reasonml/reason-cli#readme",
