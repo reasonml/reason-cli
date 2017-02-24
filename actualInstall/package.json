@@ -15,7 +15,8 @@
     "Merlin",
     "ocamlopt",
     "ocamlc",
-    "refmt"
+    "refmt",
+    "berror"
 
   ],
   "author": "Jordan",
@@ -27,6 +28,7 @@
   "dependencies": {
     "reason": "facebook/reason#esy",
     "ocaml": "esy-ocaml/ocaml#esy",
+    "berror": "esy-ocaml/BetterErrors#esy",
     "@opam-alpha/merlin": "*",
     "@opam-alpha/utop": "*"
   }

@@ -18,6 +18,7 @@ rm ./.bin/refmt
 rm ./.bin/refmttype
 rm ./.bin/refmt_merlin
 rm ./.bin/reactjs_jsx_ppx
+# rm ./.bin/berror
 # rm ./.bin/reopt
 
 cd ./actualInstall/ && ../node_modules/.bin/esy install && ../node_modules/.bin/esy build
@@ -35,6 +36,7 @@ REFMT_DEST=`../node_modules/.bin/esy which refmt`
 REFMTTYPE_DEST=`../node_modules/.bin/esy which refmttype`
 REFMT_MERLIN_DEST=`../node_modules/.bin/esy which refmt_merlin`
 REACTJS_JSX_PPX_DEST=`../node_modules/.bin/esy which reactjs_jsx_ppx`
+# BERROR_DEST=`../node_modules/.bin/esy which berror`
 # REOPT_DEST=`../node_modules/.bin/esy which reopt`
 
 cd ../
@@ -51,4 +53,5 @@ ln -s $REFMT_DEST ./.bin/refmt
 ln -s $REFMTTYPE_DEST ./.bin/refmttype
 ln -s $REFMT_MERLIN_DEST ./.bin/refmt_merlin
 ln -s $REACTJS_JSX_PPX_DEST ./.bin/reactjs_jsx_ppx
+# ln -s $BERROR_DEST ./.bin/berror
 # ln -s $REOPT_DEST ./.bin/reopt
