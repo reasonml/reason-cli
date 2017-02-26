@@ -6,3 +6,5 @@ node_js:
   - "6"
   - "6.1"
   - "5.11"
+install:
+  - npm install -g .
