@@ -5,7 +5,7 @@
   "description": "Globally Installed CLI Tools For ReasonML",
   "main": "index.js",
   "scripts": {
-    "test": "export PATH=\"$PWD/.bin:$PATH\" && which refmt && which ocamlmerlin && which rebuild && which ocamlc && which ocamlopt && which berror",
+    "test": "export PATH=\"$PWD/.bin:$PATH\" && ls -al ./.bin && which refmt && which ocamlmerlin && which rebuild && which ocamlc && which ocamlopt && which berror",
     "postinstall": "./performActualInstallAndFixLinks.sh"
   },
   "repository": {
