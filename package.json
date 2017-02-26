@@ -4,7 +4,7 @@
   "description": "Globally Installed CLI Tools For ReasonML",
   "main": "index.js",
   "scripts": {
-    "test": "which refmt && which ocamlmerlin && which rebuild && which ocamlc && which ocamlopt",
+    "test": "which refmt && which ocamlmerlin && which rebuild && which ocamlc && which ocamlopt && which berror",
     "postinstall": "./performActualInstallAndFixLinks.sh"
   },
   "repository": {
