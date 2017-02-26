@@ -1,6 +1,7 @@
 {
   "name": "reason-cli",
   "version": "1.7.3",
+  "preferGlobal": true,
   "description": "Globally Installed CLI Tools For ReasonML",
   "main": "index.js",
   "scripts": {
