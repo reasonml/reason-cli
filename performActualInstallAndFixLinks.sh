@@ -21,7 +21,10 @@ set -e
 # (rm ./.bin/berror || true)
 # (rm ./.bin/reopt || true)
 
-cd ./actualInstall/ && ../node_modules/.bin/esy install && ../node_modules/.bin/esy build
+cd ./actualInstall/
+../node_modules/.bin/esy install
+(../node_modules/.bin/esy build || (ls ./node_modules/.cache/**/* && echo "FAILED TO BUILD"))
+
 
 OCAMLMERLIN_REASON_DEST=`../node_modules/.bin/esy which ocamlmerlin-reason`
 # OCAMLRUN_DEST=`../node_modules/.bin/esy which ocamlrun`
