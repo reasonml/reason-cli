@@ -1,6 +1,9 @@
 # reason-cli
 Globally installable Reason toolchain.
 
+[![Build Status](https://travis-ci.org/reasonml/reason-cli.svg?branch=master)](https://travis-ci.org/reasonml/reason-cli)
+
+
 # Install
 
 ```
