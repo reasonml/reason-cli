@@ -1,25 +1,25 @@
 #!/usr/bin/env bash
 
-# linkFromTo ()
-# {
-#   # ln -s target_path link_path
-#   ln -s "${2}" "${1}"
-# }
-rm ./.bin/ocamlmerlin-reason
-# rm ./.bin/ocamlrun
-# rm ./.bin/ocamlc
-# rm ./.bin/ocamlopt
-# rm ./.bin/ocaml
-# rm ./.bin/rtop
-# rm ./.bin/utop
-rm ./.bin/ocamlmerlin
+set -e
+
+# Not letting failure to rm block the build because when debugging,
+# you might have already rm'd them. Every other failure should block
+# the outer npm install/build though (that's what set -e does).
+(rm ./.bin/ocamlmerlin-reason || true)
+# (rm ./.bin/ocamlrun || true)
+# (rm ./.bin/ocamlc || true)
+# (rm ./.bin/ocamlopt || true)
+# (rm ./.bin/ocaml || true)
+# (rm ./.bin/rtop || true)
+# (rm ./.bin/utop || true)
+(rm ./.bin/ocamlmerlin || true)
 # rm ./.bin/rebuild
-rm ./.bin/refmt
-rm ./.bin/refmttype
-rm ./.bin/refmt_merlin
-rm ./.bin/reactjs_jsx_ppx
-# rm ./.bin/berror
-# rm ./.bin/reopt
+(rm ./.bin/refmt || true)
+(rm ./.bin/refmttype || true)
+(rm ./.bin/refmt_merlin || true)
+(rm ./.bin/reactjs_jsx_ppx || true)
+# (rm ./.bin/berror || true)
+# (rm ./.bin/reopt || true)
 
 cd ./actualInstall/ && ../node_modules/.bin/esy install && ../node_modules/.bin/esy build
 
