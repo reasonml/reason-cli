@@ -118,6 +118,7 @@ scriptdir="$( cd -P "$( dirname "$source" )" && pwd )"
 # Now simply call the actual `berror` implementation, forwarding args,
 # but making sure we have the right environment setup.
 # ----------------------------------------------------------------------
+curr_dir=`pwd`
 cd $scriptdir/../actualInstall
 actual_path=$($scriptdir/../node_modules/.bin/esy which berror)
 if [ "$actual_path" == "" ] || [ "$actual_path" == "$source" ]; then
@@ -136,4 +137,6 @@ if [ "$actual_path" == "" ] || [ "$actual_path" == "$source" ]; then
   exit 1
 fi
 
+# This script is the odd one out - we do not prefix with esy because
+# we were not sure about how berror requires funny piping etc.
 $(echo $actual_path) "$@"
