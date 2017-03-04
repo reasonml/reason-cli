@@ -6,10 +6,10 @@ set -e
 # you might have already rm'd them. Every other failure should block
 # the outer npm install/build though (that's what set -e does).
 (rm ./.bin/ocamlmerlin-reason || true)
-# (rm ./.bin/ocamlrun || true)
-# (rm ./.bin/ocamlc || true)
-# (rm ./.bin/ocamlopt || true)
-# (rm ./.bin/ocaml || true)
+(rm ./.bin/ocamlrun || true)
+(rm ./.bin/ocamlc || true)
+(rm ./.bin/ocamlopt || true)
+(rm ./.bin/ocaml || true)
 # (rm ./.bin/rtop || true)
 # (rm ./.bin/utop || true)
 (rm ./.bin/ocamlmerlin || true)
@@ -27,10 +27,10 @@ cd ./actualInstall/
 
 
 OCAMLMERLIN_REASON_DEST=`../node_modules/.bin/esy which ocamlmerlin-reason`
-# OCAMLRUN_DEST=`../node_modules/.bin/esy which ocamlrun`
-# OCAMLC_DEST=`../node_modules/.bin/esy which ocamlc`
-# OCAMLOPT_DEST=`../node_modules/.bin/esy which ocamlopt`
-# OCAML_DEST=`../node_modules/.bin/esy which ocaml`
+OCAMLRUN_DEST=`../node_modules/.bin/esy which ocamlrun`
+OCAMLC_DEST=`../node_modules/.bin/esy which ocamlc`
+OCAMLOPT_DEST=`../node_modules/.bin/esy which ocamlopt`
+OCAML_DEST=`../node_modules/.bin/esy which ocaml`
 # RTOP_DEST=`../node_modules/.bin/esy which rtop`
 # UTOP_DEST=`../node_modules/.bin/esy which utop`
 OCAMLMERLIN_DEST=`../node_modules/.bin/esy which ocamlmerlin`
@@ -44,10 +44,10 @@ REACTJS_JSX_PPX_DEST=`../node_modules/.bin/esy which reactjs_jsx_ppx`
 
 cd ../
 ln -s $OCAMLMERLIN_REASON_DEST ./.bin/ocamlmerlin-reason
-# ln -s $OCAMLRUN_DEST ./.bin/ocamlrun
-# ln -s $OCAMLC_DEST ./.bin/ocamlc
-# ln -s $OCAMLOPT_DEST ./.bin/ocamlopt
-# ln -s $OCAML_DEST ./.bin/ocaml
+ln -s $OCAMLRUN_DEST ./.bin/ocamlrun
+ln -s $OCAMLC_DEST ./.bin/ocamlc
+ln -s $OCAMLOPT_DEST ./.bin/ocamlopt
+ln -s $OCAML_DEST ./.bin/ocaml
 # ln -s $RTOP_DEST ./.bin/rtop
 # ln -s $UTOP_DEST ./.bin/utop
 ln -s $OCAMLMERLIN_DEST ./.bin/ocamlmerlin
