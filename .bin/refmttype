@@ -118,7 +118,6 @@ scriptdir="$( cd -P "$( dirname "$source" )" && pwd )"
 # Now simply call the actual `refmttype` implementation, forwarding args,
 # but making sure we have the right environment setup.
 # ----------------------------------------------------------------------
-curr_dir=`pwd`
 cd $scriptdir/../actualInstall
 actual_path=$($scriptdir/../node_modules/.bin/esy which refmttype)
 if [ "$actual_path" == "" ] || [ "$actual_path" == "$source" ]; then
@@ -137,5 +136,4 @@ if [ "$actual_path" == "" ] || [ "$actual_path" == "$source" ]; then
   exit 1
 fi
 
-$scriptdir/../node_modules/.bin/esy sh -c "cd $curr_dir && $(echo $actual_path) \"$@\""
-
+$scriptdir/../node_modules/.bin/esy $(echo $actual_path) "$@"
