@@ -1,6 +1,6 @@
 {
   "name": "reason-cli-actual",
-  "version": "1.7.3",
+  "version": "1.13.3",
   "description": "Globally Installed CLI Tools For ReasonML - actual implementation",
   "notes": "We can't use a normal package.json because we need `esy` to perform the install",
   "main": "index.js",
@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/reasonml/reason-cli#readme",
   "dependencies": {
-    "reason": "facebook/reason#esy",
+    "@opam-alpha/reason": "1.13.3",
     "ocaml": "esy-ocaml/ocaml#esy",
     "ocamlBetterErrors": "esy-ocaml/BetterErrors#esy",
     "@opam-alpha/merlin": "*",
