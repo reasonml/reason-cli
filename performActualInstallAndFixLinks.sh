@@ -17,7 +17,7 @@ set -e
 (rm ./.bin/refmt || true)
 (rm ./.bin/refmttype || true)
 (rm ./.bin/reactjs_jsx_ppx || true)
-# (rm ./.bin/berror || true)
+(rm ./.bin/berror || true)
 # (rm ./.bin/reopt || true)
 
 cd ./actualInstall/
@@ -37,7 +37,7 @@ OCAMLMERLIN_DEST=`../node_modules/.bin/esy which ocamlmerlin`
 REFMT_DEST=`../node_modules/.bin/esy which refmt`
 REFMTTYPE_DEST=`../node_modules/.bin/esy which refmttype`
 REACTJS_JSX_PPX_DEST=`../node_modules/.bin/esy which reactjs_jsx_ppx`
-# BERROR_DEST=`../node_modules/.bin/esy which berror`
+BERROR_DEST=`../node_modules/.bin/esy which berror`
 # REOPT_DEST=`../node_modules/.bin/esy which reopt`
 
 cd ../
@@ -53,5 +53,5 @@ ln -s $OCAMLMERLIN_DEST ./.bin/ocamlmerlin
 ln -s $REFMT_DEST ./.bin/refmt
 ln -s $REFMTTYPE_DEST ./.bin/refmttype
 ln -s $REACTJS_JSX_PPX_DEST ./.bin/reactjs_jsx_ppx
-# ln -s $BERROR_DEST ./.bin/berror
+ln -s $BERROR_DEST ./.bin/berror
 # ln -s $REOPT_DEST ./.bin/reopt
