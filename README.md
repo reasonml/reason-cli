@@ -4,7 +4,24 @@ Globally installable Reason toolchain.
 [![Build Status](https://travis-ci.org/reasonml/reason-cli.svg?branch=master)](https://travis-ci.org/reasonml/reason-cli)
 
 
+Note, that this is beta software, and will likely break from time to time.
+It's great if this works for you but there are some systems that install
+doesn't work on yet (where you don't have a global `python2` binary for
+example) as well as some rare linux distributions.
+
 # Install
+
+Install a specific version of `reason-cli` which corresponds to the version of
+Reason that is bundled with it.
+
+The supported versions are below:
+
+```
+npm install -g git://github.com/reasonml/reason-cli.git#beta-v-1.13.3
+```
+
+Or you can install whichever `master` happens to point to. (You probably don't
+want this).
 
 ```
 npm install -g git://github.com/reasonml/reason-cli.git
