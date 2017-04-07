@@ -35,6 +35,7 @@
     "ocaml": "./.bin/ocaml",
     "rtop": "./.bin/rtop",
     "utop": "./.bin/utop",
+    "refmt_merlin": "./.bin/refmt_merlin",
     "refmt": "./.bin/refmt",
     "refmttype": "./.bin/refmttype",
     "reopt": "./.bin/reopt",
