@@ -16,7 +16,6 @@ set -e
 # rm ./.bin/rebuild
 (rm ./.bin/refmt || true)
 (rm ./.bin/refmttype || true)
-(rm ./.bin/refmt_merlin || true)
 (rm ./.bin/reactjs_jsx_ppx || true)
 # (rm ./.bin/berror || true)
 # (rm ./.bin/reopt || true)
@@ -37,7 +36,6 @@ OCAMLMERLIN_DEST=`../node_modules/.bin/esy which ocamlmerlin`
 # REBUILD_DEST=`../node_modules/.bin/esy which rebuild`
 REFMT_DEST=`../node_modules/.bin/esy which refmt`
 REFMTTYPE_DEST=`../node_modules/.bin/esy which refmttype`
-REFMT_MERLIN_DEST=`../node_modules/.bin/esy which refmt_merlin`
 REACTJS_JSX_PPX_DEST=`../node_modules/.bin/esy which reactjs_jsx_ppx`
 # BERROR_DEST=`../node_modules/.bin/esy which berror`
 # REOPT_DEST=`../node_modules/.bin/esy which reopt`
@@ -54,7 +52,6 @@ ln -s $OCAMLMERLIN_DEST ./.bin/ocamlmerlin
 # ln -s $REBUILD_DEST ./.bin/rebuild
 ln -s $REFMT_DEST ./.bin/refmt
 ln -s $REFMTTYPE_DEST ./.bin/refmttype
-ln -s $REFMT_MERLIN_DEST ./.bin/refmt_merlin
 ln -s $REACTJS_JSX_PPX_DEST ./.bin/reactjs_jsx_ppx
 # ln -s $BERROR_DEST ./.bin/berror
 # ln -s $REOPT_DEST ./.bin/reopt
