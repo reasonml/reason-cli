@@ -101,6 +101,20 @@ This project also serves as a good example of how to create npm
 packages that publish global tools, but sharing the same
 infrastructure, and package caching as local tools.
 
+
+## Ejecting To A Network Disconnected Host:
+
+```sh
+git clone thisRepo
+npm install --ignore-scripts
+./scripts/performDownload.sh
+./scripts/performBuildEject.sh
+
+# ... scp to host, preserve mtimes!
+./scripts/performBuild.sh
+./scripts/fixupSymlinks.sh
+```
+
 # ORIGINS
 
 See [ORIGINS](./ORIGINS.md).
