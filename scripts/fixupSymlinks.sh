@@ -20,11 +20,7 @@ set -e
 (rm ./.bin/berror || true)
 # (rm ./.bin/reopt || true)
 
-cd ./actualInstall/
-../node_modules/.bin/esy install
-(../node_modules/.bin/esy build || (ls ./node_modules/.cache/**/* && echo "FAILED TO BUILD"))
-
-
+cd ./actualInstall
 OCAMLMERLIN_REASON_DEST=`../node_modules/.bin/esy which ocamlmerlin-reason`
 OCAMLRUN_DEST=`../node_modules/.bin/esy which ocamlrun`
 OCAMLC_DEST=`../node_modules/.bin/esy which ocamlc`
@@ -40,7 +36,7 @@ REACTJS_JSX_PPX_DEST=`../node_modules/.bin/esy which reactjs_jsx_ppx`
 BERROR_DEST=`../node_modules/.bin/esy which berror`
 # REOPT_DEST=`../node_modules/.bin/esy which reopt`
 
-cd ../
+cd ..
 ln -s $OCAMLMERLIN_REASON_DEST ./.bin/ocamlmerlin-reason
 ln -s $OCAMLRUN_DEST ./.bin/ocamlrun
 ln -s $OCAMLC_DEST ./.bin/ocamlc

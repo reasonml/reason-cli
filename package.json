@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "export PATH=\"$PWD/.bin:$PATH\" && ls -al ./.bin && which refmt && which ocamlmerlin && which rebuild && which ocamlc && which ocamlopt && which berror",
-    "postinstall": "./performActualInstallAndFixLinks.sh"
+    "postinstall": "./scripts/performActualInstallAndFixLinks.sh"
   },
   "repository": {
     "type": "git",
