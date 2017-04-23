@@ -17,6 +17,7 @@ Reason that is bundled with it.
 The supported versions are below:
 
 ```
+# ocamlc/ocamlopt/merlin/reason based on 4.02.3
 npm install -g git://github.com/reasonml/reason-cli.git#beta-v-1.13.3
 ```
 
@@ -26,6 +27,23 @@ want this).
 ```
 npm install -g git://github.com/reasonml/reason-cli.git
 ```
+
+# Updating
+
+Any time you update, make sure to first uninstall the old version, then run the
+global install command for the new version you want to install.  When an update
+/ bug fix has been pushed to a release, you should `uninstall -g` and then
+install that same release you just uninstalled.
+
+
+```
+npm uninstall -g reason-cli
+npm install -g git://github.com/reasonml/reason-cli.git#beta-v-1.13.3
+```
+
+
+Updating should be fairly fast.
+
 ## Included Binaries
 
 `reason-cli` places the following tools in your path:
