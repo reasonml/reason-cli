@@ -2,6 +2,6 @@
 
 set -e
 
-./performDownload.sh
-./performBuild.sh
-./fixupSymlinks.sh
+./scripts/performDownload.sh
+./scripts/performBuild.sh
+./scripts/fixupSymlinks.sh
