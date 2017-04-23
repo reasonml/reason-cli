@@ -105,12 +105,24 @@ infrastructure, and package caching as local tools.
 ## Ejecting To A Network Disconnected Host:
 
 ```sh
-git clone thisRepo
+git clone git@github.com:reasonml/reason-cli.git
+cd reason-cli
 npm install --ignore-scripts
 ./scripts/performDownload.sh
 ./scripts/performBuildEject.sh
+cd ..
+tar -cvzf reason-cli-ejected.tar.gz reason-cli
 
-# ... scp to host, preserve mtimes!
+# ... scp to host:
+# 1. Make sure you never do anything that changes the mtimes!
+#    - If copying, copy the entire tar/gzipped so as to preserve
+#      the mtimes.
+# 2. You can probably move the final root reason-cli once built
+#    but you can not recursively copy it to a new location and
+#    expect it to work there.
+gunzip reason-cli-ejected.tar.gz
+tar -xvf reason-cli-ejected.tar
+cd reason-cli
 ./scripts/performBuild.sh
 ./scripts/fixupSymlinks.sh
 ```
