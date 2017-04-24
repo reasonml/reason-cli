@@ -111,7 +111,7 @@ npm install --ignore-scripts
 ./scripts/performDownload.sh
 ./scripts/performBuildEject.sh
 cd ..
-tar -cvzf reason-cli-ejected.tar.gz reason-cli
+tar --exclude-vcs --exclude=reason-cli/node_modules/esy/bin/EsyYarnCache-3.x.x -cvzf reason-cli-ejected.tar.gz reason-cli
 
 # ... scp to host:
 # 1. Make sure you never do anything that changes the mtimes!
