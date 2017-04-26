@@ -29,7 +29,7 @@
     "@opam-alpha/reason": "1.13.3",
     "ocaml": "esy-ocaml/ocaml#esy",
     "ocamlBetterErrors": "esy-ocaml/BetterErrors#esy",
-    "@opam-alpha/merlin": "*",
+    "@opam-alpha/merlin": "2.5.4",
     "@opam-alpha/utop": "*"
   }
 }
