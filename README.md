@@ -17,8 +17,13 @@ Reason that is bundled with it.
 The supported versions are below:
 
 ```
-# ocamlc/ocamlopt/merlin/reason based on 4.02.3
+# Reason 1.13.3 and ocaml 4.02.3
 npm install -g git://github.com/reasonml/reason-cli.git#beta-v-1.13.3
+```
+
+```
+# Reason 1.13.5 and ocaml 4.02.3
+npm install -g git://github.com/reasonml/reason-cli.git#beta-v-1.13.5
 ```
 
 Or you can install whichever `master` happens to point to. (You probably don't
@@ -38,7 +43,7 @@ install that same release you just uninstalled.
 
 ```
 npm uninstall -g reason-cli
-npm install -g git://github.com/reasonml/reason-cli.git#beta-v-1.13.3
+npm install -g git://github.com/reasonml/reason-cli.git#beta-v-1.13.5
 ```
 
 
