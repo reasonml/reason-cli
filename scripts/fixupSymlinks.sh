@@ -13,6 +13,7 @@ set -e
 # (rm ./.bin/rtop || true)
 # (rm ./.bin/utop || true)
 (rm ./.bin/ocamlmerlin || true)
+(rm ./.bin/menhir || true)
 # rm ./.bin/rebuild
 (rm ./.bin/refmt || true)
 (rm ./.bin/refmttype || true)
@@ -29,6 +30,7 @@ OCAML_DEST=`../node_modules/.bin/esy which ocaml`
 # RTOP_DEST=`../node_modules/.bin/esy which rtop`
 # UTOP_DEST=`../node_modules/.bin/esy which utop`
 OCAMLMERLIN_DEST=`../node_modules/.bin/esy which ocamlmerlin`
+MENHIR_DEST=`../node_modules/.bin/esy which menhir`
 # REBUILD_DEST=`../node_modules/.bin/esy which rebuild`
 REFMT_DEST=`../node_modules/.bin/esy which refmt`
 REFMTTYPE_DEST=`../node_modules/.bin/esy which refmttype`
@@ -45,6 +47,7 @@ ln -s $OCAML_DEST ./.bin/ocaml
 # ln -s $RTOP_DEST ./.bin/rtop
 # ln -s $UTOP_DEST ./.bin/utop
 ln -s $OCAMLMERLIN_DEST ./.bin/ocamlmerlin
+ln -s $MENHIR_DEST ./.bin/menhir
 # ln -s $REBUILD_DEST ./.bin/rebuild
 ln -s $REFMT_DEST ./.bin/refmt
 ln -s $REFMTTYPE_DEST ./.bin/refmttype
