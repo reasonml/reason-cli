@@ -30,6 +30,7 @@
     "ocaml": "esy-ocaml/ocaml#esy",
     "ocamlBetterErrors": "esy-ocaml/BetterErrors#esy",
     "@opam-alpha/merlin": "2.5.4",
-    "@opam-alpha/utop": "*"
+    "@opam-alpha/utop": "*",
+    "@opam-alpha/menhir": "= 20170418.0.0"
   }
 }
