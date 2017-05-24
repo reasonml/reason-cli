@@ -88,16 +88,56 @@ from the global cache. That has huge benefits:
    installed tools you've built.
 2. One infrastructure to manage.
 
+## TroubleShooting:
 
-There are some challenges and things we can improve with global
-packages. They are discussed in
-[`CREATING_GLOBAL_PACKAGES.md`](./CREATING_GLOBAL_PACKAGES.md).
+- Did you remember to install using `-g`?
+- In general, try uninstalling and then reinstalling `reason-cli`.
+- When updating, did you remember to uninstall the previous installation?
+- If you're experiencing permissions issues, it could be due to the linux `npm`
+  installs global `-g` packages when you use `sudo`. Instead of installing with
+  `sudo` you should probably set up your packages as explained in this guide:
+  https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
+  - Note: We are still going to work on solving permissions issues with
+    installing `-g` packages with `sudo`, but following that guide should
+    eliminate many issues with many different npm packages (not just
+    reason-cli).
+- If an error occurs during install, it likely tells you where the log is (not
+  the npm log) that contains the build errors.
+  - If not, you can find recent build attempts here in your home dir cache at these locations:
+    `~/.esy/_build/packageName/_esy/build.log`. Find recently modified created
+    build logs in those locations and create github gists, sharing them on the
+    [Reason Discord Chanel](https://discord.gg/UugQtbW)
+    in the channel `#packageManagementAndNativeBuildSystems`.
+- If nothing else works, and the error isn't clear (especially if a previous
+  version worked), you can do:
+  - `mv ~/.esy ~/.esy-old`
+  - Uninstall then *reinstall* `reason-cli`.
+  - If it works when you do this, then it's a critical bug with `esy` and you
+    can help us eliminate the bug by helping us spot some differences between
+    those two `~/.esy` and `~/.esy-old`. Are there two corresponding package
+    directories with the same name but different contents?
 
-One thing that doesn't work well yet, is when you purge the global
-`esy` cache after you install these global cli tools. The global
-tools will be pointing to dangling references in the cache. We will
-fix this eventually by relocating artifacts from the global cache to
-the global installed packages.
+
+## Ways `Reason-Cli` Can Improve:
+
+- We can distribute a version of `reason-cli` with prebuilt binaries.
+  - Some of those can be dirt simple prebuilt binaries just copied from build
+    artifacts.
+  - Others like `rtop` and `ocamlmerlin` likely require anything from a little
+    bit of path rewriting, to some more involved environment wrapping but it
+    should be doable.
+- Even if we release binary versions, we can also make the *non* binary version
+  of `reason-cli` more robust by creating tarballs of ejected builds. This
+  means that we can make `npm` installations much faster, and virtually
+  equivalent to downloading a single package whose contents are a vendorred
+  tarball of sources + one Make file that builds everything.
+- One thing that doesn't work well yet, is when you purge the global `esy`
+  cache after you install these global cli tools. The global tools will be
+  pointing to dangling references in the cache. We will fix this eventually by
+  relocating artifacts from the global cache to the global installed packages.
+  A simple uninstall and reinstall should fix that. This can be fixed by
+  relocating all build artifacts from the cache to the installed `node_modules`
+  directory (at a slight install performance hit).
 
 
 ## Global Installs: Approach
