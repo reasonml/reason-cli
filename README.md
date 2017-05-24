@@ -127,8 +127,8 @@ tar --exclude=reason-cli/.git --exclude=reason-cli/node_modules/esy/bin/EsyYarnC
 #    expect it to work there.
 gunzip reason-cli-ejected.tar.gz
 tar -xvf reason-cli-ejected.tar
-cd reason-cli/actualInstall
-make -f node_modules/.cache/_esy/build-eject/Makefile
+./scripts/resumeBuildEject.sh
+./scripts/fixupSymlinks.sh
 ```
 
 # ORIGINS
