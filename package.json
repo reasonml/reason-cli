@@ -1,12 +1,12 @@
 {
   "name": "reason-cli",
-  "version": "1.7.3",
-  "preferGlobal": true,
-  "description": "Globally Installed CLI Tools For ReasonML",
+  "version": "1.13.5",
+  "preferGlobal": false,
+  "description": "Globally Installable CLI Tools For ReasonML",
   "main": "index.js",
   "scripts": {
     "test": "export PATH=\"$PWD/.bin:$PATH\" && ls -al ./.bin && which refmt && which ocamlmerlin && which rebuild && which ocamlc && which ocamlopt && which berror",
-    "postinstall": "./scripts/performActualInstallAndFixLinks.sh"
+    "postinstall": "postinstall.sh"
   },
   "repository": {
     "type": "git",
@@ -27,26 +27,26 @@
   "bugs": {
     "url": "https://github.com/reasonml/reason-cli/issues"
   },
-  "bin": {
-    "ocamlmerlin-reason": "./.bin/ocamlmerlin-reason",
-    "ocamlrun": "./.bin/ocamlrun",
-    "ocamlc": "./.bin/ocamlc",
-    "ocamlopt": "./.bin/ocamlopt",
-    "ocaml": "./.bin/ocaml",
-    "rtop": "./.bin/rtop",
-    "utop": "./.bin/utop",
-    "refmt": "./.bin/refmt",
-    "refmttype": "./.bin/refmttype",
-    "reopt": "./.bin/reopt",
-    "rebuild": "./.bin/rebuild",
-    "reactjs_jsx_ppx": "./.bin/reactjs_jsx_ppx",
-    "berror": "./.bin/berror",
-    "ocamlmerlin": "./.bin/ocamlmerlin",
-    "menhir": "./.bin/menhir",
-    "ocamlfind": "./.bin/ocamlfind"
-  },
+  "releasedBinaries": [
+    "ocamlmerlin-reason",
+    "ocamlrun",
+    "ocamlc",
+    "ocamlopt",
+    "ocaml",
+    "rtop",
+    "utop",
+    "refmt",
+    "refmttype",
+    "reopt",
+    "rebuild",
+    "reactjs_jsx_ppx",
+    "berror",
+    "ocamlmerlin",
+    "menhir",
+    "ocamlfind"
+  ],
   "homepage": "https://github.com/reasonml/reason-cli#readme",
   "dependencies": {
-    "esy": "git://github.com/esy-ocaml/esy.git#beta-v0.0.3"
+    "esy": "git://github.com/esy-ocaml/esy.git#beta-v0.0.4"
   }
 }
