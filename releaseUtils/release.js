@@ -330,13 +330,13 @@ var createPostinstallScript = function(releaseStage, releaseType, package, build
     mv "$ESY_EJECT__SANDBOX/node_modules_tmp/.cache" "$ESY_EJECT__SANDBOX/node_modules/.cache"
     rm -rf "$ESY_EJECT__SANDBOX/node_modules_tmp"
     # Remove the non-binary artifacts, before compressing.
-    rm -rf "$ESY_EJECT__STORE/_build/"
-    rm -rf "$ESY_EJECT__STORE/_insttmp/"
+    rm -rf "$ESY_EJECT__STORE/b/"
+    rm -rf "$ESY_EJECT__STORE/s/"
     # Built packages have a special way of compressing the release, putting the
     # eject store in its own tar so that all the symlinks in the store can be
     # relocated using tools that exist in the eject sandbox.
 
-    ${scrubBinaryReleaseCommandPathPatterns('"$ESY_EJECT__STORE/_install/"')}
+    ${scrubBinaryReleaseCommandPathPatterns('"$ESY_EJECT__STORE/i/"')}
 
     tar -czf actualInstallPacked.tar.gz actualInstall
     rm -rf ./actualInstall/`;
