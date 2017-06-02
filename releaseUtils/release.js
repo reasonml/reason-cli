@@ -312,7 +312,7 @@ var createPostinstallScript = function(releaseStage, releaseType, package, build
         // Really they both should have the padding.
         `
         if [ -z "\${ESY_EJECT__STORE+x}" ]; then
-          export ESY_EJECT__STORE="$HOME/.esy/store-$ESY__STORE_VERSION"
+          export ESY_EJECT__STORE="$HOME/.esy/$ESY__STORE_VERSION"
         fi
         `
     }
