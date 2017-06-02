@@ -1,6 +1,6 @@
 {
   "name": "reason-cli",
-  "version": "1.13.5",
+  "version": "2.0.0",
   "preferGlobal": false,
   "description": "Globally Installable CLI Tools For ReasonML",
   "main": "index.js",
@@ -47,6 +47,6 @@
   ],
   "homepage": "https://github.com/reasonml/reason-cli#readme",
   "dependencies": {
-    "esy": "git://github.com/esy-ocaml/esy.git#beta-v0.0.4"
+    "esy": "git://github.com/esy-ocaml/esy.git#beta-v0.0.5"
   }
 }
