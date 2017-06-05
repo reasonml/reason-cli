@@ -1,5 +1,5 @@
 # reason-cli
-Globally installable Reason toolchain.
+Reason toolchain packaged for npm.
 
 [![Build Status](https://travis-ci.org/reasonml/reason-cli.svg?branch=master)](https://travis-ci.org/reasonml/reason-cli)
 
@@ -12,7 +12,7 @@ installations fail. Please report bugs so that we are aware of the issues.
 
 For each version of `reason-cli`, there are three forms to choose from:
 
-### 1. Install a specific release:
+### 1. Install a specific release (not yet released):
 
 ```
 # Reason 1.13.5 and ocaml 4.02.3
@@ -95,6 +95,14 @@ make release VERSION=beta-v-1.13.5 TYPE=pack
 make release VERSION=beta-v-1.13.5 TYPE=bin
 ```
 
+If making a release for Github, to avoid your upload size being rejected, make
+sure you install the `git lfs` extension `brew install git-lfs` and supply the
+`GITHUB_LFS` argument such as:
+
+```sh
+make release VERSION=beta-v-1.13.5 TYPE=bin GITHUB_LFS=1
+```
+
 ### Using `pack` to build on isolated network host (using `npm -g` on the destination):
 
 ```sh
@@ -107,9 +115,9 @@ gunzip release.tar.gz
 tar -xvf package.tar
 npm install -g ./package
 
-# You cannot move the installation once you have installed it into
-# a location (global or local). To move the package, uninstall it
-# adn reinstall it from the new location.
+# You cannot move the installation once you have installed it into # a location
+(global or local). To move the package, uninstall it # and reinstall it from
+the new location. You can, however, install it anywhere you like.
 ```
 
 ### Using `pack` to build on isolated network host (without `npm`):
@@ -143,6 +151,7 @@ include the binary locations for `refmt` in your `bsconfig`.
 Alternatively, you can put something like this in your `.bashrc`:
 
 ```
+export ESY_EJECT__STORE=`cat /path/to/package/records/recordedClientInstallStorePath.txt`
 source /path/to/package/node_modules/.cache/_esy/build-eject/eject-env
 ```
 
