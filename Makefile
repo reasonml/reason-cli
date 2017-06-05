@@ -10,4 +10,4 @@ release:
 	@rm -rf ./package
 	@# Strip away git metadata etc.
 	@FILE=`npm pack` && tar xzf $$FILE && rm $$FILE
-	@cd ./package; env ORIGIN=`git remote get-url origin` VERSION=$(VERSION) TYPE=$(TYPE) DEBUG=$(DEBUG) node -e "require('./releaseUtils/release.js').buildRelease(); require('./releaseUtils/release.js').release(); "
+	@cd ./package; env ORIGIN=`git remote get-url origin` VERSION=$(VERSION) TYPE=$(TYPE) DEBUG=$(DEBUG) node -e "require('./releaseUtils/release.js').buildRelease(); require('./releaseUtils/release.js').release($(GITHUB_LFS)); "
