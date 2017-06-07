@@ -415,7 +415,8 @@ var createPostinstallScript = function(releaseStage, releaseType, package, build
   var compressBuiltPackagesCmds = `
     ENV_PATH="$ESY_EJECT__SANDBOX/node_modules/.cache/_esy/build-eject/eject-env"
     # Double backslash in es6 literals becomes one backslash
-    shCmd="source $ENV_PATH && echo \\$PATH"
+    # Must use . instead of source for some reason.
+    shCmd=". $ENV_PATH && echo \\$PATH"
     EJECTED_PATH=\`sh -c "$shCmd"\`
     # Remove the sources, keep the .cache which has some helpful information.
     mv "$ESY_EJECT__SANDBOX/node_modules" "$ESY_EJECT__SANDBOX/node_modules_tmp"
