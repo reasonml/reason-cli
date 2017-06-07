@@ -303,7 +303,7 @@ var writeModifiedPackageJson = function(packageDir, package) {
 
 var verifyBinSetup = function(package) {
   var whosInCharge = ' Run make clean first. The release script needs to be in charge of generating the binaries.';
-  let binDirExists = fs.existsSync('./.bin');
+  var binDirExists = fs.existsSync('./.bin');
   if (binDirExists) {
     throw new Error(whosInCharge + 'Found existing binaries dir .bin. This should not exist. Release script creates it.');
   }
