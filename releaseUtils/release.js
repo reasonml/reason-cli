@@ -88,7 +88,7 @@ var postinstallScriptSupport = `
       echo >&2 "Could not perform binary build or installation because the location you are installing to ";
       echo >&2 "is too 'deep' in the file system. That sounds like a strange limitation, but ";
       echo >&2 "the scripts contain shebangs that encode this path to executable, and posix ";
-      echo >&2 "systems limit the length of those shebang lines to 126.";
+      echo >&2 "systems limit the length of those shebang lines to 127.";
       echo >&2 "";
     }
     repeatCh() {
@@ -316,7 +316,7 @@ var verifyBinSetup = function(package) {
 
 /**
  * To relocate binary artifacts: We need to make sure that the length of
- * shebang lines do not exceed 126 (common on most linuxes).
+ * shebang lines do not exceed 127 (common on most linuxes).
  *
  * For binary releases, they will be built in the form of:
  *
@@ -326,15 +326,15 @@ var verifyBinSetup = function(package) {
  *      /                                \/                                  \
  *   #!/path/to/rel/store___padding____/i/ocaml-4.02.3-d8a857f3/bin/ocamlrun
  *
- * The goal is to make this path exactly 126 characters long (maybe a little
+ * The goal is to make this path exactly 127 characters long (maybe a little
  * less to allow room for some other shebangs like `ocamlrun.opt` etc?)
  *
  * Therefore, it is optimal to make this path as long as possible, but no
- * longer than 126 characters, while minimizing the size of the final
+ * longer than 127 characters, while minimizing the size of the final
  * "ocaml-4.02.3-d8a857f3/bin/ocamlrun" portion. That allows installation of
  * the release in as many destinations as possible.
  */
-var desiredShebangPathLength = 126;
+var desiredShebangPathLength = 127 - "!#".length;
 var pathLengthConsumedByOcamlrun = "/i/ocaml-n.00.0-########/bin/ocamlrun".length;
 var desiredEsyEjectStoreLength = desiredShebangPathLength - pathLengthConsumedByOcamlrun;
 var createPostinstallScript = function(releaseStage, releaseType, package, buildLocallyAndRelocate) {
