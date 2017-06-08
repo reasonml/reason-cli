@@ -298,6 +298,13 @@ var addPostinstallScript = function(package) {
   return copy;
 };
 
+var removePostinstallScript = function(package) {
+  var copy = JSON.parse(JSON.stringify(package));
+  copy.scripts = copy.scripts || {};
+  copy.scripts.postinstall = '';
+  return copy;
+};
+
 var writeModifiedPackageJson = function(packageDir, package) {
   fs.writeFileSync(path.join(packageDir, 'package.json'), JSON.stringify(package, null, 2));
 };
@@ -677,30 +684,32 @@ exports.buildRelease = function() {
     fs.chmodSync(toWrite.path, 0755);
     packageJsonBins[toWrite.name] = toWrite.path;
   }
-  var packageWithBins = addBins(packageJsonBins, package);
-  var packageWithBinsAndPostInstall = addPostinstallScript(packageWithBins);
+  package = addBins(packageJsonBins, package);
 
-  var stageDependentSubstitutions = function(releaseStage) {
-    var postinstallShPath = path.join(packageDir, 'postinstall.sh');
-    var postinstallReleaseShPath = path.join(packageDir, 'postinstall.sh.release');
-    var packageAdjustedReleaseDeps = adjustReleaseDependencies(releaseStage, releaseType, packageWithBinsAndPostInstall)
-    writeModifiedPackageJson(packageDir, packageAdjustedReleaseDeps);
-    var postinstall = createPostinstallScript(releaseStage, releaseType, package, buildLocallyAndRelocate[releaseType]);
-    fs.writeFileSync(postinstallShPath, postinstall);
-    if (releaseStage === 'forPreparingRelease') {
-      // Recorded just so you can inspect what happened during the release.
-      fs.writeFileSync(postinstallReleaseShPath, postinstall);
-    }
-    fs.chmodSync(postinstallShPath, 0755);
-  };
-  stageDependentSubstitutions('forPreparingRelease');
+  // Prerelease: Will perform an initial installation to get dependencies, and
+  // then run the prerelease "postinstall" on that set of package source.
+  package = removePostinstallScript(package);
+  package = adjustReleaseDependencies('forPreparingRelease', releaseType, package)
+  writeModifiedPackageJson(packageDir, package);
+  var prereleaseShPath = path.join(packageDir, 'prerelease.sh');
+  var prerelease = createPostinstallScript('forPreparingRelease', releaseType, package, buildLocallyAndRelocate[releaseType]);
+  fs.writeFileSync(prereleaseShPath, prerelease);
+  fs.chmodSync(prereleaseShPath, 0755);
+
   logExec('npm install');
+  logExec('./prerelease.sh');
 
   logExec('rm -rf ' + path.join(packageDir, 'node_modules'));
   logExec('rm -rf ' + path.join(packageDir, 'rel', 'yarn.lock'));
-  // Now we re-substitute with releaseStage with 'forClientInstallation' before
-  // publishing the release!
-  stageDependentSubstitutions('forClientInstallation')
+
+  // Actual Release: We leave the *actual* postinstall script to be executed on the host.
+  package = addPostinstallScript(package);
+  package = adjustReleaseDependencies('forClientInstallation', releaseType, package)
+  writeModifiedPackageJson(packageDir, package);
+  var postinstallShPath = path.join(packageDir, 'postinstall.sh');
+  var postinstall = createPostinstallScript('forClientInstallation', releaseType, package, buildLocallyAndRelocate[releaseType]);
+  fs.writeFileSync(postinstallShPath, postinstall);
+  fs.chmodSync(postinstallShPath, 0755);
 };
 
 
