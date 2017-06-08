@@ -449,6 +449,12 @@ var createPostinstallScript = function(releaseStage, releaseType, package, build
     unset IFS
     cd "$PACKAGE_ROOT"
     ${releaseType === 'forPreparingRelease' ? scrubBinaryReleaseCommandPathPatterns('"$ESY_EJECT__TMP/i/"') : '#'}
+    ${
+    releaseType === 'forPreparingRelease' ?
+    package.deleteFromBinaryRelease.map(function(pattern) {
+      return 'rm ' + pattern;
+    }).join('\n') : ''
+    }
     # Built packages have a special way of compressing the release, putting the
     # eject store in its own tar so that all the symlinks in the store can be
     # relocated using tools that exist in the eject sandbox.
