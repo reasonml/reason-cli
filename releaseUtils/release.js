@@ -696,7 +696,7 @@ exports.buildRelease = function() {
   fs.writeFileSync(prereleaseShPath, prerelease);
   fs.chmodSync(prereleaseShPath, 0755);
 
-  logExec('npm install');
+  logExec('npm install --ignore-scripts');
   logExec('./prerelease.sh');
 
   logExec('rm -rf ' + path.join(packageDir, 'node_modules'));
