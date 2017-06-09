@@ -182,24 +182,24 @@ ${
   if [ "$1" == "----where" ]; then
      which "${binaryName}"
   else
-    exec "${binaryName}" $@
+    if [ "$1" == "shell" ]; then
+      $SHELL
+    fi
   fi
   ` :
   `
   if [[ "$1" == ""  ]]; then
+    echo ""
     echo "Welcome to ${packageName}"
     echo "-------------------------"
-  ` +
-  (package.releasedBinaries || []).map((binName) => 'echo "Installed: ' + binName + '"').join('\n') +
-  `
-    echo "- You may debug the location of the installed binaries by doing:"
-    echo "  binaryName ----where"
-    echo "- You may execute any other command within the context of the ocaml tooling by doing:"
-    echo "    ${packageName} any command here"
-    echo "  For example:"
-    echo "    ${packageName} ocamlfind query utop"
-    echo "- You may boost the performance of multiple invocations of published binaries"
-    echo "  by wrapping the invocations with the special binary named ${packageName}."
+    echo "Installed Binaries: [" ${(package.releasedBinaries || []).concat([packageName]).join(',')} "]"
+    echo "- ${packageName} shell"
+    echo   " Starts \$SHELL from the perspective of ${(package.releasedBinaries || ['<no_binaries>'])[0]} and installed binaries."
+    echo "- binaryName ----where"
+    echo "  Prints the location of binaryName"
+    echo "  Example: ${(package.releasedBinaries || ['<no_binaries>'])[0]} ----where"
+    echo "- Note: Running builds and scripts from within "${packageName} shell" will typically increase performance of builds."
+    echo ""
   else
     exec $@
   fi
