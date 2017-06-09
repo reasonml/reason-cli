@@ -28,6 +28,7 @@
     "url": "https://github.com/reasonml/reason-cli/issues"
   },
   "releasedBinaries": [
+    "ocamlmerlin",
     "ocamlmerlin-reason",
     "ocamlrun",
     "ocamlc",
@@ -41,7 +42,6 @@
     "rebuild",
     "reactjs_jsx_ppx",
     "berror",
-    "ocamlmerlin",
     "menhir",
     "ocamlfind"
   ],
