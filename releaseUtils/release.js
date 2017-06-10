@@ -451,7 +451,7 @@ var createPostinstallScript = function(releaseStage, releaseType, package, build
     ${releaseType === 'forPreparingRelease' ? scrubBinaryReleaseCommandPathPatterns('"$ESY_EJECT__TMP/i/"') : '#'}
     ${
     releaseType === 'forPreparingRelease' ?
-    package.deleteFromBinaryRelease.map(function(pattern) {
+    (package.deleteFromBinaryRelease || []).map(function(pattern) {
       return 'rm ' + pattern;
     }).join('\n') : ''
     }
