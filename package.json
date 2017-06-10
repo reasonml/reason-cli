@@ -50,15 +50,15 @@
     " you released above, no longer work correctly."
   ],
   "deleteFromBinaryRelease": [
-    "releasePackedBinaries/i/*ounit-2.0.0-*.tar.gz",
-    "releasePackedBinaries/i/*camlp4-4.2.7-*.tar.gz",
-    "releasePackedBinaries/i/opam_installer_bin-*.tar.gz",
-    "releasePackedBinaries/i/*topkg-0.8.1-*.tar.gz",
-    "releasePackedBinaries/i/substs-0.0.1-*.tar.gz",
-    "releasePackedBinaries/i/*conf_which-1.0.0-*.tar.gz",
-    "releasePackedBinaries/i/*conf_m4-1.0.0-*.tar.gz",
-    "releasePackedBinaries/i/*cppo-1.4.1-*.tar.gz",
-    "releasePackedBinaries/i/*jbuilder-1.9.0-*.tar.gz"
+    "relBinaries/i/*ounit-2.0.0-*.tar.gz",
+    "relBinaries/i/*camlp4-4.2.7-*.tar.gz",
+    "relBinaries/i/opam_installer_bin-*.tar.gz",
+    "relBinaries/i/*topkg-0.8.1-*.tar.gz",
+    "relBinaries/i/substs-0.0.1-*.tar.gz",
+    "relBinaries/i/*conf_which-1.0.0-*.tar.gz",
+    "relBinaries/i/*conf_m4-1.0.0-*.tar.gz",
+    "relBinaries/i/*cppo-1.4.1-*.tar.gz",
+    "relBinaries/i/*jbuilder-1.9.0-*.tar.gz"
   ],
   "homepage": "https://github.com/reasonml/reason-cli#readme",
   "dependencies": {
