@@ -344,7 +344,7 @@ var verifyBinSetup = function(package) {
 var desiredShebangPathLength = 127 - "!#".length;
 var pathLengthConsumedByOcamlrun = "/i/ocaml-n.00.0-########/bin/ocamlrun".length;
 var desiredEsyEjectStoreLength = desiredShebangPathLength - pathLengthConsumedByOcamlrun;
-var createPostinstallScript = function(releaseStage, releaseType, package, buildLocallyAndRelocate) {
+var createPostinstallScript = function(releaseStage, releaseType, package) {
   var shouldDownload = actions[releaseType].download === releaseStage;
   var shouldPack = actions[releaseType].pack === releaseStage;
   var shouldCompressPack = actions[releaseType].compressPack === releaseStage;
