@@ -182,9 +182,7 @@ ${
   if [ "$1" == "----where" ]; then
      which "${binaryName}"
   else
-    if [ "$1" == "shell" ]; then
-      $SHELL
-    fi
+    exec "${binaryName}" $@
   fi
   ` :
   `
@@ -201,7 +199,9 @@ ${
     echo "- Note: Running builds and scripts from within "${packageName} shell" will typically increase performance of builds."
     echo ""
   else
-    exec $@
+    if [ "$1" == "shell" ]; then
+      $SHELL
+    fi
   fi
   `
 }
