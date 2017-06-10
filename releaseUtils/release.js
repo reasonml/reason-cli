@@ -382,23 +382,23 @@ var createPostinstallScript = function(releaseStage, releaseType, package) {
     # Compress:
     # Avoid npm stripping out vendored node_modules via tar. Merely renaming node_modules
     # is not sufficient!
-    tar -czf releasePacked.tar.gz rel
+    tar -czf rel.tar.gz rel
     rm -rf ./rel/`;
   var decompressPackCmds =`
     # Decompress:
     # Avoid npm stripping out vendored node_modules.
-    gunzip releasePacked.tar.gz
+    gunzip rel.tar.gz
     if hash bsdtar 2>/dev/null; then
-      bsdtar -xf releasePacked.tar
+      bsdtar -xf rel.tar
     else
       if hash tar 2>/dev/null; then
         # Supply --warning=no-unknown-keyword to supresses warnings when packed on OSX
-        tar --warning=no-unknown-keyword -xf releasePacked.tar
+        tar --warning=no-unknown-keyword -xf rel.tar
       else
         echo >&2 "Installation requires either bsdtar or tar - neither is found.  Aborting.";
       fi
     fi
-    rm -rf releasePacked.tar`;
+    rm -rf rel.tar`;
   var buildPackagesCmds = `
     # BuildPackages: Always reserve enough path space to perform relocation.
     cd ./rel/
@@ -448,18 +448,17 @@ var createPostinstallScript = function(releaseStage, releaseType, package) {
     done
     unset IFS
     cd "$PACKAGE_ROOT"
-    ${releaseType === 'forPreparingRelease' ? scrubBinaryReleaseCommandPathPatterns('"$ESY_EJECT__TMP/i/"') : '#'}
-    ${
-    releaseType === 'forPreparingRelease' ?
-    (package.deleteFromBinaryRelease || []).map(function(pattern) {
-      return 'rm ' + pattern;
-    }).join('\n') : ''
+    ${releaseStage === 'forPreparingRelease' ? scrubBinaryReleaseCommandPathPatterns('"$ESY_EJECT__TMP/i/"') : '#'}
+    ${releaseStage === 'forPreparingRelease' ?
+      (package.deleteFromBinaryRelease || []).map(function(pattern) {
+        return 'rm ' + pattern;
+      }).join('\n') : ''
     }
     # Built packages have a special way of compressing the release, putting the
     # eject store in its own tar so that all the symlinks in the store can be
     # relocated using tools that exist in the eject sandbox.
 
-    tar -czf releasePacked.tar.gz rel
+    tar -czf rel.tar.gz rel
     rm -rf ./rel/`;
   var decompressAndRelocateBuiltPackagesCmds = `
 
@@ -471,20 +470,20 @@ var createPostinstallScript = function(releaseStage, releaseType, package) {
     serverEsyEjectStoreDirName=\`basename "$serverEsyEjectStore"\`
 
     # Decompress the actual sandbox:
-    gunzip releasePacked.tar.gz
+    gunzip rel.tar.gz
     # Beware of the issues of using "which". https://stackoverflow.com/a/677212
     # Also: hash is only safe/reliable to use in bash, so make sure shebang line is bash.
     if hash bsdtar 2>/dev/null; then
-      bsdtar -s "|\${serverEsyEjectStore}|\${ESY_EJECT__INSTALL_STORE}|gs" -xf releasePacked.tar
+      bsdtar -s "|\${serverEsyEjectStore}|\${ESY_EJECT__INSTALL_STORE}|gs" -xf rel.tar
     else
       if hash tar 2>/dev/null; then
         # Supply --warning=no-unknown-keyword to supresses warnings when packed on OSX
-        tar --warning=no-unknown-keyword --transform="s|\${serverEsyEjectStore}|\${ESY_EJECT__INSTALL_STORE}|" -xf releasePacked.tar
+        tar --warning=no-unknown-keyword --transform="s|\${serverEsyEjectStore}|\${ESY_EJECT__INSTALL_STORE}|" -xf rel.tar
       else
         echo >&2 "Installation requires either bsdtar or tar - neither is found.  Aborting.";
       fi
     fi
-    rm releasePacked.tar
+    rm rel.tar
 
     cd "$ESY_EJECT__TMP/i/"
     for f in *.gz
@@ -600,7 +599,7 @@ var createPostinstallScript = function(releaseStage, releaseType, package) {
     # here temporarily. Sometimes the build location is the same as where we
     # copy them to inside the sandbox - sometimes not.
     export PACKAGE_ROOT="$SCRIPTDIR"
-    export ESY_EJECT__TMP="$PACKAGE_ROOT/releasePackedBinaries"
+    export ESY_EJECT__TMP="$PACKAGE_ROOT/relBinaries"
     checkEsyEjectStore
     ${download}
     ${pack}
@@ -698,7 +697,7 @@ exports.buildRelease = function() {
   package = adjustReleaseDependencies('forPreparingRelease', releaseType, package)
   writeModifiedPackageJson(packageDir, package);
   var prereleaseShPath = path.join(packageDir, 'prerelease.sh');
-  var prerelease = createPostinstallScript('forPreparingRelease', releaseType, package, buildLocallyAndRelocate[releaseType]);
+  var prerelease = createPostinstallScript('forPreparingRelease', releaseType, package);
   fs.writeFileSync(prereleaseShPath, prerelease);
   fs.chmodSync(prereleaseShPath, 0755);
 
@@ -713,7 +712,7 @@ exports.buildRelease = function() {
   package = adjustReleaseDependencies('forClientInstallation', releaseType, package)
   writeModifiedPackageJson(packageDir, package);
   var postinstallShPath = path.join(packageDir, 'postinstall.sh');
-  var postinstall = createPostinstallScript('forClientInstallation', releaseType, package, buildLocallyAndRelocate[releaseType]);
+  var postinstall = createPostinstallScript('forClientInstallation', releaseType, package);
   fs.writeFileSync(postinstallShPath, postinstall);
   fs.chmodSync(postinstallShPath, 0755);
 };
@@ -724,8 +723,8 @@ exports.release = function(forGithubLFS) {
   [
     'git init',
     'git checkout -b branch-' + tagName + '',
-    forGithubLFS ? 'git lfs track ./releasePacked.tar.gz' : '',
-    forGithubLFS ? 'git lfs track releasePackedBinaries/i/*.tar.gz' : '',
+    forGithubLFS ? 'git lfs track ./rel.tar.gz' : '',
+    forGithubLFS ? 'git lfs track relBinaries/i/*.tar.gz' : '',
     'git add .',
     'git remote add origin ' + process.env['ORIGIN'],
     'git fetch --tags --depth=1',
