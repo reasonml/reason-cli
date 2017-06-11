@@ -82,6 +82,28 @@ You can test install the release by running:
 `
 
 var postinstallScriptSupport = `
+    # Exporting so we can call it from xargs
+    # https://stackoverflow.com/questions/11003418/calling-functions-with-xargs-within-a-bash-script
+    unzipAndUntar() {
+      serverEsyEjectStore=$1
+      gunzip "$2"
+      # Beware of the issues of using "which". https://stackoverflow.com/a/677212
+      # Also: hash is only safe/reliable to use in bash, so make sure shebang line is bash.
+      if hash bsdtar 2>/dev/null; then
+        bsdtar -s "|\${serverEsyEjectStore}|\${ESY_EJECT__INSTALL_STORE}|gs" -xf ./\`basename "$2" .gz\`
+      else
+        if hash tar 2>/dev/null; then
+          # Supply --warning=no-unknown-keyword to supresses warnings when packed on OSX
+          tar --warning=no-unknown-keyword --transform="s|\${serverEsyEjectStore}|\${ESY_EJECT__INSTALL_STORE}|" -xf ./\`basename "$2" .gz\`
+        else
+          echo >&2 "Installation requires either bsdtar or tar - neither is found.  Aborting.";
+        fi
+      fi
+      # remove the .tar file
+      rm ./\`basename "$2" .gz\`
+    }
+    export -f unzipAndUntar
+
     printByteLengthError() {
       echo >&2 "ERROR:";
       echo >&2 "  $1";
@@ -470,38 +492,11 @@ var createPostinstallScript = function(releaseStage, releaseType, package) {
     serverEsyEjectStoreDirName=\`basename "$serverEsyEjectStore"\`
 
     # Decompress the actual sandbox:
-    gunzip rel.tar.gz
-    # Beware of the issues of using "which". https://stackoverflow.com/a/677212
-    # Also: hash is only safe/reliable to use in bash, so make sure shebang line is bash.
-    if hash bsdtar 2>/dev/null; then
-      bsdtar -s "|\${serverEsyEjectStore}|\${ESY_EJECT__INSTALL_STORE}|gs" -xf rel.tar
-    else
-      if hash tar 2>/dev/null; then
-        # Supply --warning=no-unknown-keyword to supresses warnings when packed on OSX
-        tar --warning=no-unknown-keyword --transform="s|\${serverEsyEjectStore}|\${ESY_EJECT__INSTALL_STORE}|" -xf rel.tar
-      else
-        echo >&2 "Installation requires either bsdtar or tar - neither is found.  Aborting.";
-      fi
-    fi
-    rm rel.tar
+    unzipAndUntar "$serverEsyEjectStore" "rel.tar.gz"
 
     cd "$ESY_EJECT__TMP/i/"
-    for f in *.gz
-    do
-      gunzip "$f"
-      if hash bsdtar 2>/dev/null; then
-        bsdtar -s "|\${serverEsyEjectStore}|\${ESY_EJECT__INSTALL_STORE}|gs" -xf ./\`basename "$f" .gz\`
-      else
-        if hash tar 2>/dev/null; then
-          # Supply --warning=no-unknown-keyword to supresses warnings when packed on OSX
-          tar --warning=no-unknown-keyword --transform="s|\${serverEsyEjectStore}|\${ESY_EJECT__INSTALL_STORE}|" -xf ./\`basename "$f" .gz\`
-        else
-          echo >&2 "Installation requires either bsdtar or tar - neither is found.  Aborting.";
-        fi
-      fi
-      # remove the .tar file
-      rm ./\`basename "$f" .gz\`
-    done
+    # Executing the untar/unzip in parallel!
+    find . -name '*.gz' -print0 | xargs -0 -I {} -P 30 bash -c "unzipAndUntar $serverEsyEjectStore {}"
 
     mv "$ESY_EJECT__TMP" "$ESY_EJECT__INSTALL_STORE"
     # Write the final store path, overwritting the (original) path on server.
@@ -510,10 +505,9 @@ var createPostinstallScript = function(releaseStage, releaseType, package) {
     # Not that this is really even used for anything once on the client.
     # We use the install store. Still, this might be good for debugging.
     echo "$ESY_EJECT__STORE" > "$PACKAGE_ROOT/records/recordedClientBuildStorePath.txt"
-
-    for filename in \`find $ESY_EJECT__INSTALL_STORE -type f\`; do
-      $ESY_EJECT__SANDBOX/node_modules/.cache/_esy/build-eject/bin/fastreplacestring.exe "$filename" "$serverEsyEjectStore" "$ESY_EJECT__INSTALL_STORE"
-    done
+    # Executing the replace string in parallel!
+    # https://askubuntu.com/questions/431478/decompressing-multiple-files-at-once
+    find $ESY_EJECT__INSTALL_STORE -type f -print0 | xargs -0 -I {} -P 30 "$ESY_EJECT__SANDBOX/node_modules/.cache/_esy/build-eject/bin/fastreplacestring.exe" "{}" "$serverEsyEjectStore" "$ESY_EJECT__INSTALL_STORE"
     `;
   // Notice how we comment out each section which doesn't apply to this
   // combination of releaseStage/releaseType.
