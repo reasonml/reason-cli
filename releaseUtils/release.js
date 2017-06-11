@@ -84,7 +84,7 @@ You can test install the release by running:
 var postinstallScriptSupport = `
     # Exporting so we can call it from xargs
     # https://stackoverflow.com/questions/11003418/calling-functions-with-xargs-within-a-bash-script
-    unzipAndUntar() {
+    unzipAndUntarFixupLinks() {
       serverEsyEjectStore=$1
       gunzip "$2"
       # Beware of the issues of using "which". https://stackoverflow.com/a/677212
@@ -102,7 +102,7 @@ var postinstallScriptSupport = `
       # remove the .tar file
       rm ./\`basename "$2" .gz\`
     }
-    export -f unzipAndUntar
+    export -f unzipAndUntarFixupLinks
 
     printByteLengthError() {
       echo >&2 "ERROR:";
@@ -492,11 +492,11 @@ var createPostinstallScript = function(releaseStage, releaseType, package) {
     serverEsyEjectStoreDirName=\`basename "$serverEsyEjectStore"\`
 
     # Decompress the actual sandbox:
-    unzipAndUntar "$serverEsyEjectStore" "rel.tar.gz"
+    unzipAndUntarFixupLinks "$serverEsyEjectStore" "rel.tar.gz"
 
     cd "$ESY_EJECT__TMP/i/"
     # Executing the untar/unzip in parallel!
-    find . -name '*.gz' -print0 | xargs -0 -I {} -P 30 bash -c "unzipAndUntar $serverEsyEjectStore {}"
+    find . -name '*.gz' -print0 | xargs -0 -I {} -P 30 bash -c "unzipAndUntarFixupLinks $serverEsyEjectStore {}"
 
     mv "$ESY_EJECT__TMP" "$ESY_EJECT__INSTALL_STORE"
     # Write the final store path, overwritting the (original) path on server.
