@@ -1,0 +1,69 @@
+{
+  "name": "reason-cli",
+  "version": "1.13.6",
+  "preferGlobal": false,
+  "description": "Globally Installable CLI Tools For ReasonML",
+  "main": "index.js",
+  "notes": "Do not include a postinstall script - it will be added for you",
+  "scripts": {
+    "test": "export PATH=\"$PWD/.bin:$PATH\" && ls -al ./.bin && which refmt && which ocamlmerlin && which rebuild && which ocamlc && which ocamlopt && which berror",
+    "postinstall": "./postinstall.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reasonml/reason-cli.git"
+  },
+  "keywords": [
+    "ReasonML",
+    "Reason",
+    "OCaml",
+    "Merlin",
+    "ocamlopt",
+    "ocamlc",
+    "refmt",
+    "berror"
+  ],
+  "author": "Jordan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/reasonml/reason-cli/issues"
+  },
+  "NOTES": [
+    "Make the release as lean as you want! Just remove packed binary zips until the executables",
+    " you released above, no longer work correctly."
+  ],
+  "deleteFromBinaryRelease": [
+    "relBinaries/i/*ounit-2.0.0-*.tar.gz",
+    "relBinaries/i/*camlp4-4.2.7-*.tar.gz",
+    "relBinaries/i/opam_installer_bin-*.tar.gz",
+    "relBinaries/i/*topkg-0.8.1-*.tar.gz",
+    "relBinaries/i/substs-0.0.1-*.tar.gz",
+    "relBinaries/i/*conf_which-1.0.0-*.tar.gz",
+    "relBinaries/i/*conf_m4-1.0.0-*.tar.gz",
+    "relBinaries/i/*cppo-1.4.1-*.tar.gz",
+    "relBinaries/i/*jbuilder-1.9.0-*.tar.gz"
+  ],
+  "homepage": "https://github.com/reasonml/reason-cli#readme",
+  "dependencies": {
+    "esy": "git://github.com/esy-ocaml/esy.git#beta-v0.0.5"
+  },
+  "bin": {
+    "ocamlmerlin": ".bin/ocamlmerlin",
+    "ocamlmerlin-reason": ".bin/ocamlmerlin-reason",
+    "ocamlrun": ".bin/ocamlrun",
+    "ocamlc": ".bin/ocamlc",
+    "ocamlopt": ".bin/ocamlopt",
+    "ocaml": ".bin/ocaml",
+    "rtop": ".bin/rtop",
+    "utop": ".bin/utop",
+    "refmt": ".bin/refmt",
+    "refmttype": ".bin/refmttype",
+    "reopt": ".bin/reopt",
+    "rebuild": ".bin/rebuild",
+    "reactjs_jsx_ppx": ".bin/reactjs_jsx_ppx",
+    "berror": ".bin/berror",
+    "menhir": ".bin/menhir",
+    "ocamlfind": ".bin/ocamlfind",
+    "reason-cli": ".bin/reason-cli"
+  }
+}
