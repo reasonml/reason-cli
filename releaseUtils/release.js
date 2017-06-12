@@ -261,8 +261,8 @@ var actions = {
     compressPack: '',
     decompressPack: '',
     buildPackages: 'forClientInstallation',
-    compressBuiltPackages: '',
-    decompressAndRelocateBuiltPackages: ''
+    compressBuiltPackages: 'forClientInstallation',
+    decompressAndRelocateBuiltPackages: 'forClientInstallation'
   },
   'pack': {
     download: 'forPreparingRelease',
