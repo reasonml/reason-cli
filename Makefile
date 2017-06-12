@@ -1,8 +1,7 @@
 clean:
 	@rm -rf package
 
-# Releases to Github
-release:
+build:
 	@# Program "fails" if unstaged changes.
 	@echo 
 	@git diff --exit-code || (echo ""  && echo "!!You have unstaged changes. Please clean up first." && exit 1)
@@ -10,4 +9,8 @@ release:
 	@rm -rf ./package
 	@# Strip away git metadata etc.
 	@FILE=`npm pack` && tar xzf $$FILE && rm $$FILE
-	@cd ./package; env ORIGIN=`git remote get-url origin` VERSION=$(VERSION) TYPE=$(TYPE) DEBUG=$(DEBUG) node -e "require('./releaseUtils/release.js').buildRelease(); require('./releaseUtils/release.js').release($(GITHUB_LFS)); "
+	@cd ./package; VERSION=$(VERSION) TYPE=$(TYPE) DEBUG=$(DEBUG) node -e "require('./releaseUtils/release.js').buildRelease();"
+
+# Releases to Github
+release: build
+	 @cd ./package; env ORIGIN=`git remote get-url origin` node -e "require('./releaseUtils/release.js').release($(GITHUB_LFS));"
