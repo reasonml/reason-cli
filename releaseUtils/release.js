@@ -683,11 +683,11 @@ exports.buildRelease = function() {
     fs.chmodSync(toWrite.path, 0755);
     packageJsonBins[toWrite.name] = toWrite.path;
   }
-  package = addBins(packageJsonBins, package);
+  var packageWithBins = addBins(packageJsonBins, package);
 
   // Prerelease: Will perform an initial installation to get dependencies, and
   // then run the prerelease "postinstall" on that set of package source.
-  package = removePostinstallScript(package);
+  package = removePostinstallScript(packageWithBins);
   package = adjustReleaseDependencies('forPreparingRelease', releaseType, package)
   writeModifiedPackageJson(packageDir, package);
   var prereleaseShPath = path.join(packageDir, 'prerelease.sh');
@@ -702,7 +702,7 @@ exports.buildRelease = function() {
   logExec('rm -rf ' + path.join(packageDir, 'rel', 'yarn.lock'));
 
   // Actual Release: We leave the *actual* postinstall script to be executed on the host.
-  package = addPostinstallScript(package);
+  package = addPostinstallScript(packageWithBins);
   package = adjustReleaseDependencies('forClientInstallation', releaseType, package)
   writeModifiedPackageJson(packageDir, package);
   var postinstallShPath = path.join(packageDir, 'postinstall.sh');
