@@ -213,16 +213,21 @@ ${
     echo "Welcome to ${packageName}"
     echo "-------------------------"
     echo "Installed Binaries: [" ${(package.releasedBinaries || []).concat([packageName]).join(',')} "]"
-    echo "- ${packageName} shell"
-    echo   " Starts \$SHELL from the perspective of ${(package.releasedBinaries || ['<no_binaries>'])[0]} and installed binaries."
+    echo "- ${packageName} bash"
+    echo   " Starts bash from the perspective of ${(package.releasedBinaries || ['<no_binaries>'])[0]} and installed binaries."
     echo "- binaryName ----where"
     echo "  Prints the location of binaryName"
     echo "  Example: ${(package.releasedBinaries || ['<no_binaries>'])[0]} ----where"
-    echo "- Note: Running builds and scripts from within "${packageName} shell" will typically increase performance of builds."
+    echo "- Note: Running builds and scripts from within "${packageName} bash" will typically increase performance of builds."
     echo ""
   else
-    if [ "$1" == "shell" ]; then
-      $SHELL
+    if [ "$1" == "bash" ]; then
+      # Important to pass --noprofile, and --rcfile so that the user's
+      # .bashrc doesn't run and the npm global packages don't get put in front
+      # of the already constructed PATH.
+      bash --noprofile --rcfile <(echo 'export PS1="${'\033[0;31m⏣ ' + packageName + ': \033[0m$PS1'}"')
+    else
+      echo "Invalid argument $1, type reason-cli for help"
     fi
   fi
   `
