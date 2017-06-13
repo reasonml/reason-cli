@@ -41,6 +41,7 @@
     "reopt",
     "rebuild",
     "reactjs_jsx_ppx",
+    "reactjs_jsx_ppx_2",
     "berror",
     "menhir",
     "ocamlfind"
