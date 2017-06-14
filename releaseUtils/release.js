@@ -163,12 +163,16 @@ var launchBinScriptSupport = `
     }
 `;
 
+var escapeBashVarName = function(str) {
+  var map = {'.': 'd', '_': '_', '-': 'h'};
+  var replacer = match => map.hasOwnProperty(match) ? "_"+map[match] : match;
+  return str.replace(/./g, replacer);
+}
+
 var createLaunchBinSh = function(releaseType, package, binaryName) {
   var packageName = package.name;
-  var packageNameUppercase =
-    replaceAll(replaceAll(replaceAll(package.name.toUpperCase(), '.', '__'), '_', '__'), '-', '_');
-  var binaryNameUppercase =
-    replaceAll(replaceAll(replaceAll(binaryName.toUpperCase(), '.', '__'), '_', '___'), '-', '_');
+  var packageNameUppercase = escapeBashVarName(package.name.toUpperCase());
+  var binaryNameUppercase = escapeBashVarName(binaryName.toUpperCase());
   return `#!/usr/bin/env bash
 
 export ESY__STORE_VERSION=${storeVersion}
