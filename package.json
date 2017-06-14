@@ -6,7 +6,7 @@
   "main": "index.js",
   "notes": "Do not include a postinstall script - it will be added for you",
   "scripts": {
-    "test": "export PATH=\"$PWD/.bin:$PATH\" && ls -al ./.bin && which refmt && which ocamlmerlin && which rebuild && which ocamlc && which ocamlopt && which berror && refmt ----where && reactjs_jsx_ppx ----where && reactjs_jsx_ppx_2 ----where"
+    "test": "export PATH=\"$PWD/.bin:$PATH\" && ls -al ./.bin && which refmt && which ocamlmerlin && which rebuild && which ocamlc && which ocamlc.opt && which ocamlopt && which ocamlopt.opt && which berror && refmt ----where && reactjs_jsx_ppx ----where && reactjs_jsx_ppx_2 ----where",
   },
   "repository": {
     "type": "git",
