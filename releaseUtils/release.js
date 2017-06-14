@@ -256,10 +256,6 @@ var logExec = function (cmd) {
   child_process.execSync(cmd, {stdio: 'inherit'});
 }
 
-function replaceAll(str, find, replace) {
-  return str.replace(new RegExp(find, 'g'), replace);
-}
-
 var types = ['dev', 'pack', 'bin'];
 var releaseStage = ['forPreparingRelease', 'forClientInstallation'];
 
