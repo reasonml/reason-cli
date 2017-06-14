@@ -166,9 +166,9 @@ var launchBinScriptSupport = `
 var createLaunchBinSh = function(releaseType, package, binaryName) {
   var packageName = package.name;
   var packageNameUppercase =
-    replaceAll(replaceAll(package.name.toUpperCase(), '_', '__'), '-', '_');
+    replaceAll(replaceAll(replaceAll(package.name.toUpperCase(), '.', '__'), '_', '__'), '-', '_');
   var binaryNameUppercase =
-    replaceAll(replaceAll(binaryName.toUpperCase(), '_', '___'), '-', '_');
+    replaceAll(replaceAll(replaceAll(binaryName.toUpperCase(), '.', '__'), '_', '___'), '-', '_');
   return `#!/usr/bin/env bash
 
 export ESY__STORE_VERSION=${storeVersion}
