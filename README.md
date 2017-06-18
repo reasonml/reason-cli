@@ -24,10 +24,10 @@ For each version of `reason-cli`, there are binary releases for linux and Mac
 OS.
 
 
-| type | install command                                                                   | Notes   |
-|:----:|-----------------------------------------------------------------------------------|---------|
-| **`binary` OSX** | `npm install -g https://github.com/reasonml/reason-cli/archive/beta-v-1.13.6-bin-darwin.tar.gz` | Downloads Binaries |
-| **`binary` Linux** | `npm install -g https://github.com/reasonml/reason-cli/archive/beta-v-1.13.6-bin-linux.tar.gz` | Downloads Binaries |
+| type | platform | install command                                                                                      | Notes   |
+|:----:|-----------------------------------------------------------------------------------------------------------------|---------|
+| `binary` | **OSX**   | `npm install -g https://github.com/reasonml/reason-cli/archive/beta-v-1.13.6-bin-darwin.tar.gz` | Installs Binaries |
+| `binary` | **Linux** | `npm install -g https://github.com/reasonml/reason-cli/archive/beta-v-1.13.6-bin-linux.tar.gz`  | Installs Binaries |
 
 
 There are also two other types of releases, `dev` and `pack`.
