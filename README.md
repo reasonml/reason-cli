@@ -148,7 +148,7 @@ cd ./package
 Then you can simply invoke the binaries as part of a build script elsewhere, or
 include the binary locations for `refmt` in your `bsconfig`.
 
-```share
+```sh
 /path/to/package/.bin/refmt
 ```
 
@@ -173,16 +173,21 @@ source /path/to/package/node_modules/.cache/_esy/build-eject/eject-env
   - Does it give any better information about what is failing?
   - Is there a specific log file that it claims the actual error is written into?
 
-
 - Did you remember to install using `-g`?
 - When updating, did you try to uninstall the previous installation?
-- If an error occurs during install, it likely tells you where the log is (not
-  the npm log) that contains the build errors.
-  - If not, you can find recent build attempts here in your home dir cache at these locations:
-    `~/.esy/_build/packageName/_esy/build.log`. Find recently modified created
-    build logs in those locations and create github gists, sharing them on the
-    [Reason Discord Chanel](https://discord.gg/UugQtbW)
-    in the channel `#packageManagementAndNativeBuildSystems`.
+
+Each published binary includes the built-in ability to troubleshoot where each
+binary is resolved to.  If something is going wrong with your `refmt` command,
+you can see which released binary `refmt` *actually* invokes in the release. We
+use the `----where` flag with four `-` characters because it's unlikely to
+conflict with any meaningful parameters of binaries like `refmt`.
+
+```
+refmt ----where
+
+> /path/to/npm-packages/lib/reason-cli/actualInstall/builds/reason/bin/refmt
+
+```
 
 ### Ways `Reason-Cli` Can Improve:
 
