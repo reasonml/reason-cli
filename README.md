@@ -161,19 +161,6 @@ source /path/to/package/node_modules/.cache/_esy/build-eject/eject-env
 
 ## More Info
 
-### Global Installs That Share the build cache:
-
-Since these global tools use `esy`, globally installed tools (`dev` and `pack`
-modes) warm the build cache for your local projects.
-
-1. When building sandboxed projects, now those sandboxed projects
-   build very fast because they share the same cache as the globally
-   installed tools you've built.
-2. One infrastructure to manage.
-
-We do not have good examples of creating sandboxed projects yet, so this isn't
-entirely useful yet.
-
 
 ### TroubleShooting:
 
@@ -183,20 +170,12 @@ entirely useful yet.
       cd whereverYourGlobalNpmPackagesAreStored/reason-cli/
       ./scripts/postinstall.sh
 
-  Does it give any better information about what is failing?
+  - Does it give any better information about what is failing?
+  - Is there a specific log file that it claims the actual error is written into?
 
 
 - Did you remember to install using `-g`?
-- In general, try uninstalling and then reinstalling `reason-cli`.
-- When updating, did you remember to uninstall the previous installation?
-- If you're experiencing permissions issues, it could be due to the linux `npm`
-  installs global `-g` packages when you use `sudo`. Instead of installing with
-  `sudo` you should probably set up your packages as explained in this guide:
-  https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
-  - Note: We are still going to work on solving permissions issues with
-    installing `-g` packages with `sudo`, but following that guide should
-    eliminate many issues with many different npm packages (not just
-    reason-cli).
+- When updating, did you try to uninstall the previous installation?
 - If an error occurs during install, it likely tells you where the log is (not
   the npm log) that contains the build errors.
   - If not, you can find recent build attempts here in your home dir cache at these locations:
@@ -204,25 +183,8 @@ entirely useful yet.
     build logs in those locations and create github gists, sharing them on the
     [Reason Discord Chanel](https://discord.gg/UugQtbW)
     in the channel `#packageManagementAndNativeBuildSystems`.
-- If nothing else works, and the error isn't clear (especially if a previous
-  version worked), you can do:
-  - `mv ~/.esy ~/.esy-old`
-  - Uninstall then *reinstall* `reason-cli`.
-  - If it works when you do this, then it's a critical bug with `esy` and you
-    can help us eliminate the bug by helping us spot some differences between
-    those two `~/.esy` and `~/.esy-old`. Are there two corresponding package
-    directories with the same name but different contents?
-
 
 ### Ways `Reason-Cli` Can Improve:
-
-- One thing that doesn't work well yet, is when you purge the global `esy`
-  cache after you install `pack` or `dev` releases, the global tools will be
-  pointing to dangling references in the cache. We will fix this eventually by
-  relocating artifacts from the global cache to the global installed packages.
-  A simple uninstall and reinstall should fix that. This can be fixed by
-  relocating all build artifacts from the cache to the installed `node_modules`
-  directory (at a slight install performance hit).
 
 - We can repurpose the `releaseUtils/release.js` to allow releasing other opam
 packages as npm binaries.
