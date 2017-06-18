@@ -5,15 +5,10 @@ Reason toolchain packaged for npm.
 
 Supported:
 
-- Installing via `npm`. (Yarn support is untested and unsupported but it still
-  might work)
+- Installing via `npm`.
 - Mac OS, Linux.
 
-Note, that this is beta software, and will likely break from time to time.
-
-Please report bugs so that we are aware of the issues.
-
-If you are comfortabe using `opam`, then `opam` installations of the Reason
+> Note, that this is beta software, and will likely break from time to time. Please report bugs so that we are aware of the issues. If you are comfortabe using `opam`, then `opam` installations of the Reason
 toolchain may be more stable.
 
 # Install
