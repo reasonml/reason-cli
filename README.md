@@ -28,7 +28,7 @@ toolchain may be more stable.
 project. Simply omit the `-g` flag. The binaries will show up in your
 `node_modules/.bin` directory.
 
-### 4. Optional: Install as local developer tool:
+### 4. Updating
 
 Just reinstall over the previously installed package. It's usually a good idea
 to uninstall the package first. Updating should be fairly fast, even in the case of builds-from-source.
