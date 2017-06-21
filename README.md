@@ -140,11 +140,17 @@ include the binary locations for `refmt` in your `bsconfig`.
 /path/to/package/.bin/refmt
 ```
 
-Alternatively, you can put something like this in your `.bashrc`:
+#### Debugging
+
+After installing globally, you can put something like this in your `.bashrc` and all the underlying
+toolchain binaries will be in your path, without having to go through the `npm` bin
+links redirection. This is useful for debugging purposes:
 
 ```
-export ESY_EJECT__STORE=`cat /path/to/package/records/recordedClientInstallStorePath.txt`
-source /path/to/package/node_modules/.cache/_esy/build-eject/eject-env
+export ESY_EJECT__STORE=`cat /path/to/global/reason-cli/records/recordedClientInstallStorePath.txt`
+PREV_SHELL="$SHELL"
+source /path/to/global/reason-cli/.cache/_esy/build-eject/eject-env
+export SHELL="$PREV_SHELL"
 ```
 
 ## More Info
