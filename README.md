@@ -28,7 +28,7 @@ toolchain may be more stable.
 project. Simply omit the `-g` flag. The binaries will show up in your
 `node_modules/.bin` directory.
 
-#### Updating
+### 4. Optional: Install as local developer tool:
 
 Just reinstall over the previously installed package. It's usually a good idea
 to uninstall the package first. Updating should be fairly fast, even in the case of builds-from-source.
@@ -38,24 +38,6 @@ to uninstall the package first. Updating should be fairly fast, even in the case
 npm uninstall -g reason-cli
 npm install -g git://github.com/reasonml/reason-cli.git#beta--v-1.13.6-bin-darwin
 ```
-
-#### Optional `dev`/`pack` releases:
-There are also two other types of releases, `dev` and `pack`.
-
-- **`dev`**: Live on the bleeding edge and help us find bugs earlier. When
-  installed, it downloads sources, packs them into a bundle, and then builds
-  them from source - all on the client.
-
-- **`pack`**: (Not yet released) (experimental) Builds a *prepacked* bundle of
-  sources on the client. Suitable for offline installations, CI, isolated
-  networks, and environments that require building on host.
-
-| type | install command                                                                   | Notes   |
-|:----:|-----------------------------------------------------------------------------------|---------|
-| **`dev`** | `npm install -g https://github.com/reasonml/reason-cli/archive/beta-v-1.13.6-dev.tar.gz`    | Downloads+Packs Source, Builds Source |
-| **`pack`** | Not yet distributed. You can create your own release - see [releaseUtils/README.md](./releaseUtils/README.md)  | Builds Prepacked Source |
-
-
 # Usage
 
 - After installing `reason-cli` globally, and after installing your editor
@@ -77,7 +59,27 @@ in your path:
 - `ocamlfind`
 
 
-# Releasing
+# Advanced
+
+### Optional `dev`/`pack` releases:
+There are also two other types of releases, `dev` and `pack`.
+
+- **`dev`**: Live on the bleeding edge and help us find bugs earlier. When
+  installed, it downloads sources, packs them into a bundle, and then builds
+  them from source - all on the client.
+
+- **`pack`**: (Not yet released) (experimental) Builds a *prepacked* bundle of
+  sources on the client. Suitable for offline installations, CI, isolated
+  networks, and environments that require building on host.
+
+| type | install command                                                                   | Notes   |
+|:----:|-----------------------------------------------------------------------------------|---------|
+| **`dev`** | `npm install -g https://github.com/reasonml/reason-cli/archive/beta-v-1.13.6-dev.tar.gz`    | Downloads+Packs Source, Builds Source |
+| **`pack`** | Not yet distributed. You can create your own release - see [releaseUtils/README.md](./releaseUtils/README.md)  | Builds Prepacked Source |
+
+
+
+### Releasing
 
 See [the `README` in `releaseUtils`](./releaseUtils/README.md) to understand
 what happens in each release. Each of the release forms may be created as
