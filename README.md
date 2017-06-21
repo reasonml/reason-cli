@@ -36,7 +36,7 @@ to uninstall the package first. Updating should be fairly fast, even in the case
 
 ```
 npm uninstall -g reason-cli
-npm install -g git://github.com/reasonml/reason-cli.git#beta--v-1.13.6-bin-darwin
+npm install -g git://github.com/reasonml/reason-cli.git#beta-v-1.13.6-bin-darwin
 ```
 # Usage
 
