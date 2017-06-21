@@ -8,9 +8,8 @@ Reason toolchain packaged for npm.
 > Note, that this is beta software, and will likely break from time to time. Please report bugs so that we are aware of the issues. If you are comfortabe using `opam`, then `opam` installations of the Reason
 toolchain may be more stable.
 
-# Install
 
-### 1. Install a specific release:
+### 1. Install `reason-cli` Globally:
 
 | type     | platform  | install command                                                                                 | Notes   |
 |:--------:|-----------|-------------------------------------------------------------------------------------------------|---------|
@@ -29,7 +28,7 @@ toolchain may be more stable.
 project. Simply omit the `-g` flag. The binaries will show up in your
 `node_modules/.bin` directory.
 
-### Updating
+#### Updating
 
 Just reinstall over the previously installed package. It's usually a good idea
 to uninstall the package first. Updating should be fairly fast, even in the case of builds-from-source.
@@ -40,7 +39,7 @@ npm uninstall -g reason-cli
 npm install -g git://github.com/reasonml/reason-cli.git#beta--v-1.13.6-bin-darwin
 ```
 
-### Optional `dev`/`pack` releases:
+#### Optional `dev`/`pack` releases:
 There are also two other types of releases, `dev` and `pack`.
 
 - **`dev`**: Live on the bleeding edge and help us find bugs earlier. When
