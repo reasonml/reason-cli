@@ -11,6 +11,8 @@ toolchain may be more stable.
 
 ### 1. Install `reason-cli` Globally:
 
+_these steps might seem like they have frozen on slower computers. if it seems like one of the commands has frozen, please try re-running it adding `--verbose` to the command at the end to make sure it isn't just processing lots of information. if it does still look frozen, please let us know by opening an issue here_
+
 | type     | platform  | install command                                                                                 | Notes   |
 |:--------:|-----------|-------------------------------------------------------------------------------------------------|---------|
 | `binary` | **OSX**   | `npm install -g https://github.com/reasonml/reason-cli/archive/beta-v-1.13.6-bin-darwin.tar.gz` | Installs Binaries |
