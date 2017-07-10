@@ -208,7 +208,7 @@ ${
   if [ "$1" == "----where" ]; then
      which "${binaryName}"
   else
-    exec "${binaryName}" $@
+    exec "${binaryName}" "$@"
   fi
   ` :
   `
