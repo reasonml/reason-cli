@@ -1,6 +1,6 @@
 {
   "name": "reason-cli",
-  "version": "1.13.6",
+  "version": "1.13.7",
   "preferGlobal": false,
   "description": "Globally Installable CLI Tools For ReasonML",
   "main": "index.js",
@@ -61,10 +61,10 @@
     "relBinaries/i/*conf_which-1.0.0-*.tar.gz",
     "relBinaries/i/*conf_m4-1.0.0-*.tar.gz",
     "relBinaries/i/*cppo-1.4.1-*.tar.gz",
-    "relBinaries/i/*jbuilder-1.9.0-*.tar.gz"
+    "relBinaries/i/*jbuilder-1.11.0-*.tar.gz"
   ],
   "homepage": "https://github.com/reasonml/reason-cli#readme",
   "dependencies": {
-    "esy": "git://github.com/esy-ocaml/esy.git#beta-v0.0.5"
+    "esy": "git://github.com/esy-ocaml/esy.git#beta-vexperimental-0.0.6"
   }
 }
