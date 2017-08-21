@@ -3,7 +3,7 @@ Reason toolchain packaged for npm.
 
 [![Build Status](https://travis-ci.org/reasonml/reason-cli.svg?branch=master)](https://travis-ci.org/reasonml/reason-cli)
 
-**Supported**: Installing via `npm`, on Mac OS or Linux.
+**Supported**: Installing via `NPM`/Yarn`, on Mac OS or Linux.
 
 ## Install
 
@@ -13,6 +13,8 @@ Reason toolchain packaged for npm.
 |:--------:|-----------|-------------------------------------------------------------------------------------------------|---------|
 | `binary` | **OSX**   | `npm install -g https://github.com/reasonml/reason-cli/archive/beta-v-1.13.6-bin-darwin.tar.gz` | Installs Binaries |
 | `binary` | **Linux** | `npm install -g https://github.com/reasonml/reason-cli/archive/beta-v-1.13.6-bin-linux.tar.gz`  | Installs Binaries |
+
+(Or `yarn global add https://github.com/reasonml/reason-cli/archive/beta-v-1.13.6-bin-darwin.tar.gz`, etc.)
 
 **The installation requires glibc >=3.4.21**. If you're on macOS, you should be good to go. If you're on Ubuntu, reason-cli requires Ubuntu **16.04**. Otherwise the postinstall might fail.
 
