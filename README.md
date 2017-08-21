@@ -5,48 +5,35 @@ Reason toolchain packaged for npm.
 
 **Supported**: Installing via `npm`, on Mac OS or Linux.
 
-> Note, that this is beta software, and will likely break from time to time. Please report bugs so that we are aware of the issues. If you are comfortabe using `opam`, then `opam` installations of the Reason
-toolchain may be more stable.
+## Install
 
-
-
-### 1. Install `reason-cli` Globally:
+### 1. Choose your platform
 
 | type     | platform  | install command                                                                                 | Notes   |
 |:--------:|-----------|-------------------------------------------------------------------------------------------------|---------|
 | `binary` | **OSX**   | `npm install -g https://github.com/reasonml/reason-cli/archive/beta-v-1.13.6-bin-darwin.tar.gz` | Installs Binaries |
 | `binary` | **Linux** | `npm install -g https://github.com/reasonml/reason-cli/archive/beta-v-1.13.6-bin-linux.tar.gz`  | Installs Binaries |
 
+**The installation requires glibc >=3.4.21**. If you're on macOS, you should be good to go. If you're on e.g. Ubuntu, [do check this requirement](https://unix.stackexchange.com/questions/120380/what-c-library-version-does-my-system-use). Otherwise the postinstall step might fail.
+
 ### 2. Install your editor plugins
 
-- [vscode-reasonml](https://github.com/freebroccolo/vscode-reasonml)
-- [vim-reason](https://github.com/chenglou/vim-reason)
-- Someone please test on `emacs` plugins so we can add them to this list.
+Pick your favorite editor plugin [here](https://reasonml.github.io/guide/editor-tools/editors-plugins#officially-supported-editors)
 
-
-### 3. Optional: Install as local developer tool:
-`reason-cli` now supports being installed as a dev-time dependency in an `npm`
-project. Simply omit the `-g` flag. The binaries will show up in your
-`node_modules/.bin` directory.
-
-### 4. Updating
+### 3. Updating when needed
 
 Just reinstall over the previously installed package. It's usually a good idea
-to uninstall the package first. Updating should be fairly fast, even in the case of builds-from-source.
-
+to uninstall the old reason-cli first.
 
 ```
 npm uninstall -g reason-cli
 npm install -g git://github.com/reasonml/reason-cli.git#beta-v-1.13.6-bin-darwin
 ```
-# Usage
 
-- After installing `reason-cli` globally, and after installing your editor
-  plugins, just start your editor like you normally would, and it should see
-  `ocamlmerlin`, and `refmt`.
-- One downside is that `merlin` doesn't know where you have your findlib
-  packages installed within your local project, because it is built for the
-  global environment.
+### Optional: Install as local developer tool:
+`reason-cli` now supports being installed as a dev-time dependency in an `npm`
+project. Simply omit the `-g` flag. The binaries will show up in your
+`node_modules/.bin` directory.
 
 #### Included Binaries
 
@@ -54,13 +41,13 @@ When installed with `npm install -g`, `reason-cli` places the following tools
 in your path:
 
 - `ocamlmerlin`
+- `ocamlmerlin-reason`
 - `refmt`
 - `ocamlrun`
 - `ocamlc`/`ocamlopt`
 - `ocamlfind`
 
-
-# Advanced
+## Advanced
 
 ### Optional `dev`/`pack` releases:
 There are also two other types of releases, `dev` and `pack`.
