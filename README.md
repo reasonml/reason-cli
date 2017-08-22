@@ -3,7 +3,7 @@ Reason toolchain packaged for npm.
 
 [![Build Status](https://travis-ci.org/reasonml/reason-cli.svg?branch=master)](https://travis-ci.org/reasonml/reason-cli)
 
-**Supported**: Installing via `NPM`/Yarn`, on Mac OS or Linux.
+**Supported**: Installing via `NPM`/`Yarn`, on Mac OS or Linux.
 
 ## Install
 
