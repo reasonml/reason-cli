@@ -732,7 +732,9 @@ exports.release = function(forGithubLFS) {
     '(git tag --delete ' + tagName + ' &> /dev/null) || echo "Tag ' + tagName + ' doesn\'t yet exist, creating it now."',
     'git tag -a ' + tagName + ' -m "' + tagName + '"',
   ].forEach(function(cmd) {
-    logExec(cmd);
+    if (cmd) {
+      logExec(cmd);
+    }
   });
   console.log (almostDoneMsg);
 };
