@@ -1,0 +1,21 @@
+language: node_js
+os:
+  - linux
+  - osx
+compiler:
+  - gcc
+node_js:
+  - "6"
+  - "6.1"
+  - "5.11"
+install:
+  - make build VERSION=beta-v-1.13.5 TYPE=dev && cd package && npm install -g .
+# https://docs.travis-ci.com/user/languages/javascript-with-nodejs/#Node.js-v4-(or-io.js-v3)-compiler-requirements
+env:
+  - CXX=g++-4.8
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - g++-4.8
