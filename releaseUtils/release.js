@@ -503,6 +503,7 @@ var createPostinstallScript = function(releaseStage, releaseType, package) {
     # Executing the untar/unzip in parallel!
     find . -name '*.gz' -print0 | xargs -0 -I {} -P 30 bash -c "unzipAndUntarFixupLinks $serverEsyEjectStore {}"
 
+    cd "$PACKAGE_ROOT"
     mv "$ESY_EJECT__TMP" "$ESY_EJECT__INSTALL_STORE"
     # Write the final store path, overwritting the (original) path on server.
     echo "$ESY_EJECT__INSTALL_STORE" > "$PACKAGE_ROOT/records/recordedClientInstallStorePath.txt"
