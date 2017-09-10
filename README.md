@@ -150,7 +150,7 @@ export SHELL="$PREV_SHELL"
 
       npm install -g whateverReasonCliReleaseYouTried --ignore-scripts
       cd whereverYourGlobalNpmPackagesAreStored/reason-cli/
-      ./scripts/postinstall.sh
+      ./postinstall.sh
 
   - Does it give any better information about what is failing?
   - Is there a specific log file that it claims the actual error is written into?
