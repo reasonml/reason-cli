@@ -11,10 +11,10 @@ Reason toolchain packaged for npm.
 
 | type     | platform  | install command                                                                                 | Notes   |
 |:--------:|-----------|-------------------------------------------------------------------------------------------------|---------|
-| `binary` | **OSX**   | `npm install -g https://github.com/reasonml/reason-cli/archive/beta-v-1.13.6-bin-darwin.tar.gz` | Installs Binaries |
-| `binary` | **Linux** | `npm install -g https://github.com/reasonml/reason-cli/archive/beta-v-1.13.6-bin-linux.tar.gz`  | Installs Binaries |
+| `binary` | **OSX**   | `npm install -g https://github.com/reasonml/reason-cli/archive/beta-v-1.13.7-bin-darwin.tar.gz` | Installs Binaries |
+| `binary` | **Linux** | `npm install -g https://github.com/reasonml/reason-cli/archive/beta-v-1.13.7-bin-linux.tar.gz`  | Installs Binaries |
 
-(Or `yarn global add https://github.com/reasonml/reason-cli/archive/beta-v-1.13.6-bin-darwin.tar.gz`, etc.)
+(Or `yarn global add https://github.com/reasonml/reason-cli/archive/beta-v-1.13.7-bin-darwin.tar.gz`, etc.)
 
 **The installation requires glibc >=3.4.21**. If you're on macOS, you should be good to go. If you're on Ubuntu, reason-cli requires Ubuntu **16.04**. Otherwise the postinstall might fail.
 
@@ -29,7 +29,7 @@ to uninstall the old reason-cli first.
 
 ```
 npm uninstall -g reason-cli
-npm install -g git://github.com/reasonml/reason-cli.git#beta-v-1.13.6-bin-darwin
+npm install -g git://github.com/reasonml/reason-cli.git#beta-v-1.13.7-bin-darwin
 ```
 
 ### Optional: Install as local developer tool:
@@ -64,7 +64,7 @@ There are also two other types of releases, `dev` and `pack`.
 
 | type | install command                                                                   | Notes   |
 |:----:|-----------------------------------------------------------------------------------|---------|
-| **`dev`** | `npm install -g https://github.com/reasonml/reason-cli/archive/beta-v-1.13.6-dev.tar.gz`    | Downloads+Packs Source, Builds Source |
+| **`dev`** | `npm install -g https://github.com/reasonml/reason-cli/archive/beta-v-1.13.7-dev.tar.gz`    | Downloads+Packs Source, Builds Source |
 | **`pack`** | Not yet distributed. You can create your own release - see [releaseUtils/README.md](./releaseUtils/README.md)  | Builds Prepacked Source |
 
 
@@ -76,11 +76,11 @@ what happens in each release. Each of the release forms may be created as
 follows:
 
 ```sh
-make release VERSION=beta-v-1.13.5 TYPE=dev
+make release VERSION=beta-v-1.13.8 TYPE=dev
 # Or
-make release VERSION=beta-v-1.13.5 TYPE=pack
+make release VERSION=beta-v-1.13.8 TYPE=pack
 # Or
-make release VERSION=beta-v-1.13.5 TYPE=bin
+make release VERSION=beta-v-1.13.8 TYPE=bin
 ```
 
 ### Using `pack` to build on isolated network host (using `npm -g` on the destination):
@@ -88,16 +88,17 @@ make release VERSION=beta-v-1.13.5 TYPE=bin
 ```sh
 git clone git@github.com:reasonml/reason-cli.git
 cd reason-cli
-make release VERSION=beta-v-1.13.5 TYPE=pack
+make release VERSION=beta-v-1.13.8 TYPE=pack
 tar --exclude=.git -cvzf release.tar.gz package
 
 gunzip release.tar.gz
 tar -xvf package.tar
 npm install -g ./package
 
-# You cannot move the installation once you have installed it into # a location
-(global or local). To move the package, uninstall it # and reinstall it from
-the new location. You can, however, install it anywhere you like.
+# You cannot move the installation once you have installed it into
+# a location (global or local). To move the package, uninstall it
+# and reinstall it from the new location. You can, however, install
+# it anywhere you like.
 ```
 
 ### Using `pack` to build on isolated network host (without `npm`):
@@ -111,7 +112,7 @@ package once it's installed.
 ```sh
 git clone git@github.com:reasonml/reason-cli.git
 cd reason-cli
-make release VERSION=beta-v-1.13.5 TYPE=pack
+make release VERSION=beta-v-1.13.8 TYPE=pack
 tar --exclude=.git -cvzf release.tar.gz package
 
 gunzip release.tar.gz
