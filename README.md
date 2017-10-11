@@ -71,35 +71,51 @@ There are also two other types of releases, `dev` and `pack`.
 
 ### Releasing
 
-See [the `README` in `releaseUtils`](./releaseUtils/README.md) to understand
-what happens in each release. Each of the release forms may be created as
-follows:
+You need `esy@beta-v0.0.6` (at least) installed globally:
 
 ```sh
-make release VERSION=beta-v-1.13.8 TYPE=dev
-# Or
-make release VERSION=beta-v-1.13.8 TYPE=pack
-# Or
-make release VERSION=beta-v-1.13.8 TYPE=bin
+npm install -g "git://github.com/esy-ocaml/esy.git#beta-v0.0.6"
 ```
+
+Now you can use `make release TYPE=...` command.
+
+For *dev* releases (an installation process will download a copy of Esy, a set of
+its deps and perform a build):
+
+```sh
+make release TYPE=dev
+```
+
+For *pack* releases (an installation process will perform only build, all deps
+are bundled with the release):
+
+```sh
+make release TYPE=pack
+```
+
+For *bin* releases (an installation process will just copy prebuilt binaries to
+the installation location):
+
+```sh
+make release TYPE=bin
+```
+
+After you've performed the release build you can release it:
 
 ### Using `pack` to build on isolated network host (using `npm -g` on the destination):
 
 ```sh
 git clone git@github.com:reasonml/reason-cli.git
 cd reason-cli
-make release VERSION=beta-v-1.13.8 TYPE=pack
-tar --exclude=.git -cvzf release.tar.gz package
-
-gunzip release.tar.gz
-tar -xvf package.tar
-npm install -g ./package
-
-# You cannot move the installation once you have installed it into
-# a location (global or local). To move the package, uninstall it
-# and reinstall it from the new location. You can, however, install
-# it anywhere you like.
+make build-release TYPE=pack
+cd _release/pack
+npm pack
+npm install --global ./reason-cli-VERSION.tgz
 ```
+
+You cannot move the installation once you have installed it into a location
+(global or local). To move the package, uninstall it and reinstall it from the
+new location. You can, however, install it anywhere you like.
 
 ### Using `pack` to build on isolated network host (without `npm`):
 
@@ -109,16 +125,21 @@ can simply extract `release.tar.gz` to the installation directory of your
 choosing and then invoke the `postinstall.sh` yourself. Again, don't move the
 package once it's installed.
 
+On build host:
+
 ```sh
 git clone git@github.com:reasonml/reason-cli.git
 cd reason-cli
-make release VERSION=beta-v-1.13.8 TYPE=pack
-tar --exclude=.git -cvzf release.tar.gz package
+make build-release TYPE=pack
+cd _release/pack
+npm pack
+```
 
-gunzip release.tar.gz
-tar -xvf package.tar
-npm install -g ./package
-cd ./package
+On target host:
+
+```sh
+tar xzf reason-cli-VERSION.tgz
+cd package
 ./postinstall.sh
 ```
 
@@ -171,12 +192,6 @@ refmt ----where
 > /path/to/npm-packages/lib/reason-cli/actualInstall/builds/reason/bin/refmt
 
 ```
-
-### Ways `Reason-Cli` Can Improve:
-
-- We can repurpose the `releaseUtils/release.js` to allow releasing other opam
-packages as npm binaries.
-
 
 ### ORIGINS
 

@@ -5,14 +5,17 @@ os:
 compiler:
   - gcc
 node_js:
+  - "8"
   - "6"
-  - "6.1"
-  - "5.11"
-install:
-  - make build VERSION=beta-v-1.13.5 TYPE=dev && cd package && npm install -g .
 # https://docs.travis-ci.com/user/languages/javascript-with-nodejs/#Node.js-v4-(or-io.js-v3)-compiler-requirements
+install:
+  - npm install --global git://github.com/esy-ocaml/esy.git#beta-v0.0.6
+  - make build-release
+  - npm install --global ./_release/*
 env:
-  - CXX=g++-4.8
+  - CXX=g++-4.8 TYPE=dev
+  - CXX=g++-4.8 TYPE=pack
+  - CXX=g++-4.8 TYPE=bin
 addons:
   apt:
     sources:
