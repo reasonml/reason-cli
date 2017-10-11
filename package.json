@@ -6,7 +6,7 @@
   "main": "index.js",
   "notes": "Do not include a postinstall script - it will be added for you",
   "scripts": {
-    "test": "export PATH=\"$PWD/.bin:$PATH\" && ls -al ./.bin && which refmt && which ocamlmerlin && which rebuild && which ocamlc && which ocamlc.opt && which ocamlopt && which ocamlopt.opt && which berror && refmt ----where && reactjs_jsx_ppx ----where && reactjs_jsx_ppx_2 ----where"
+    "test": "which refmt && which ocamlmerlin && which rebuild && which ocamlc && which ocamlc.opt && which ocamlopt && which ocamlopt.opt && which berror && refmt ----where && reactjs_jsx_ppx ----where && reactjs_jsx_ppx_2 ----where"
   },
   "repository": {
     "type": "git",
@@ -27,44 +27,56 @@
   "bugs": {
     "url": "https://github.com/reasonml/reason-cli/issues"
   },
-  "releasedBinaries": [
-    "ocamlmerlin",
-    "ocamlmerlin-reason",
-    "ocamlrun",
-    "ocamlc",
-    "ocamlc.opt",
-    "ocamlopt",
-    "ocamlopt.opt",
-    "ocaml",
-    "rtop",
-    "utop",
-    "refmt",
-    "refmttype",
-    "reopt",
-    "rebuild",
-    "reactjs_jsx_ppx",
-    "reactjs_jsx_ppx_2",
-    "berror",
-    "menhir",
-    "ocamlfind"
-  ],
-  "NOTES": [
-    "Make the release as lean as you want! Just remove packed binary zips until the executables",
-    " you released above, no longer work correctly."
-  ],
-  "deleteFromBinaryRelease": [
-    "relBinaries/i/*ounit-2.0.0-*.tar.gz",
-    "relBinaries/i/*camlp4-4.2.7-*.tar.gz",
-    "relBinaries/i/opam_installer_bin-*.tar.gz",
-    "relBinaries/i/*topkg-0.8.1-*.tar.gz",
-    "relBinaries/i/substs-0.0.1-*.tar.gz",
-    "relBinaries/i/*conf_which-1.0.0-*.tar.gz",
-    "relBinaries/i/*conf_m4-1.0.0-*.tar.gz",
-    "relBinaries/i/*cppo-1.4.1-*.tar.gz",
-    "relBinaries/i/*jbuilder-1.11.0-*.tar.gz"
-  ],
+  "esy": {
+    "release": {
+      "releasedBinaries": [
+        "ocamlmerlin",
+        "ocamlmerlin-reason",
+        "ocamlrun",
+        "ocamlc",
+        "ocamlc.opt",
+        "ocamlopt",
+        "ocamlopt.opt",
+        "ocaml",
+        "rtop",
+        "utop",
+        "refmt",
+        "refmttype",
+        "reopt",
+        "rebuild",
+        "reactjs_jsx_ppx",
+        "reactjs_jsx_ppx_2",
+        "berror",
+        "menhir",
+        "ocamlfind"
+      ],
+      "NOTES": [
+        "Make the release as lean as you want! Just remove packed binary zips until the executables",
+        " you released above, no longer work correctly."
+      ],
+      "deleteFromBinaryRelease": [
+        "relBinaries/i/*ounit-2.0.0-*.tar.gz",
+        "relBinaries/i/*camlp4-4.2.7-*.tar.gz",
+        "relBinaries/i/opam_installer_bin-*.tar.gz",
+        "relBinaries/i/*topkg-0.8.1-*.tar.gz",
+        "relBinaries/i/substs-0.0.1-*.tar.gz",
+        "relBinaries/i/*conf_which-1.0.0-*.tar.gz",
+        "relBinaries/i/*conf_m4-1.0.0-*.tar.gz",
+        "relBinaries/i/*cppo-1.4.1-*.tar.gz",
+        "relBinaries/i/*jbuilder-1.11.0-*.tar.gz"
+      ]
+    }
+  },
   "homepage": "https://github.com/reasonml/reason-cli#readme",
+  "devDependencies": {
+    "esy": "git://github.com/esy-ocaml/esy.git#beta-v0.0.6"
+  },
   "dependencies": {
-    "esy": "git://github.com/esy-ocaml/esy.git#beta-vexperimental-0.0.6"
+    "@opam-alpha/reason": "1.13.7",
+    "ocaml": "esy-ocaml/ocaml#esy",
+    "ocamlBetterErrors": "esy-ocaml/BetterErrors#esy",
+    "@opam-alpha/merlin": "2.5.4",
+    "@opam-alpha/utop": "*",
+    "@opam-alpha/menhir": "= 20170418.0.0"
   }
 }
