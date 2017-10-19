@@ -71,10 +71,10 @@ There are also two other types of releases, `dev` and `pack`.
 
 ### Releasing
 
-You need `esy@beta-v0.0.6` (at least) installed globally:
+You need `esy@0.0.16` (at least) installed globally:
 
 ```sh
-npm install -g "git://github.com/esy-ocaml/esy.git#beta-v0.0.6"
+npm install -g esy
 ```
 
 Now you can use `make release TYPE=...` command.

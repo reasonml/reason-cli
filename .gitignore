@@ -1,3 +1,5 @@
 .DS_Store
-node_modules/
-_release/
+node_modules
+_release
+_esyinstall
+_esybuild
