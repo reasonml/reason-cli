@@ -55,28 +55,25 @@
         " you released above, no longer work correctly."
       ],
       "deleteFromBinaryRelease": [
-        "relBinaries/i/*ounit-2.0.0-*.tar.gz",
-        "relBinaries/i/*camlp4-4.2.7-*.tar.gz",
+        "relBinaries/i/*ounit-*.tar.gz",
+        "relBinaries/i/*camlp4-*.tar.gz",
         "relBinaries/i/opam_installer_bin-*.tar.gz",
-        "relBinaries/i/*topkg-0.8.1-*.tar.gz",
-        "relBinaries/i/substs-0.0.1-*.tar.gz",
-        "relBinaries/i/*conf_which-1.0.0-*.tar.gz",
-        "relBinaries/i/*conf_m4-1.0.0-*.tar.gz",
-        "relBinaries/i/*cppo-1.4.1-*.tar.gz",
-        "relBinaries/i/*jbuilder-1.11.0-*.tar.gz"
+        "relBinaries/i/*topkg-*.tar.gz",
+        "relBinaries/i/substs-*.tar.gz",
+        "relBinaries/i/*conf_which-*.tar.gz",
+        "relBinaries/i/*conf_m4-*.tar.gz",
+        "relBinaries/i/*cppo-*.tar.gz",
+        "relBinaries/i/*jbuilder-*.tar.gz"
       ]
     }
   },
   "homepage": "https://github.com/reasonml/reason-cli#readme",
-  "devDependencies": {
-    "esy": "git://github.com/esy-ocaml/esy.git#beta-v0.0.6"
-  },
   "dependencies": {
-    "@opam-alpha/reason": "1.13.7",
-    "ocaml": "esy-ocaml/ocaml#esy",
+    "@opam/reason": "1.13.7",
+    "ocaml": "esy-ocaml/ocaml#4.2.3+esy",
     "ocamlBetterErrors": "esy-ocaml/BetterErrors#esy",
-    "@opam-alpha/merlin": "2.5.4",
-    "@opam-alpha/utop": "*",
-    "@opam-alpha/menhir": "= 20170418.0.0"
+    "@opam/merlin": "2.5.4",
+    "@opam/utop": "*",
+    "@opam/menhir": "= 20170418.0.0"
   }
 }
