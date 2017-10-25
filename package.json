@@ -57,9 +57,9 @@
       "deleteFromBinaryRelease": [
         "relBinaries/i/*ounit-*.tar.gz",
         "relBinaries/i/*camlp4-*.tar.gz",
-        "relBinaries/i/opam_installer_bin-*.tar.gz",
+        "relBinaries/i/esy_ocaml__slash__esy_installer-*.tar.gz",
         "relBinaries/i/*topkg-*.tar.gz",
-        "relBinaries/i/substs-*.tar.gz",
+        "relBinaries/i/esy_ocaml__slash__substs-*.tar.gz",
         "relBinaries/i/*conf_which-*.tar.gz",
         "relBinaries/i/*conf_m4-*.tar.gz",
         "relBinaries/i/*cppo-*.tar.gz",
