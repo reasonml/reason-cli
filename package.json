@@ -70,7 +70,7 @@
   "homepage": "https://github.com/reasonml/reason-cli#readme",
   "dependencies": {
     "@opam/reason": "1.13.7",
-    "ocaml": "esy-ocaml/ocaml#4.2.3+esy",
+    "ocaml": "~4.2.3001",
     "ocamlBetterErrors": "esy-ocaml/BetterErrors#esy",
     "@opam/merlin": "2.5.4",
     "@opam/utop": "*",

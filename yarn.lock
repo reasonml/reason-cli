@@ -2,13 +2,21 @@
 # yarn lockfile v1
 
 
+"@esy-ocaml/esy-installer@^0.0.0":
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/@esy-ocaml/esy-installer/-/esy-installer-0.0.0.tgz#6b0e2bd4ee43531ac74793fe55cfcc3aca197a66"
+
+"@esy-ocaml/substs@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@esy-ocaml/substs/-/substs-0.0.1.tgz#59ebdbbaedcda123fc7ed8fb2b302b7d819e9a46"
+
 "@opam/base-bytes@*":
   version "0.0.0-base"
   resolved "@opam/base-bytes@0.0.0-base"
   dependencies:
+    "@esy-ocaml/esy-installer" "^0.0.0"
+    "@esy-ocaml/substs" "^0.0.1"
     "@opam/ocamlfind" " >= 1.5.3"
-    opam-installer-bin esy-ocaml/opam-installer-bin
-    substs esy-ocaml/substs
   peerDependencies:
     ocaml " >= 4.2.0"
 
@@ -16,8 +24,8 @@
   version "0.0.0-base"
   resolved "@opam/base-threads@0.0.0-base"
   dependencies:
-    opam-installer-bin esy-ocaml/opam-installer-bin
-    substs esy-ocaml/substs
+    "@esy-ocaml/esy-installer" "^0.0.0"
+    "@esy-ocaml/substs" "^0.0.1"
   peerDependencies:
     ocaml "*"
 
@@ -25,8 +33,8 @@
   version "0.0.0-base"
   resolved "@opam/base-unix@0.0.0-base"
   dependencies:
-    opam-installer-bin esy-ocaml/opam-installer-bin
-    substs esy-ocaml/substs
+    "@esy-ocaml/esy-installer" "^0.0.0"
+    "@esy-ocaml/substs" "^0.0.1"
   peerDependencies:
     ocaml "*"
 
@@ -34,11 +42,11 @@
   version "1.2.0"
   resolved "@opam/biniou@1.2.0"
   dependencies:
+    "@esy-ocaml/esy-installer" "^0.0.0"
+    "@esy-ocaml/substs" "^0.0.1"
     "@opam/conf-which" ""
     "@opam/easy-format" "*"
     "@opam/jbuilder" ""
-    opam-installer-bin esy-ocaml/opam-installer-bin
-    substs esy-ocaml/substs
   peerDependencies:
     ocaml " >= 4.2.3"
 
@@ -47,10 +55,10 @@
   uid "3d446bb90084c96174a2da4347245b860ced02fcb381348c274e810d573591a6a6833e5507e681c013c1eac75d0e973050b8b28aec4982b5671dd44594a2a98b"
   resolved "@opam/camlp4@4.2.0-7"
   dependencies:
+    "@esy-ocaml/esy-installer" "^0.0.0"
+    "@esy-ocaml/substs" "^0.0.1"
     "@opam/conf-which" ""
     "@opam/ocamlbuild" ""
-    opam-installer-bin esy-ocaml/opam-installer-bin
-    substs esy-ocaml/substs
   peerDependencies:
     ocaml " >= 4.2.0  < 4.3.0"
 
@@ -59,11 +67,11 @@
   uid "869771d8a2bf35584f79b48e0f9e37623ea5cf138f03be98fefa5a9a8b8a7523797b376dc0daaeafc6e90879fae73e049921ebf2d78568b6205742e4a2daae53"
   resolved "@opam/camomile@0.8.5"
   dependencies:
+    "@esy-ocaml/esy-installer" "^0.0.0"
+    "@esy-ocaml/substs" "^0.0.1"
     "@opam/camlp4" "*"
     "@opam/cppo" ""
     "@opam/ocamlfind" ""
-    opam-installer-bin esy-ocaml/opam-installer-bin
-    substs esy-ocaml/substs
   peerDependencies:
     ocaml "*"
 
@@ -71,8 +79,8 @@
   version "1.0.0"
   resolved "@opam/conf-m4@1.0.0"
   dependencies:
-    opam-installer-bin esy-ocaml/opam-installer-bin
-    substs esy-ocaml/substs
+    "@esy-ocaml/esy-installer" "^0.0.0"
+    "@esy-ocaml/substs" "^0.0.1"
   peerDependencies:
     ocaml "*"
 
@@ -80,8 +88,8 @@
   version "1.0.0"
   resolved "@opam/conf-which@1.0.0"
   dependencies:
-    opam-installer-bin esy-ocaml/opam-installer-bin
-    substs esy-ocaml/substs
+    "@esy-ocaml/esy-installer" "^0.0.0"
+    "@esy-ocaml/substs" "^0.0.1"
   peerDependencies:
     ocaml "*"
 
@@ -90,11 +98,11 @@
   uid "5db55fda300a64b488e40fd4d240443304903191986c5602bb93f6c200499e0b2092c435952ef8ec531b446fdedc06fd0ede166a42fa4f54be61e741b3274275"
   resolved "@opam/cppo@1.6.0"
   dependencies:
+    "@esy-ocaml/esy-installer" "^0.0.0"
+    "@esy-ocaml/substs" "^0.0.1"
     "@opam/base-bytes" "*"
     "@opam/base-unix" "*"
     "@opam/jbuilder" "  >= 1.0.0-beta10"
-    opam-installer-bin esy-ocaml/opam-installer-bin
-    substs esy-ocaml/substs
   peerDependencies:
     ocaml "*"
 
@@ -102,9 +110,9 @@
   version "1.3.0"
   resolved "@opam/easy-format@1.3.0"
   dependencies:
+    "@esy-ocaml/esy-installer" "^0.0.0"
+    "@esy-ocaml/substs" "^0.0.1"
     "@opam/jbuilder" ""
-    opam-installer-bin esy-ocaml/opam-installer-bin
-    substs esy-ocaml/substs
   peerDependencies:
     ocaml " >= 4.2.3"
 
@@ -112,9 +120,9 @@
   version "1.0.0-beta14"
   resolved "@opam/jbuilder@1.0.0-beta14"
   dependencies:
+    "@esy-ocaml/esy-installer" "^0.0.0"
+    "@esy-ocaml/substs" "^0.0.1"
     "@opam/ocamlfind" ""
-    opam-installer-bin esy-ocaml/opam-installer-bin
-    substs esy-ocaml/substs
   peerDependencies:
     ocaml " >= 4.2.3"
 
@@ -123,12 +131,12 @@
   uid "0066b04b1142d97699f7e4886e74f22769f51fbeff61251f41e67f17d6cc9ffde41c65e3140bdd9ae05731f88ed7270d313c1be5cf7acc16ce142694675e6712"
   resolved "@opam/lambda-term@1.11.0"
   dependencies:
+    "@esy-ocaml/esy-installer" "^0.0.0"
+    "@esy-ocaml/substs" "^0.0.1"
     "@opam/jbuilder" "  >= 1.0.0-beta7"
     "@opam/lwt" " >= 2.7.0"
     "@opam/lwt_react" "*"
     "@opam/zed" " >= 1.2.0"
-    opam-installer-bin esy-ocaml/opam-installer-bin
-    substs esy-ocaml/substs
   peerDependencies:
     ocaml " >= 4.2.3"
 
@@ -137,6 +145,8 @@
   uid "00c8c1cff0386fd89c6181a52e9f7f66a35034e58bf3125e6dff9c90c4316adc69d7bc9a4d632352cc5a88db59606f7a0da84b4b8e560ae86497bd12d0d9734c"
   resolved "@opam/lwt@3.1.0"
   dependencies:
+    "@esy-ocaml/esy-installer" "^0.0.0"
+    "@esy-ocaml/substs" "^0.0.1"
     "@opam/base-threads" "*"
     "@opam/base-unix" "*"
     "@opam/camlp4" "*"
@@ -146,8 +156,6 @@
     "@opam/ocamlfind" "  >= 1.5.0"
     "@opam/ppx_tools_versioned" "*"
     "@opam/result" "*"
-    opam-installer-bin esy-ocaml/opam-installer-bin
-    substs esy-ocaml/substs
   peerDependencies:
     ocaml " >= 4.2.0"
 
@@ -155,11 +163,11 @@
   version "1.1.0"
   resolved "@opam/lwt_react@1.1.0"
   dependencies:
+    "@esy-ocaml/esy-installer" "^0.0.0"
+    "@esy-ocaml/substs" "^0.0.1"
     "@opam/jbuilder" "  >= 1.0.0-beta10"
     "@opam/lwt" " >= 3.0.0"
     "@opam/react" " >= 1.0.0"
-    opam-installer-bin esy-ocaml/opam-installer-bin
-    substs esy-ocaml/substs
   peerDependencies:
     ocaml "*"
 
@@ -167,10 +175,10 @@
   version "20170712.0.0"
   resolved "@opam/menhir@20170712.0.0"
   dependencies:
+    "@esy-ocaml/esy-installer" "^0.0.0"
+    "@esy-ocaml/substs" "^0.0.1"
     "@opam/ocamlbuild" ""
     "@opam/ocamlfind" "*"
-    opam-installer-bin esy-ocaml/opam-installer-bin
-    substs esy-ocaml/substs
   peerDependencies:
     ocaml " >= 4.2.0"
 
@@ -178,10 +186,10 @@
   version "20170418.0.0"
   resolved "@opam/menhir@20170418.0.0"
   dependencies:
+    "@esy-ocaml/esy-installer" "^0.0.0"
+    "@esy-ocaml/substs" "^0.0.1"
     "@opam/ocamlbuild" ""
     "@opam/ocamlfind" "*"
-    opam-installer-bin esy-ocaml/opam-installer-bin
-    substs esy-ocaml/substs
   peerDependencies:
     ocaml " >= 4.2.0"
 
@@ -189,10 +197,10 @@
   version "0.3.0"
   resolved "@opam/merlin-extend@0.3.0"
   dependencies:
+    "@esy-ocaml/esy-installer" "^0.0.0"
+    "@esy-ocaml/substs" "^0.0.1"
     "@opam/cppo" ""
     "@opam/ocamlfind" ""
-    opam-installer-bin esy-ocaml/opam-installer-bin
-    substs esy-ocaml/substs
   peerDependencies:
     ocaml " >= 4.2.3"
 
@@ -200,10 +208,10 @@
   version "2.5.4"
   resolved "@opam/merlin@2.5.4"
   dependencies:
+    "@esy-ocaml/esy-installer" "^0.0.0"
+    "@esy-ocaml/substs" "^0.0.1"
     "@opam/ocamlfind" " >= 1.5.2"
     "@opam/yojson" "*"
-    opam-installer-bin esy-ocaml/opam-installer-bin
-    substs esy-ocaml/substs
   peerDependencies:
     ocaml " >= 4.2.1  < 4.5.0"
 
@@ -211,11 +219,11 @@
   version "1.0.6"
   resolved "@opam/ocaml-migrate-parsetree@1.0.6"
   dependencies:
+    "@esy-ocaml/esy-installer" "^0.0.0"
+    "@esy-ocaml/substs" "^0.0.1"
     "@opam/jbuilder" "  >= 1.0.0-beta10"
     "@opam/ocamlfind" ""
     "@opam/result" "*"
-    opam-installer-bin esy-ocaml/opam-installer-bin
-    substs esy-ocaml/substs
   peerDependencies:
     ocaml " >= 4.2.0"
 
@@ -224,8 +232,8 @@
   uid "59a44a434d5f50442946d2825d493a832fac658785dc055c72934ec0d49f24f5e8d77cf8a54d416bbe1381c33f50a231ed8f1f36bfefd349b9f0fbb9e69b16be"
   resolved "@opam/ocamlbuild@0.11.0"
   dependencies:
-    opam-installer-bin esy-ocaml/opam-installer-bin
-    substs esy-ocaml/substs
+    "@esy-ocaml/esy-installer" "^0.0.0"
+    "@esy-ocaml/substs" "^0.0.1"
   peerDependencies:
     ocaml "<4.3.0"
 
@@ -234,9 +242,9 @@
   uid a3a62075f6682bc65418e94e46445ffb4c3946d0c916a015ef7e72916510555fdf74f6e70f6b04ed62975f546379e83adeb7720efc116674fcc749ab5c6c0c9a
   resolved "@opam/ocamlfind@1.7.3"
   dependencies:
+    "@esy-ocaml/esy-installer" "^0.0.0"
+    "@esy-ocaml/substs" "^0.0.1"
     "@opam/conf-m4" ""
-    opam-installer-bin esy-ocaml/opam-installer-bin
-    substs esy-ocaml/substs
   peerDependencies:
     ocaml " >= 3.12.0"
 
@@ -244,11 +252,11 @@
   version "2.0.6"
   resolved "@opam/ounit@2.0.6"
   dependencies:
+    "@esy-ocaml/esy-installer" "^0.0.0"
+    "@esy-ocaml/substs" "^0.0.1"
     "@opam/base-bytes" "*"
     "@opam/ocamlbuild" ""
     "@opam/ocamlfind" "*"
-    opam-installer-bin esy-ocaml/opam-installer-bin
-    substs esy-ocaml/substs
   peerDependencies:
     ocaml " >= 3.11.0"
 
@@ -256,10 +264,10 @@
   version "5.0.1"
   resolved "@opam/ppx_tools_versioned@5.0.1"
   dependencies:
+    "@esy-ocaml/esy-installer" "^0.0.0"
+    "@esy-ocaml/substs" "^0.0.1"
     "@opam/ocaml-migrate-parsetree" " >= 0.7.0"
     "@opam/ocamlfind" " >= 1.5.0"
-    opam-installer-bin esy-ocaml/opam-installer-bin
-    substs esy-ocaml/substs
   peerDependencies:
     ocaml " >= 4.2.0"
 
@@ -267,12 +275,12 @@
   version "1.7.1"
   resolved "@opam/re@1.7.1"
   dependencies:
+    "@esy-ocaml/esy-installer" "^0.0.0"
+    "@esy-ocaml/substs" "^0.0.1"
     "@opam/base-bytes" "*"
     "@opam/ocamlbuild" ""
     "@opam/ocamlfind" ""
     "@opam/ounit" ""
-    opam-installer-bin esy-ocaml/opam-installer-bin
-    substs esy-ocaml/substs
   peerDependencies:
     ocaml "*"
 
@@ -280,11 +288,11 @@
   version "1.2.1"
   resolved "@opam/react@1.2.1"
   dependencies:
+    "@esy-ocaml/esy-installer" "^0.0.0"
+    "@esy-ocaml/substs" "^0.0.1"
     "@opam/ocamlbuild" ""
     "@opam/ocamlfind" ""
     "@opam/topkg" "  >= 0.9.0"
-    opam-installer-bin esy-ocaml/opam-installer-bin
-    substs esy-ocaml/substs
   peerDependencies:
     ocaml " >= 4.1.0"
 
@@ -292,6 +300,8 @@
   version "1.13.7"
   resolved "@opam/reason@1.13.7"
   dependencies:
+    "@esy-ocaml/esy-installer" "^0.0.0"
+    "@esy-ocaml/substs" "^0.0.1"
     "@opam/menhir" " >= 20170418.0.0  <= 20170712.0.0"
     "@opam/merlin-extend" " >= 0.3.0"
     "@opam/ocaml-migrate-parsetree" "*"
@@ -300,8 +310,6 @@
     "@opam/result" "=1.2.0"
     "@opam/topkg" " >= 0.8.1"
     "@opam/utop" " >= 1.17.0"
-    opam-installer-bin esy-ocaml/opam-installer-bin
-    substs esy-ocaml/substs
   peerDependencies:
     ocaml " >= 4.2.0  < 4.6.0"
 
@@ -309,8 +317,8 @@
   version "1.2.0"
   resolved "@opam/result@1.2.0"
   dependencies:
-    opam-installer-bin esy-ocaml/opam-installer-bin
-    substs esy-ocaml/substs
+    "@esy-ocaml/esy-installer" "^0.0.0"
+    "@esy-ocaml/substs" "^0.0.1"
   peerDependencies:
     ocaml "*"
 
@@ -318,11 +326,11 @@
   version "0.9.1"
   resolved "@opam/topkg@0.9.1"
   dependencies:
+    "@esy-ocaml/esy-installer" "^0.0.0"
+    "@esy-ocaml/substs" "^0.0.1"
     "@opam/ocamlbuild" "*"
     "@opam/ocamlfind" "  >= 1.6.1"
     "@opam/result" "*"
-    opam-installer-bin esy-ocaml/opam-installer-bin
-    substs esy-ocaml/substs
   peerDependencies:
     ocaml " >= 4.1.0"
 
@@ -330,6 +338,8 @@
   version "2.0.1"
   resolved "@opam/utop@2.0.1"
   dependencies:
+    "@esy-ocaml/esy-installer" "^0.0.0"
+    "@esy-ocaml/substs" "^0.0.1"
     "@opam/base-threads" "*"
     "@opam/base-unix" "*"
     "@opam/cppo" "  >= 1.1.2"
@@ -338,8 +348,6 @@
     "@opam/lwt" "*"
     "@opam/ocamlfind" " >= 1.7.2"
     "@opam/react" " >= 1.0.0"
-    opam-installer-bin esy-ocaml/opam-installer-bin
-    substs esy-ocaml/substs
   peerDependencies:
     ocaml " >= 4.2.3  < 4.6.0"
 
@@ -347,12 +355,12 @@
   version "1.4.0"
   resolved "@opam/yojson@1.4.0"
   dependencies:
+    "@esy-ocaml/esy-installer" "^0.0.0"
+    "@esy-ocaml/substs" "^0.0.1"
     "@opam/biniou" " >= 1.2.0"
     "@opam/cppo" ""
     "@opam/easy-format" "*"
     "@opam/jbuilder" ""
-    opam-installer-bin esy-ocaml/opam-installer-bin
-    substs esy-ocaml/substs
   peerDependencies:
     ocaml " >= 4.2.3"
 
@@ -360,18 +368,18 @@
   version "1.5.0"
   resolved "@opam/zed@1.5.0"
   dependencies:
+    "@esy-ocaml/esy-installer" "^0.0.0"
+    "@esy-ocaml/substs" "^0.0.1"
     "@opam/base-bytes" "*"
     "@opam/camomile" " >= 0.8.0"
     "@opam/jbuilder" "  >= 1.0.0-beta7"
     "@opam/react" "*"
-    opam-installer-bin esy-ocaml/opam-installer-bin
-    substs esy-ocaml/substs
   peerDependencies:
     ocaml " >= 4.2.3"
 
-ocaml@esy-ocaml/ocaml#4.2.3+esy:
-  version "4.2.3"
-  resolved "https://codeload.github.com/esy-ocaml/ocaml/tar.gz/d5bddac3483a2914e15953ed33f5317d2b712600"
+ocaml@~4.2.3001:
+  version "4.2.3001"
+  resolved "https://registry.yarnpkg.com/ocaml/-/ocaml-4.2.3001.tgz#4bb250b8a842fb357acb2ebf1a13a0c3fa753dd6"
 
 ocamlBetterErrors@esy-ocaml/BetterErrors#esy:
   version "0.1.0"
@@ -379,11 +387,3 @@ ocamlBetterErrors@esy-ocaml/BetterErrors#esy:
   dependencies:
     "@opam/re" "*"
     "@opam/reason" "1.13.x"
-
-opam-installer-bin@esy-ocaml/opam-installer-bin:
-  version "0.0.0"
-  resolved "https://codeload.github.com/esy-ocaml/opam-installer-bin/tar.gz/37d5d7951cc5befd1f124e1abe14b39ba1bdf5a6"
-
-substs@esy-ocaml/substs:
-  version "0.0.1"
-  resolved "https://codeload.github.com/esy-ocaml/substs/tar.gz/58b2f5fafbd675665a5a46ef3d142e8e505d2042"
