@@ -1,12 +1,12 @@
 {
   "name": "reason-cli",
-  "version": "1.13.7",
+  "version": "3.0.0",
   "preferGlobal": false,
   "description": "Globally Installable CLI Tools For ReasonML",
   "main": "index.js",
   "notes": "Do not include a postinstall script - it will be added for you",
   "scripts": {
-    "test": "which refmt && which ocamlmerlin && which rebuild && which ocamlc && which ocamlc.opt && which ocamlopt && which ocamlopt.opt && which berror && refmt ----where && reactjs_jsx_ppx ----where && reactjs_jsx_ppx_2 ----where"
+    "test": "which refmt && which ocamlmerlin && which rebuild && which ocamlc && which ocamlc.opt && which ocamlopt && which ocamlopt.opt && refmt ----where && reactjs_jsx_ppx ----where && reactjs_jsx_ppx_2 ----where"
   },
   "repository": {
     "type": "git",
@@ -19,8 +19,7 @@
     "Merlin",
     "ocamlopt",
     "ocamlc",
-    "refmt",
-    "berror"
+    "refmt"
   ],
   "author": "Jordan",
   "license": "MIT",
@@ -46,7 +45,6 @@
         "rebuild",
         "reactjs_jsx_ppx",
         "reactjs_jsx_ppx_2",
-        "berror",
         "menhir",
         "ocamlfind"
       ],
@@ -55,7 +53,6 @@
         " you released above, no longer work correctly."
       ],
       "deleteFromBinaryRelease": [
-        "relBinaries/i/*ounit-*.tar.gz",
         "relBinaries/i/*camlp4-*.tar.gz",
         "relBinaries/i/esy_ocaml__slash__esy_installer-*.tar.gz",
         "relBinaries/i/*topkg-*.tar.gz",
@@ -69,9 +66,8 @@
   },
   "homepage": "https://github.com/reasonml/reason-cli#readme",
   "dependencies": {
-    "@opam/reason": "1.13.7",
+    "@opam/reason": "https://github.com/facebook/reason/archive/3.0.0.tar.gz",
     "ocaml": "~4.2.3001",
-    "ocamlBetterErrors": "esy-ocaml/BetterErrors#esy",
     "@opam/merlin": "2.5.4",
     "@opam/utop": "*",
     "@opam/menhir": "= 20170418.0.0"
