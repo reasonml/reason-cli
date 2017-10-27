@@ -1,0 +1,53 @@
+#!/bin/bash
+
+export ESY__STORE_VERSION=3.x.x
+
+printError() {
+  echo >&2 "ERROR:";
+  echo >&2 "$0 command is not installed correctly. ";
+  TROUBLESHOOTING="When installing <package_name>, did you see any errors in the log? "
+  TROUBLESHOOTING="$TROUBLESHOOTING - What does (which <binary_name>) return? "
+  TROUBLESHOOTING="$TROUBLESHOOTING - Please file a github issue on <package_name>'s repo."
+  echo >&2 "$TROUBLESHOOTING";
+}
+
+if [ -z ${REASON_hCLI__ENVIRONMENTSOURCED__OCAMLMERLIN_hREASON+x} ]; then
+  if [ -z ${REASON_hCLI__ENVIRONMENTSOURCED+x} ]; then
+    
+#
+# Define $SCRIPTDIR
+#
+
+SOURCE="${BASH_SOURCE[0]}"
+while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+  SCRIPTDIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+  SOURCE="$(readlink "$SOURCE")"
+  [[ $SOURCE != /* ]] && SOURCE="$SCRIPTDIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+done
+SCRIPTDIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+
+    export ESY_EJECT__SANDBOX="$SCRIPTDIR/../rel"
+    export ESY_EJECT__ROOT="$ESY_EJECT__SANDBOX/_esyEjectRoot"
+    export PACKAGE_ROOT="$SCRIPTDIR/.."
+    # Remove dependency on esy and package managers in general
+    # We fake it so that the eject store is the location where we relocated the
+    # binaries to.
+    export ESY_EJECT__STORE=`cat $PACKAGE_ROOT/records/recordedClientInstallStorePath.txt`
+    ENV_PATH="$ESY_EJECT__ROOT/command-env"
+    source "$ENV_PATH"
+    export REASON_hCLI__ENVIRONMENTSOURCED="sourced"
+    export REASON_hCLI__ENVIRONMENTSOURCED__OCAMLMERLIN_hREASON="sourced"
+  fi
+  command -v $0 >/dev/null 2>&1 || {
+    printError;
+    exit 1;
+  }
+  if [ "$1" == "----where" ]; then
+  which "ocamlmerlin-reason"
+else
+  exec "ocamlmerlin-reason" "$@"
+fi
+else
+  printError;
+  exit 1;
+fi
