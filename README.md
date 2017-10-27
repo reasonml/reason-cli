@@ -9,7 +9,7 @@ Reason toolchain packaged for npm.
 
 ### 1. Choose your platform
 
-**Are you using the new Reason syntax or the old one**?
+**[Are you using the new Reason syntax or the old one](https://twitter.com/reasonml/status/924043510977740800)**?
 
 ### New Syntax (3)
 
