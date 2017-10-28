@@ -11,6 +11,11 @@ Reason toolchain packaged for npm.
 
 **[Are you using the new Reason syntax or the old one](https://twitter.com/reasonml/status/924043510977740800)**?
 
+**The package's size over network is around 140mb. It takes a while to download,
+especially on slow internet speeds. If npm is stuck and doesn't produce any
+errors then it's probably just downloading it. This will be fixed in the
+following releases. Sorry.**
+
 ### New Syntax (3)
 
 | type     | platform  | install command                                                                                 | Notes   |
