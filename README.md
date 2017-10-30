@@ -125,6 +125,7 @@ After you've performed the release build you can release it:
 ```sh
 git clone git@github.com:reasonml/reason-cli.git
 cd reason-cli
+npm install -g esy
 make build-release TYPE=pack
 cd _release/pack
 npm pack
@@ -148,6 +149,7 @@ On build host:
 ```sh
 git clone git@github.com:reasonml/reason-cli.git
 cd reason-cli
+npm install -g esy
 make build-release TYPE=pack
 cd _release/pack
 npm pack
