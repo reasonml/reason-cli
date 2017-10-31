@@ -20,10 +20,10 @@ following releases. Sorry.** (If you are having trouble, you can download the ta
 
 | type     | platform  | install command                                                                                 | Notes   |
 |:--------:|-----------|-------------------------------------------------------------------------------------------------|---------|
-| `binary` | **OSX**   | `npm install -g https://github.com/reasonml/reason-cli/archive/3.0.0-bin-darwin.tar.gz` | Installs Binaries |
-| `binary` | **Linux** | `npm install -g https://github.com/reasonml/reason-cli/archive/3.0.0-bin-linux.tar.gz`  | Installs Binaries |
+| `binary` | **OSX**   | `npm install -g https://github.com/reasonml/reason-cli/archive/3.0.1-bin-darwin.tar.gz` | Installs Binaries |
+| `binary` | **Linux** | `npm install -g https://github.com/reasonml/reason-cli/archive/3.0.1-bin-linux.tar.gz`  | Installs Binaries |
 
-(Or `yarn global add https://github.com/reasonml/reason-cli/archive/3.0.0-bin-darwin.tar.gz`, etc.)
+(Or `yarn global add https://github.com/reasonml/reason-cli/archive/3.0.1-bin-darwin.tar.gz`, etc.)
 
 ### Old Syntax (2)
 
