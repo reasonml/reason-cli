@@ -1,0 +1,94 @@
+{
+  "name": "reason-cli",
+  "version": "3.0.1",
+  "preferGlobal": false,
+  "description": "Globally Installable CLI Tools For ReasonML",
+  "main": "index.js",
+  "notes": "Do not include a postinstall script - it will be added for you",
+  "scripts": {
+    "test": "which refmt && which ocamlmerlin && which rebuild && which ocamlc && which ocamlc.opt && which ocamlopt && which ocamlopt.opt && refmt ----where && reactjs_jsx_ppx ----where && reactjs_jsx_ppx_2 ----where",
+    "postinstall": "./postinstall.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reasonml/reason-cli.git"
+  },
+  "keywords": [
+    "ReasonML",
+    "Reason",
+    "OCaml",
+    "Merlin",
+    "ocamlopt",
+    "ocamlc",
+    "refmt"
+  ],
+  "author": "Jordan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/reasonml/reason-cli/issues"
+  },
+  "esy": {
+    "release": {
+      "releasedBinaries": [
+        "ocamlmerlin",
+        "ocamlmerlin-reason",
+        "ocamlrun",
+        "ocamlc",
+        "ocamlc.opt",
+        "ocamlopt",
+        "ocamlopt.opt",
+        "ocaml",
+        "rtop",
+        "utop",
+        "refmt",
+        "refmttype",
+        "reopt",
+        "rebuild",
+        "reactjs_jsx_ppx",
+        "reactjs_jsx_ppx_2",
+        "menhir",
+        "ocamlfind"
+      ],
+      "NOTES": [
+        "Make the release as lean as you want! Just remove packed binary zips until the executables",
+        " you released above, no longer work correctly."
+      ],
+      "deleteFromBinaryRelease": [
+        "relBinaries/i/*camlp4-*.tar.gz",
+        "relBinaries/i/esy_ocaml__slash__esy_installer-*.tar.gz",
+        "relBinaries/i/*topkg-*.tar.gz",
+        "relBinaries/i/esy_ocaml__slash__substs-*.tar.gz",
+        "relBinaries/i/*conf_which-*.tar.gz",
+        "relBinaries/i/*conf_m4-*.tar.gz",
+        "relBinaries/i/*cppo-*.tar.gz",
+        "relBinaries/i/*jbuilder-*.tar.gz"
+      ],
+      "esyDependency": "0.0.27"
+    }
+  },
+  "homepage": "https://github.com/reasonml/reason-cli#readme",
+  "dependencies": {},
+  "devDependencies": {},
+  "peerDependencies": {},
+  "bin": {
+    "ocamlmerlin": ".bin/ocamlmerlin",
+    "ocamlmerlin-reason": ".bin/ocamlmerlin-reason",
+    "ocamlrun": ".bin/ocamlrun",
+    "ocamlc": ".bin/ocamlc",
+    "ocamlc.opt": ".bin/ocamlc.opt",
+    "ocamlopt": ".bin/ocamlopt",
+    "ocamlopt.opt": ".bin/ocamlopt.opt",
+    "ocaml": ".bin/ocaml",
+    "rtop": ".bin/rtop",
+    "utop": ".bin/utop",
+    "refmt": ".bin/refmt",
+    "refmttype": ".bin/refmttype",
+    "reopt": ".bin/reopt",
+    "rebuild": ".bin/rebuild",
+    "reactjs_jsx_ppx": ".bin/reactjs_jsx_ppx",
+    "reactjs_jsx_ppx_2": ".bin/reactjs_jsx_ppx_2",
+    "menhir": ".bin/menhir",
+    "ocamlfind": ".bin/ocamlfind",
+    "reason-cli-esy-sandbox": ".bin/reason-cli-esy-sandbox"
+  }
+}
