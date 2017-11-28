@@ -6,7 +6,7 @@
   "main": "index.js",
   "notes": "Do not include a postinstall script - it will be added for you",
   "scripts": {
-    "test": "which refmt && which ocamlmerlin && which rebuild && which ocamlc && which ocamlc.opt && which ocamlopt && which ocamlopt.opt && refmt ----where && reactjs_jsx_ppx ----where && reactjs_jsx_ppx_2 ----where"
+    "test": "which refmt && which ocamlmerlin && which rebuild && refmt ----where && reactjs_jsx_ppx_v2 ----where && reactjs_jsx_ppx_v3 ----where"
   },
   "repository": {
     "type": "git",
@@ -37,22 +37,22 @@
         "refmttype",
         "reopt",
         "rebuild",
-        "reactjs_jsx_ppx",
-        "reactjs_jsx_ppx_2"
+        "reactjs_jsx_ppx_v2",
+        "reactjs_jsx_ppx_v3"
       ],
       "NOTES": [
         "Make the release as lean as you want! Just remove packed binary zips until the executables",
         " you released above, no longer work correctly."
       ],
       "deleteFromBinaryRelease": [
-        "relBinaries/i/*camlp4-*.tar.gz",
-        "relBinaries/i/esy_ocaml__slash__esy_installer-*.tar.gz",
-        "relBinaries/i/*topkg-*.tar.gz",
-        "relBinaries/i/esy_ocaml__slash__substs-*.tar.gz",
-        "relBinaries/i/*conf_which-*.tar.gz",
-        "relBinaries/i/*conf_m4-*.tar.gz",
-        "relBinaries/i/*cppo-*.tar.gz",
-        "relBinaries/i/*jbuilder-*.tar.gz"
+        "*camlp4-*",
+        "*esy_ocaml__slash__esy_installer-*",
+        "*topkg-*",
+        "*esy_ocaml__slash__substs-*",
+        "*conf_which-*",
+        "*conf_m4-*",
+        "*cppo-*",
+        "*jbuilder-*"
       ]
     }
   },
