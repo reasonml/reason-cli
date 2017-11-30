@@ -31,12 +31,6 @@
       "releasedBinaries": [
         "ocamlmerlin",
         "ocamlmerlin-reason",
-        "ocamlrun",
-        "ocamlc",
-        "ocamlc.opt",
-        "ocamlopt",
-        "ocamlopt.opt",
-        "ocaml",
         "rtop",
         "utop",
         "refmt",
@@ -44,9 +38,7 @@
         "reopt",
         "rebuild",
         "reactjs_jsx_ppx",
-        "reactjs_jsx_ppx_2",
-        "menhir",
-        "ocamlfind"
+        "reactjs_jsx_ppx_2"
       ],
       "NOTES": [
         "Make the release as lean as you want! Just remove packed binary zips until the executables",
@@ -66,10 +58,9 @@
   },
   "homepage": "https://github.com/reasonml/reason-cli#readme",
   "dependencies": {
-    "@opam/reason": "https://github.com/facebook/reason/archive/3.0.0.tar.gz",
+    "@opam/reason": "3.0.3",
     "ocaml": "~4.2.3001",
     "@opam/merlin": "2.5.4",
-    "@opam/utop": "*",
-    "@opam/menhir": "= 20170418.0.0"
+    "@opam/utop": "*"
   }
 }
