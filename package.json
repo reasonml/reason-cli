@@ -1,6 +1,6 @@
 {
   "name": "reason-cli",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "preferGlobal": false,
   "description": "Globally Installable CLI Tools For ReasonML",
   "main": "index.js",
@@ -58,7 +58,7 @@
   },
   "homepage": "https://github.com/reasonml/reason-cli#readme",
   "dependencies": {
-    "@opam/reason": "3.0.3",
+    "@opam/reason": "3.0.4",
     "ocaml": "~4.2.3001",
     "@opam/merlin": "2.5.4",
     "@opam/utop": "*"
