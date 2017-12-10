@@ -1,0 +1,82 @@
+{
+  "name": "reason-cli",
+  "version": "3.0.4",
+  "preferGlobal": false,
+  "description": "Globally Installable CLI Tools For ReasonML",
+  "main": "index.js",
+  "notes": "Do not include a postinstall script - it will be added for you",
+  "scripts": {
+    "test": "which refmt && which ocamlmerlin && which rebuild && refmt ----where && reactjs_jsx_ppx_v2 ----where && reactjs_jsx_ppx_v3 ----where",
+    "postinstall": "./bin/esyBuildRelease bin install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reasonml/reason-cli.git"
+  },
+  "keywords": [
+    "ReasonML",
+    "Reason",
+    "OCaml",
+    "Merlin",
+    "ocamlopt",
+    "ocamlc",
+    "refmt"
+  ],
+  "author": "Jordan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/reasonml/reason-cli/issues"
+  },
+  "esy": {
+    "release": {
+      "releasedBinaries": [
+        "ocamlmerlin",
+        "ocamlmerlin-reason",
+        "rtop",
+        "utop",
+        "refmt",
+        "refmttype",
+        "reopt",
+        "rebuild",
+        "reactjs_jsx_ppx_v2",
+        "reactjs_jsx_ppx_v3"
+      ],
+      "NOTES": [
+        "Make the release as lean as you want! Just remove packed binary zips until the executables",
+        " you released above, no longer work correctly."
+      ],
+      "deleteFromBinaryRelease": [
+        "*camlp4-*",
+        "*esy_ocaml__slash__esy_installer-*",
+        "*topkg-*",
+        "*esy_ocaml__slash__substs-*",
+        "*conf_which-*",
+        "*conf_m4-*",
+        "*cppo-*",
+        "*jbuilder-*"
+      ]
+    },
+    "build": [],
+    "install": [],
+    "exportedEnv": {},
+    "buildsInSource": false,
+    "sandboxType": "project"
+  },
+  "homepage": "https://github.com/reasonml/reason-cli#readme",
+  "dependencies": {},
+  "peerDependencies": {},
+  "devDependencies": {},
+  "bin": {
+    "ocamlmerlin": ".bin/ocamlmerlin",
+    "ocamlmerlin-reason": ".bin/ocamlmerlin-reason",
+    "rtop": ".bin/rtop",
+    "utop": ".bin/utop",
+    "refmt": ".bin/refmt",
+    "refmttype": ".bin/refmttype",
+    "reopt": ".bin/reopt",
+    "rebuild": ".bin/rebuild",
+    "reactjs_jsx_ppx_v2": ".bin/reactjs_jsx_ppx_v2",
+    "reactjs_jsx_ppx_v3": ".bin/reactjs_jsx_ppx_v3",
+    "reason-cli-esy-sandbox": ".bin/reason-cli-esy-sandbox"
+  }
+}
