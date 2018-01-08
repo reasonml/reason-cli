@@ -20,7 +20,7 @@ following releases. Sorry.** (If you are having trouble, you can download the ta
 
 | type     | platform  | install command                                                                                 | Notes   |
 |:--------:|-----------|-------------------------------------------------------------------------------------------------|---------|
-| `binary` | **OSX**   | `npm install -g https://github.com/reasonml/reason-cli/archive/3.0.4-bin-darwin.tar.gz` | Installs Binaries |
+| `binary` | **macOS**   | `npm install -g https://github.com/reasonml/reason-cli/archive/3.0.4-bin-darwin.tar.gz` | Installs Binaries |
 | `binary` | **Linux** | `npm install -g https://github.com/reasonml/reason-cli/archive/3.0.4-bin-linux.tar.gz`  | Installs Binaries |
 | ---      |**Windows**| Please see https://github.com/reasonml/reasonml.github.io/issues/195
 
@@ -30,7 +30,7 @@ following releases. Sorry.** (If you are having trouble, you can download the ta
 
 | type     | platform  | install command                                                                                 | Notes   |
 |:--------:|-----------|-------------------------------------------------------------------------------------------------|---------|
-| `binary` | **OSX**   | `npm install -g https://github.com/reasonml/reason-cli/archive/beta-v-1.13.7-bin-darwin.tar.gz` | Installs Binaries |
+| `binary` | **macOS**   | `npm install -g https://github.com/reasonml/reason-cli/archive/beta-v-1.13.7-bin-darwin.tar.gz` | Installs Binaries |
 | `binary` | **Linux** | `npm install -g https://github.com/reasonml/reason-cli/archive/beta-v-1.13.7-bin-linux.tar.gz`  | Installs Binaries |
 | ---      |**Windows**| Please see https://github.com/reasonml/reasonml.github.io/issues/195
 
