@@ -1,0 +1,43 @@
+#!/bin/bash
+
+set -e
+
+#
+# Define $SCRIPTDIR
+#
+
+SOURCE="${BASH_SOURCE[0]}"
+while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+  SCRIPTDIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+  SOURCE="$(readlink "$SOURCE")"
+  [[ $SOURCE != /* ]] && SOURCE="$SCRIPTDIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+done
+SCRIPTDIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+
+PACKAGE_ROOT="$(dirname $SCRIPTDIR)"
+ESY_COMMAND="$PACKAGE_ROOT/_esyInstallation/bin/esy"
+
+REL_ESY__PREFIX="$PACKAGE_ROOT/rel"
+DST_ESY__PREFIX="$HOME/.esy"
+
+if [ ! -d "$DST_ESY__PREFIX" ]; then
+
+  ESY_EJECT__ROOT="$REL_ESY__PREFIX/_esyEjectRoot"
+
+  REL_ESY__STORE=$(ESY__PREFIX="$REL_ESY__PREFIX" $ESY_COMMAND config get store-path)
+  DST_ESY__STORE=$(ESY__PREFIX="$DST_ESY__PREFIX" $ESY_COMMAND config get store-path)
+
+  TMP_ESY__PREFIX=$(mktemp -d)
+  TMP_ESY__STORE="$TMP_ESY__PREFIX/s"
+
+  cp -rf $REL_ESY__STORE $TMP_ESY__STORE
+
+  find $TMP_ESY__STORE -type f -print0 \
+    | xargs -0 -I '{}' -P 30 $ESY_EJECT__ROOT/bin/fastreplacestring.exe "{}" "$REL_ESY__STORE" "$DST_ESY__STORE"
+
+  mkdir "$DST_ESY__PREFIX"
+  mv "$TMP_ESY__STORE" "$DST_ESY__STORE"
+  rm -rf "$TMP_ESY__PREFIX"
+fi
+
+exec "$ESY_COMMAND" "$@"

@@ -68,6 +68,15 @@ in your path:
 - `ocamlrun`
 - `ocamlc`/`ocamlopt`
 - `ocamlfind`
+- `esy`
+
+#### Inlcuded Binaries: `esy`
+
+reason-cli distribution comes with a tool called [esy][], a package.json
+workflow for compiled languages.Refer to its [documentation][esy] for the usage
+instructions.
+
+[Esy]: https://github.com/esy-ocaml/esy-core
 
 ## Advanced
 
@@ -91,7 +100,7 @@ There are also two other types of releases, `dev` and `pack`.
 
 ### Releasing
 
-You need `esy@0.0.16` (at least) installed globally:
+You need `esy@0.0.21` (at least) installed globally:
 
 ```sh
 npm install -g esy
