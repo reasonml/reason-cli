@@ -15,12 +15,12 @@ build-release:
 
 # Releases to Github
 release: build-release
-	@cp ./Makefile _release/$(RELEASE_TAG)/
+	@cp ./Makefile _release/
 	@make \
 		RELEASE_TAG="$(RELEASE_TAG)" \
 		ORIGIN=`git remote get-url origin` \
 		VERSION=`node -p "require('./package.json').version"` \
-		-C _release/$(RELEASE_TAG) \
+		-C _release/ \
 		_release_continue
 
 define WELCOME_MSG
@@ -38,10 +38,10 @@ define ALMOST_DONE_MSG
 -- Almost Done. Complete the following two steps
 ----------------------------------------------------
 
-Directory _release/$(RELEASE_TAG) contains a git repository ready
+Directory _release/ contains a git repository ready
 to be pushed under a tag to remote.
 
-1. [REQUIRED] cd _release/$(RELEASE_TAG)
+1. [REQUIRED] cd _release/
 
 2. git show HEAD
 		Make sure you approve of what will be pushed to tag $(VERSION)-$(RELEASE_TAG)

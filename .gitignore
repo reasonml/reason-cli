@@ -3,3 +3,4 @@ node_modules
 _release
 _esyinstall
 _esybuild
+esy.lock
