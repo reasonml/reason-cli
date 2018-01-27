@@ -58,9 +58,10 @@
   },
   "homepage": "https://github.com/reasonml/reason-cli#readme",
   "dependencies": {
-    "@opam/reason": "3.0.4",
+    "@esy-ocaml/reason": "3.0.5",
+    "@esy-ocaml/rtop": "3.0.5",
+    "@esy-ocaml/rebuild": "3.0.5",
     "ocaml": "~4.2.3001",
-    "@opam/merlin": "2.5.4",
-    "@opam/utop": "*"
+    "@esy-ocaml/merlin": "*"
   }
 }
