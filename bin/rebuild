@@ -1,0 +1,80 @@
+#!/bin/bash
+
+printError() {
+  echo >&2 "ERROR:";
+  echo >&2 "$0 command is not installed correctly. ";
+  TROUBLESHOOTING="When installing <package_name>, did you see any errors in the log? "
+  TROUBLESHOOTING="$TROUBLESHOOTING - What does (which <binary_name>) return? "
+  TROUBLESHOOTING="$TROUBLESHOOTING - Please file a github issue on <package_name>'s repo."
+  echo >&2 "$TROUBLESHOOTING";
+}
+
+if [ -z ${REASON_hCLI__ENVIRONMENTSOURCED__REBUILD+x} ]; then
+  if [ -z ${REASON_hCLI__ENVIRONMENTSOURCED+x} ]; then
+    
+#
+# Define $SCRIPTDIR
+#
+
+SOURCE="${BASH_SOURCE[0]}"
+while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+  SCRIPTDIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+  SOURCE="$(readlink "$SOURCE")"
+  [[ $SOURCE != /* ]] && SOURCE="$SCRIPTDIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+done
+SCRIPTDIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+
+    
+#
+# Esy utility functions
+#
+
+esyStrLength() {
+  # run in a subprocess to override $LANG variable
+  LANG=C /bin/bash -c 'echo "${#0}"' "$1"
+}
+
+esyRepeatCharacter() {
+  chToRepeat=$1
+  times=$2
+  printf "%0.s$chToRepeat" $(seq 1 $times)
+}
+
+esyGetStorePathFromPrefix() {
+  ESY_EJECT__PREFIX="$1"
+  # Remove trailing slash if any.
+  ESY_EJECT__PREFIX="${ESY_EJECT__PREFIX%/}"
+  ESY_STORE_VERSION="3"
+
+  prefixLength=$(esyStrLength "$ESY_EJECT__PREFIX/$ESY_STORE_VERSION")
+  paddingLength=$(expr 86 - $prefixLength)
+
+  # Discover how much of the reserved relocation padding must be consumed.
+  if [ "$paddingLength" -lt "0" ]; then
+    echo "$ESY_EJECT__PREFIX is too deep inside filesystem, Esy won't be able to relocate binaries"
+    exit 1;
+  fi
+
+  padding=$(esyRepeatCharacter '_' "$paddingLength")
+  echo "$ESY_EJECT__PREFIX/$ESY_STORE_VERSION$padding"
+}
+
+    esyReleasePackageRoot=$(dirname "$SCRIPTDIR")
+    export ESY__STORE="$(esyGetStorePathFromPrefix $esyReleasePackageRoot)"
+    source "$SCRIPTDIR/sandbox-env"
+    export REASON_hCLI__ENVIRONMENTSOURCED="sourced"
+    export REASON_hCLI__ENVIRONMENTSOURCED__REBUILD="sourced"
+  fi
+  command -v $0 >/dev/null 2>&1 || {
+    printError;
+    exit 1;
+  }
+  if [ "$1" == "----where" ]; then
+  which "rebuild"
+else
+  exec "rebuild" "$@"
+fi
+else
+  printError;
+  exit 1;
+fi

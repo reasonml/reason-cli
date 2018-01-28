@@ -1,0 +1,285 @@
+
+#
+# Esy Sandbox
+#
+export OCAMLPATH="$ESY__STORE/i/reason_cli-3.0.5-f6c0324d/lib:$ESY__STORE/i/esy_ocaml__slash__merlin-3.0.5-b0f65fbc/lib:$ESY__STORE/i/opam__slash__yojson-1.4.0-20ef32bc/lib:$ESY__STORE/i/opam__slash__biniou-1.2.0-b6ef1035/lib:$ESY__STORE/i/opam__slash__easy_format-1.3.1-03089144/lib:$ESY__STORE/i/esy_ocaml__slash__rebuild-3.0.5-95a89268/lib:$ESY__STORE/i/esy_ocaml__slash__rtop-3.0.5-1f16aba3/lib:$ESY__STORE/i/esy_ocaml__slash__reason-3.0.5-8a8fc10a/lib:$ESY__STORE/i/opam__slash__merlin_extend-0.3.0-e765bc12/lib:$ESY__STORE/i/opam__slash__utop-2.0.2-b6582239/lib:$ESY__STORE/i/opam__slash__lambda_term-1.12.0-aedf6caf/lib:$ESY__STORE/i/opam__slash__lwt___react-1.1.0-e245e850/lib:$ESY__STORE/i/opam__slash__zed-1.6.0-45900b3a/lib:$ESY__STORE/i/opam__slash__camomile-0.8.7-d8211bb7/lib:$ESY__STORE/i/opam__slash__react-1.2.1-26ccb818/lib:$ESY__STORE/i/opam__slash__topkg-0.9.1-a2ae887b/lib:$ESY__STORE/i/opam__slash__lwt-3.2.1-79a5c95f/lib:$ESY__STORE/i/opam__slash__camlp4-4.2.0-7-6f6d6e6d/lib:$ESY__STORE/i/opam__slash__conf_which-1.0.0-d8fd577d/lib:$ESY__STORE/i/opam__slash__ppx___tools___versioned-5.1.0-9dee4f72/lib:$ESY__STORE/i/opam__slash__ocaml_migrate_parsetree-1.0.7-45d945a4/lib:$ESY__STORE/i/opam__slash__cppo-1.6.0-54dc7cf0/lib:$ESY__STORE/i/opam__slash__base_bytes-0.0.0-base-3e6fd7e7/lib:$ESY__STORE/i/opam__slash__base_threads-0.0.0-base-77e1ea07/lib:$ESY__STORE/i/opam__slash__base_unix-0.0.0-base-f2822328/lib:$ESY__STORE/i/opam__slash__menhir-20171013.0.0-7bc2383c/lib:$ESY__STORE/i/opam__slash__ocamlbuild-0.11.0-b4652c35/lib:$ESY__STORE/i/opam__slash__jbuilder-1.0.0-beta16-cd83b154/lib:$ESY__STORE/i/opam__slash__result-1.2.0-b8cf22b7/lib:$ESY__STORE/i/opam__slash__ocamlfind-1.7.3--1-d98b7946/lib:$ESY__STORE/i/opam__slash__conf_m4-1.0.0-610ffe39/lib:$ESY__STORE/i/ocaml-4.2.3004-490319bf/lib:$ESY__STORE/i/esy_ocaml__slash__esy_installer-0.0.0-dc229629/lib:$ESY__STORE/i/esy_ocaml__slash__substs-0.0.1-90afc72d/lib"
+export OCAMLFIND_DESTDIR="$ESY__SANDBOX/node_modules/.cache/_esy/store/s/__sandbox__/lib"
+export OCAMLFIND_LDCONF="ignore"
+export OCAMLFIND_COMMANDS="ocamlc=ocamlc.opt ocamldep=ocamldep.opt ocamldoc=ocamldoc.opt ocamllex=ocamllex.opt ocamlopt=ocamlopt.opt"
+export PATH="$ESY__STORE/i/reason_cli-3.0.5-f6c0324d/bin:$ESY__STORE/i/esy_ocaml__slash__merlin-3.0.5-b0f65fbc/bin:$ESY__STORE/i/opam__slash__yojson-1.4.0-20ef32bc/bin:$ESY__STORE/i/opam__slash__biniou-1.2.0-b6ef1035/bin:$ESY__STORE/i/opam__slash__easy_format-1.3.1-03089144/bin:$ESY__STORE/i/esy_ocaml__slash__rebuild-3.0.5-95a89268/bin:$ESY__STORE/i/esy_ocaml__slash__rtop-3.0.5-1f16aba3/bin:$ESY__STORE/i/esy_ocaml__slash__reason-3.0.5-8a8fc10a/bin:$ESY__STORE/i/opam__slash__merlin_extend-0.3.0-e765bc12/bin:$ESY__STORE/i/opam__slash__utop-2.0.2-b6582239/bin:$ESY__STORE/i/opam__slash__lambda_term-1.12.0-aedf6caf/bin:$ESY__STORE/i/opam__slash__lwt___react-1.1.0-e245e850/bin:$ESY__STORE/i/opam__slash__zed-1.6.0-45900b3a/bin:$ESY__STORE/i/opam__slash__camomile-0.8.7-d8211bb7/bin:$ESY__STORE/i/opam__slash__react-1.2.1-26ccb818/bin:$ESY__STORE/i/opam__slash__topkg-0.9.1-a2ae887b/bin:$ESY__STORE/i/opam__slash__lwt-3.2.1-79a5c95f/bin:$ESY__STORE/i/opam__slash__camlp4-4.2.0-7-6f6d6e6d/bin:$ESY__STORE/i/opam__slash__conf_which-1.0.0-d8fd577d/bin:$ESY__STORE/i/opam__slash__ppx___tools___versioned-5.1.0-9dee4f72/bin:$ESY__STORE/i/opam__slash__ocaml_migrate_parsetree-1.0.7-45d945a4/bin:$ESY__STORE/i/opam__slash__cppo-1.6.0-54dc7cf0/bin:$ESY__STORE/i/opam__slash__base_bytes-0.0.0-base-3e6fd7e7/bin:$ESY__STORE/i/opam__slash__base_threads-0.0.0-base-77e1ea07/bin:$ESY__STORE/i/opam__slash__base_unix-0.0.0-base-f2822328/bin:$ESY__STORE/i/opam__slash__menhir-20171013.0.0-7bc2383c/bin:$ESY__STORE/i/opam__slash__ocamlbuild-0.11.0-b4652c35/bin:$ESY__STORE/i/opam__slash__jbuilder-1.0.0-beta16-cd83b154/bin:$ESY__STORE/i/opam__slash__result-1.2.0-b8cf22b7/bin:$ESY__STORE/i/opam__slash__ocamlfind-1.7.3--1-d98b7946/bin:$ESY__STORE/i/opam__slash__conf_m4-1.0.0-610ffe39/bin:$ESY__STORE/i/ocaml-4.2.3004-490319bf/bin:$ESY__STORE/i/esy_ocaml__slash__esy_installer-0.0.0-dc229629/bin:$ESY__STORE/i/esy_ocaml__slash__substs-0.0.1-90afc72d/bin:$PATH"
+export MAN_PATH="$ESY__STORE/i/reason_cli-3.0.5-f6c0324d/man:$ESY__STORE/i/esy_ocaml__slash__merlin-3.0.5-b0f65fbc/man:$ESY__STORE/i/opam__slash__yojson-1.4.0-20ef32bc/man:$ESY__STORE/i/opam__slash__biniou-1.2.0-b6ef1035/man:$ESY__STORE/i/opam__slash__easy_format-1.3.1-03089144/man:$ESY__STORE/i/esy_ocaml__slash__rebuild-3.0.5-95a89268/man:$ESY__STORE/i/esy_ocaml__slash__rtop-3.0.5-1f16aba3/man:$ESY__STORE/i/esy_ocaml__slash__reason-3.0.5-8a8fc10a/man:$ESY__STORE/i/opam__slash__merlin_extend-0.3.0-e765bc12/man:$ESY__STORE/i/opam__slash__utop-2.0.2-b6582239/man:$ESY__STORE/i/opam__slash__lambda_term-1.12.0-aedf6caf/man:$ESY__STORE/i/opam__slash__lwt___react-1.1.0-e245e850/man:$ESY__STORE/i/opam__slash__zed-1.6.0-45900b3a/man:$ESY__STORE/i/opam__slash__camomile-0.8.7-d8211bb7/man:$ESY__STORE/i/opam__slash__react-1.2.1-26ccb818/man:$ESY__STORE/i/opam__slash__topkg-0.9.1-a2ae887b/man:$ESY__STORE/i/opam__slash__lwt-3.2.1-79a5c95f/man:$ESY__STORE/i/opam__slash__camlp4-4.2.0-7-6f6d6e6d/man:$ESY__STORE/i/opam__slash__conf_which-1.0.0-d8fd577d/man:$ESY__STORE/i/opam__slash__ppx___tools___versioned-5.1.0-9dee4f72/man:$ESY__STORE/i/opam__slash__ocaml_migrate_parsetree-1.0.7-45d945a4/man:$ESY__STORE/i/opam__slash__cppo-1.6.0-54dc7cf0/man:$ESY__STORE/i/opam__slash__base_bytes-0.0.0-base-3e6fd7e7/man:$ESY__STORE/i/opam__slash__base_threads-0.0.0-base-77e1ea07/man:$ESY__STORE/i/opam__slash__base_unix-0.0.0-base-f2822328/man:$ESY__STORE/i/opam__slash__menhir-20171013.0.0-7bc2383c/man:$ESY__STORE/i/opam__slash__ocamlbuild-0.11.0-b4652c35/man:$ESY__STORE/i/opam__slash__jbuilder-1.0.0-beta16-cd83b154/man:$ESY__STORE/i/opam__slash__result-1.2.0-b8cf22b7/man:$ESY__STORE/i/opam__slash__ocamlfind-1.7.3--1-d98b7946/man:$ESY__STORE/i/opam__slash__conf_m4-1.0.0-610ffe39/man:$ESY__STORE/i/ocaml-4.2.3004-490319bf/man:$ESY__STORE/i/esy_ocaml__slash__esy_installer-0.0.0-dc229629/man:$ESY__STORE/i/esy_ocaml__slash__substs-0.0.1-90afc72d/man:$MAN_PATH"
+
+#
+# __sandbox__@0.0.0 (at )
+#
+export cur__name="__sandbox__"
+export cur__version="0.0.0"
+export cur__root="$ESY__SANDBOX"
+export cur__original_root="$ESY__SANDBOX"
+export cur__depends="reason-cli"
+export cur__target_dir="$ESY__SANDBOX/node_modules/.cache/_esy/store/b/__sandbox__"
+export cur__install="$ESY__SANDBOX/node_modules/.cache/_esy/store/s/__sandbox__"
+export cur__bin="$ESY__SANDBOX/node_modules/.cache/_esy/store/s/__sandbox__/bin"
+export cur__sbin="$ESY__SANDBOX/node_modules/.cache/_esy/store/s/__sandbox__/sbin"
+export cur__lib="$ESY__SANDBOX/node_modules/.cache/_esy/store/s/__sandbox__/lib"
+export cur__man="$ESY__SANDBOX/node_modules/.cache/_esy/store/s/__sandbox__/man"
+export cur__doc="$ESY__SANDBOX/node_modules/.cache/_esy/store/s/__sandbox__/doc"
+export cur__stublibs="$ESY__SANDBOX/node_modules/.cache/_esy/store/s/__sandbox__/stublibs"
+export cur__toplevel="$ESY__SANDBOX/node_modules/.cache/_esy/store/s/__sandbox__/toplevel"
+export cur__share="$ESY__SANDBOX/node_modules/.cache/_esy/store/s/__sandbox__/share"
+export cur__etc="$ESY__SANDBOX/node_modules/.cache/_esy/store/s/__sandbox__/etc"
+
+#
+# @esy-ocaml/substs@0.0.1 (at node_modules/@esy-ocaml/substs)
+#
+export CAML_LD_LIBRARY_PATH="$ESY__STORE/i/esy_ocaml__slash__substs-0.0.1-90afc72d/stublibs:$ESY__STORE/i/esy_ocaml__slash__substs-0.0.1-90afc72d/lib/stublibs:$CAML_LD_LIBRARY_PATH"
+
+#
+# @esy-ocaml/esy-installer@0.0.0 (at node_modules/@esy-ocaml/esy-installer)
+#
+export CAML_LD_LIBRARY_PATH="$ESY__STORE/i/esy_ocaml__slash__esy_installer-0.0.0-dc229629/stublibs:$ESY__STORE/i/esy_ocaml__slash__esy_installer-0.0.0-dc229629/lib/stublibs:$CAML_LD_LIBRARY_PATH"
+
+#
+# ocaml@4.2.3004 (at node_modules/ocaml)
+#
+export OCAMLLIB="$ESY__STORE/i/ocaml-4.2.3004-490319bf/lib/ocaml"
+export CAML_LD_LIBRARY_PATH="$ESY__STORE/i/ocaml-4.2.3004-490319bf/lib/ocaml/stublibs:$ESY__STORE/i/ocaml-4.2.3004-490319bf/lib/ocaml:$CAML_LD_LIBRARY_PATH"
+export OCAML_TOPLEVEL_PATH="$ESY__STORE/i/ocaml-4.2.3004-490319bf/lib/ocaml"
+
+#
+# @opam/conf-m4@1.0.0 (at node_modules/@opam/conf-m4)
+#
+export conf_m4_version="1.0.0"
+export conf_m4_installed="true"
+export conf_m4_enable="enable"
+export CAML_LD_LIBRARY_PATH="$ESY__STORE/i/opam__slash__conf_m4-1.0.0-610ffe39/stublibs:$ESY__STORE/i/opam__slash__conf_m4-1.0.0-610ffe39/lib/stublibs:$CAML_LD_LIBRARY_PATH"
+
+#
+# @opam/ocamlfind@1.7.3--1 (at node_modules/@opam/ocamlfind)
+#
+export ocamlfind_version="1.7.3--1"
+export ocamlfind_installed="true"
+export ocamlfind_enable="enable"
+export OCAMLLIB="$ESY__STORE/i/opam__slash__ocamlfind-1.7.3--1-d98b7946/lib/ocaml"
+export CAML_LD_LIBRARY_PATH="$ESY__STORE/i/opam__slash__ocamlfind-1.7.3--1-d98b7946/lib/ocaml/stublibs:$ESY__STORE/i/opam__slash__ocamlfind-1.7.3--1-d98b7946/lib/ocaml:$CAML_LD_LIBRARY_PATH"
+export OCAML_TOPLEVEL_PATH="$ESY__STORE/i/opam__slash__ocamlfind-1.7.3--1-d98b7946/lib/ocaml"
+
+#
+# @opam/result@1.2.0 (at node_modules/@opam/result)
+#
+export result_version="1.2.0"
+export result_installed="true"
+export result_enable="enable"
+export CAML_LD_LIBRARY_PATH="$ESY__STORE/i/opam__slash__result-1.2.0-b8cf22b7/stublibs:$ESY__STORE/i/opam__slash__result-1.2.0-b8cf22b7/lib/stublibs:$CAML_LD_LIBRARY_PATH"
+
+#
+# @opam/jbuilder@1.0.0-beta16 (at node_modules/@opam/jbuilder)
+#
+export jbuilder_version="1.0.0-beta16"
+export jbuilder_installed="true"
+export jbuilder_enable="enable"
+export CAML_LD_LIBRARY_PATH="$ESY__STORE/i/opam__slash__jbuilder-1.0.0-beta16-cd83b154/stublibs:$ESY__STORE/i/opam__slash__jbuilder-1.0.0-beta16-cd83b154/lib/stublibs:$CAML_LD_LIBRARY_PATH"
+
+#
+# @opam/ocamlbuild@0.11.0 (at node_modules/@opam/ocamlbuild)
+#
+export ocamlbuild_version="0.11.0"
+export ocamlbuild_installed="true"
+export ocamlbuild_enable="enable"
+export CAML_LD_LIBRARY_PATH="$ESY__STORE/i/opam__slash__ocamlbuild-0.11.0-b4652c35/stublibs:$ESY__STORE/i/opam__slash__ocamlbuild-0.11.0-b4652c35/lib/stublibs:$CAML_LD_LIBRARY_PATH"
+
+#
+# @opam/menhir@20171013.0.0 (at node_modules/@opam/menhir)
+#
+export menhir_version="20171013.0.0"
+export menhir_installed="true"
+export menhir_enable="enable"
+export CAML_LD_LIBRARY_PATH="$ESY__STORE/i/opam__slash__menhir-20171013.0.0-7bc2383c/stublibs:$ESY__STORE/i/opam__slash__menhir-20171013.0.0-7bc2383c/lib/stublibs:$CAML_LD_LIBRARY_PATH"
+
+#
+# @opam/base-unix@0.0.0-base (at node_modules/@opam/base-unix)
+#
+export base_unix_version="0.0.0-base"
+export base_unix_installed="true"
+export base_unix_enable="enable"
+export CAML_LD_LIBRARY_PATH="$ESY__STORE/i/opam__slash__base_unix-0.0.0-base-f2822328/stublibs:$ESY__STORE/i/opam__slash__base_unix-0.0.0-base-f2822328/lib/stublibs:$CAML_LD_LIBRARY_PATH"
+
+#
+# @opam/base-threads@0.0.0-base (at node_modules/@opam/base-threads)
+#
+export base_threads_version="0.0.0-base"
+export base_threads_installed="true"
+export base_threads_enable="enable"
+export CAML_LD_LIBRARY_PATH="$ESY__STORE/i/opam__slash__base_threads-0.0.0-base-77e1ea07/stublibs:$ESY__STORE/i/opam__slash__base_threads-0.0.0-base-77e1ea07/lib/stublibs:$CAML_LD_LIBRARY_PATH"
+
+#
+# @opam/base-bytes@0.0.0-base (at node_modules/@opam/base-bytes)
+#
+export base_bytes_version="0.0.0-base"
+export base_bytes_installed="true"
+export base_bytes_enable="enable"
+export CAML_LD_LIBRARY_PATH="$ESY__STORE/i/opam__slash__base_bytes-0.0.0-base-3e6fd7e7/stublibs:$ESY__STORE/i/opam__slash__base_bytes-0.0.0-base-3e6fd7e7/lib/stublibs:$CAML_LD_LIBRARY_PATH"
+
+#
+# @opam/cppo@1.6.0 (at node_modules/@opam/cppo)
+#
+export cppo_version="1.6.0"
+export cppo_installed="true"
+export cppo_enable="enable"
+export CAML_LD_LIBRARY_PATH="$ESY__STORE/i/opam__slash__cppo-1.6.0-54dc7cf0/stublibs:$ESY__STORE/i/opam__slash__cppo-1.6.0-54dc7cf0/lib/stublibs:$CAML_LD_LIBRARY_PATH"
+
+#
+# @opam/ocaml-migrate-parsetree@1.0.7 (at node_modules/@opam/ocaml-migrate-parsetree)
+#
+export ocaml_migrate_parsetree_version="1.0.7"
+export ocaml_migrate_parsetree_installed="true"
+export ocaml_migrate_parsetree_enable="enable"
+export CAML_LD_LIBRARY_PATH="$ESY__STORE/i/opam__slash__ocaml_migrate_parsetree-1.0.7-45d945a4/stublibs:$ESY__STORE/i/opam__slash__ocaml_migrate_parsetree-1.0.7-45d945a4/lib/stublibs:$CAML_LD_LIBRARY_PATH"
+
+#
+# @opam/ppx_tools_versioned@5.1.0 (at node_modules/@opam/ppx_tools_versioned)
+#
+export ppx___tools___versioned_version="5.1.0"
+export ppx___tools___versioned_installed="true"
+export ppx___tools___versioned_enable="enable"
+export CAML_LD_LIBRARY_PATH="$ESY__STORE/i/opam__slash__ppx___tools___versioned-5.1.0-9dee4f72/stublibs:$ESY__STORE/i/opam__slash__ppx___tools___versioned-5.1.0-9dee4f72/lib/stublibs:$CAML_LD_LIBRARY_PATH"
+
+#
+# @opam/conf-which@1.0.0 (at node_modules/@opam/conf-which)
+#
+export conf_which_version="1.0.0"
+export conf_which_installed="true"
+export conf_which_enable="enable"
+export CAML_LD_LIBRARY_PATH="$ESY__STORE/i/opam__slash__conf_which-1.0.0-d8fd577d/stublibs:$ESY__STORE/i/opam__slash__conf_which-1.0.0-d8fd577d/lib/stublibs:$CAML_LD_LIBRARY_PATH"
+
+#
+# @opam/camlp4@4.2.0-7 (at node_modules/@opam/camlp4)
+#
+export camlp4_version="4.2.0-7"
+export camlp4_installed="true"
+export camlp4_enable="enable"
+export CAML_LD_LIBRARY_PATH="$ESY__STORE/i/opam__slash__camlp4-4.2.0-7-6f6d6e6d/stublibs:$ESY__STORE/i/opam__slash__camlp4-4.2.0-7-6f6d6e6d/lib/stublibs:$CAML_LD_LIBRARY_PATH"
+
+#
+# @opam/lwt@3.2.1 (at node_modules/@opam/lwt)
+#
+export lwt_version="3.2.1"
+export lwt_installed="true"
+export lwt_enable="enable"
+export CAML_LD_LIBRARY_PATH="$ESY__STORE/i/opam__slash__lwt-3.2.1-79a5c95f/lib/stublibs:$CAML_LD_LIBRARY_PATH"
+
+#
+# @opam/topkg@0.9.1 (at node_modules/@opam/topkg)
+#
+export topkg_version="0.9.1"
+export topkg_installed="true"
+export topkg_enable="enable"
+export CAML_LD_LIBRARY_PATH="$ESY__STORE/i/opam__slash__topkg-0.9.1-a2ae887b/stublibs:$ESY__STORE/i/opam__slash__topkg-0.9.1-a2ae887b/lib/stublibs:$CAML_LD_LIBRARY_PATH"
+
+#
+# @opam/react@1.2.1 (at node_modules/@opam/react)
+#
+export react_version="1.2.1"
+export react_installed="true"
+export react_enable="enable"
+export CAML_LD_LIBRARY_PATH="$ESY__STORE/i/opam__slash__react-1.2.1-26ccb818/stublibs:$ESY__STORE/i/opam__slash__react-1.2.1-26ccb818/lib/stublibs:$CAML_LD_LIBRARY_PATH"
+
+#
+# @opam/camomile@0.8.7 (at node_modules/@opam/camomile)
+#
+export camomile_version="0.8.7"
+export camomile_installed="true"
+export camomile_enable="enable"
+export CAML_LD_LIBRARY_PATH="$ESY__STORE/i/opam__slash__camomile-0.8.7-d8211bb7/stublibs:$ESY__STORE/i/opam__slash__camomile-0.8.7-d8211bb7/lib/stublibs:$CAML_LD_LIBRARY_PATH"
+
+#
+# @opam/zed@1.6.0 (at node_modules/@opam/zed)
+#
+export zed_version="1.6.0"
+export zed_installed="true"
+export zed_enable="enable"
+export CAML_LD_LIBRARY_PATH="$ESY__STORE/i/opam__slash__zed-1.6.0-45900b3a/stublibs:$ESY__STORE/i/opam__slash__zed-1.6.0-45900b3a/lib/stublibs:$CAML_LD_LIBRARY_PATH"
+
+#
+# @opam/lwt_react@1.1.0 (at node_modules/@opam/lwt_react)
+#
+export lwt___react_version="1.1.0"
+export lwt___react_installed="true"
+export lwt___react_enable="enable"
+export CAML_LD_LIBRARY_PATH="$ESY__STORE/i/opam__slash__lwt___react-1.1.0-e245e850/stublibs:$ESY__STORE/i/opam__slash__lwt___react-1.1.0-e245e850/lib/stublibs:$CAML_LD_LIBRARY_PATH"
+
+#
+# @opam/lambda-term@1.12.0 (at node_modules/@opam/lambda-term)
+#
+export lambda_term_version="1.12.0"
+export lambda_term_installed="true"
+export lambda_term_enable="enable"
+export CAML_LD_LIBRARY_PATH="$ESY__STORE/i/opam__slash__lambda_term-1.12.0-aedf6caf/lib/stublibs:$CAML_LD_LIBRARY_PATH"
+
+#
+# @opam/utop@2.0.2 (at node_modules/@opam/utop)
+#
+export utop_version="2.0.2"
+export utop_installed="true"
+export utop_enable="enable"
+export CAML_LD_LIBRARY_PATH="$ESY__STORE/i/opam__slash__utop-2.0.2-b6582239/stublibs:$ESY__STORE/i/opam__slash__utop-2.0.2-b6582239/lib/stublibs:$CAML_LD_LIBRARY_PATH"
+
+#
+# @opam/merlin-extend@0.3.0 (at node_modules/@opam/merlin-extend)
+#
+export merlin_extend_version="0.3.0"
+export merlin_extend_installed="true"
+export merlin_extend_enable="enable"
+export CAML_LD_LIBRARY_PATH="$ESY__STORE/i/opam__slash__merlin_extend-0.3.0-e765bc12/stublibs:$ESY__STORE/i/opam__slash__merlin_extend-0.3.0-e765bc12/lib/stublibs:$CAML_LD_LIBRARY_PATH"
+
+#
+# @esy-ocaml/reason@3.0.5 (at node_modules/@esy-ocaml/reason)
+#
+export CAML_LD_LIBRARY_PATH="$ESY__STORE/i/esy_ocaml__slash__reason-3.0.5-8a8fc10a/stublibs:$ESY__STORE/i/esy_ocaml__slash__reason-3.0.5-8a8fc10a/lib/stublibs:$CAML_LD_LIBRARY_PATH"
+
+#
+# @esy-ocaml/rtop@3.0.5 (at node_modules/@esy-ocaml/rtop)
+#
+export CAML_LD_LIBRARY_PATH="$ESY__STORE/i/esy_ocaml__slash__rtop-3.0.5-1f16aba3/stublibs:$ESY__STORE/i/esy_ocaml__slash__rtop-3.0.5-1f16aba3/lib/stublibs:$CAML_LD_LIBRARY_PATH"
+
+#
+# @esy-ocaml/rebuild@3.0.5 (at node_modules/@esy-ocaml/rebuild)
+#
+export CAML_LD_LIBRARY_PATH="$ESY__STORE/i/esy_ocaml__slash__rebuild-3.0.5-95a89268/stublibs:$ESY__STORE/i/esy_ocaml__slash__rebuild-3.0.5-95a89268/lib/stublibs:$CAML_LD_LIBRARY_PATH"
+
+#
+# @opam/easy-format@1.3.1 (at node_modules/@opam/easy-format)
+#
+export easy_format_version="1.3.1"
+export easy_format_installed="true"
+export easy_format_enable="enable"
+export CAML_LD_LIBRARY_PATH="$ESY__STORE/i/opam__slash__easy_format-1.3.1-03089144/stublibs:$ESY__STORE/i/opam__slash__easy_format-1.3.1-03089144/lib/stublibs:$CAML_LD_LIBRARY_PATH"
+
+#
+# @opam/biniou@1.2.0 (at node_modules/@opam/biniou)
+#
+export biniou_version="1.2.0"
+export biniou_installed="true"
+export biniou_enable="enable"
+export CAML_LD_LIBRARY_PATH="$ESY__STORE/i/opam__slash__biniou-1.2.0-b6ef1035/stublibs:$ESY__STORE/i/opam__slash__biniou-1.2.0-b6ef1035/lib/stublibs:$CAML_LD_LIBRARY_PATH"
+
+#
+# @opam/yojson@1.4.0 (at node_modules/@opam/yojson)
+#
+export yojson_version="1.4.0"
+export yojson_installed="true"
+export yojson_enable="enable"
+export CAML_LD_LIBRARY_PATH="$ESY__STORE/i/opam__slash__yojson-1.4.0-20ef32bc/stublibs:$ESY__STORE/i/opam__slash__yojson-1.4.0-20ef32bc/lib/stublibs:$CAML_LD_LIBRARY_PATH"
+
+#
+# @esy-ocaml/merlin@3.0.5 (at node_modules/@esy-ocaml/merlin)
+#
+export merlin_version="3.0.5"
+export merlin_installed="true"
+export merlin_enable="enable"
+export CAML_LD_LIBRARY_PATH="$ESY__STORE/i/esy_ocaml__slash__merlin-3.0.5-b0f65fbc/stublibs:$ESY__STORE/i/esy_ocaml__slash__merlin-3.0.5-b0f65fbc/lib/stublibs:$CAML_LD_LIBRARY_PATH"
+
+#
+# reason-cli@3.0.5 (at )
+#
+export CAML_LD_LIBRARY_PATH="$ESY__STORE/i/reason_cli-3.0.5-f6c0324d/stublibs:$ESY__STORE/i/reason_cli-3.0.5-f6c0324d/lib/stublibs:$CAML_LD_LIBRARY_PATH"

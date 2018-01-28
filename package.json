@@ -1,0 +1,88 @@
+{
+  "author": "Jordan",
+  "bin": {
+    "ocamlmerlin": "bin/ocamlmerlin",
+    "ocamlmerlin-reason": "bin/ocamlmerlin-reason",
+    "reactjs_jsx_ppx_v2": "bin/reactjs_jsx_ppx_v2",
+    "reactjs_jsx_ppx_v3": "bin/reactjs_jsx_ppx_v3",
+    "reason-cli-esy-sandbox": "bin/reason-cli-esy-sandbox",
+    "rebuild": "bin/rebuild",
+    "refmt": "bin/refmt",
+    "refmttype": "bin/refmttype",
+    "reopt": "bin/reopt",
+    "rtop": "bin/rtop",
+    "utop": "bin/utop"
+  },
+  "bugs": {
+    "url": "https://github.com/reasonml/reason-cli/issues"
+  },
+  "dependencies": {
+  },
+  "description": "Globally Installable CLI Tools For ReasonML",
+  "devDependencies": {
+  },
+  "esy": {
+    "build": [
+    ],
+    "buildsInSource": false,
+    "exportedEnv": {
+    },
+    "install": [
+    ],
+    "release": {
+      "NOTES": [
+        "Make the release as lean as you want! Just remove packed binary zips until the executables",
+        " you released above, no longer work correctly."
+      ],
+      "deleteFromBinaryRelease": [
+        "*camlp4-*",
+        "*esy_ocaml__slash__esy_installer-*",
+        "*topkg-*",
+        "*esy_ocaml__slash__substs-*",
+        "*conf_which-*",
+        "*conf_m4-*",
+        "*cppo-*",
+        "*jbuilder-*"
+      ],
+      "releasedBinaries": [
+        "ocamlmerlin",
+        "ocamlmerlin-reason",
+        "rtop",
+        "utop",
+        "refmt",
+        "refmttype",
+        "reopt",
+        "rebuild",
+        "reactjs_jsx_ppx_v2",
+        "reactjs_jsx_ppx_v3"
+      ]
+    },
+    "sandboxType": "project"
+  },
+  "homepage": "https://github.com/reasonml/reason-cli#readme",
+  "keywords": [
+    "ReasonML",
+    "Reason",
+    "OCaml",
+    "Merlin",
+    "ocamlopt",
+    "ocamlc",
+    "refmt"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "reason-cli",
+  "notes": "Do not include a postinstall script - it will be added for you",
+  "peerDependencies": {
+  },
+  "preferGlobal": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reasonml/reason-cli.git"
+  },
+  "scripts": {
+    "postinstall": "node ./bin/esy.js install-release",
+    "test": "which refmt && which ocamlmerlin && which rebuild && refmt ----where && reactjs_jsx_ppx_v2 ----where && reactjs_jsx_ppx_v3 ----where"
+  },
+  "version": "3.0.5"
+}
