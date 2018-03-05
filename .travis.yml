@@ -15,8 +15,6 @@ install:
   - make build-release
   - npm install --global ./_release
 env:
-  - CXX=g++-4.8 TYPE=dev
-  - CXX=g++-4.8 TYPE=pack
   - CXX=g++-4.8 TYPE=bin
 addons:
   apt:
