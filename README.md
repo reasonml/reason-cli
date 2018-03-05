@@ -91,10 +91,11 @@ There are also two other types of releases, `dev` and `pack`.
 
 ### Releasing
 
-You need `esy@0.0.16` (at least) installed globally:
+You need `esy@0.0.62` installed globally: (First remove any existing global esy you have)
 
 ```sh
-npm install -g esy
+npm remove -g esy
+npm install -g esy@0.0.62
 ```
 
 Now you can use `make release TYPE=...` command.
@@ -127,7 +128,8 @@ After you've performed the release build you can release it:
 ```sh
 git clone git@github.com:reasonml/reason-cli.git
 cd reason-cli
-npm install -g esy
+npm remove -g esy
+npm install -g esy@0.0.62
 make build-release TYPE=pack
 cd _release/pack
 npm pack
@@ -151,7 +153,7 @@ On build host:
 ```sh
 git clone git@github.com:reasonml/reason-cli.git
 cd reason-cli
-npm install -g esy
+npm install -g esy@0.0.62
 make build-release TYPE=pack
 cd _release/pack
 npm pack
