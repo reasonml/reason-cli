@@ -9,19 +9,6 @@ node_js:
   - "6"
 # https://docs.travis-ci.com/user/languages/javascript-with-nodejs/#Node.js-v4-(or-io.js-v3)-compiler-requirements
 install:
-  # First test the old version of esy that we cut releases with because it supports
-  # a wider range of node versions.
-  - npm install --global esy@0.0.62
-  - esy install
-  - esy build
-  - make build-release
-    # this older version of esy keeps the release in _release/bin-darwin etc
-  - npm install --global ./_release/bin-*
-  # Explicitly run the test command since it won't be run with this version of esy.
-  - npm run test
-  - npm remove -g reason-cli
-  # Now use the latest esy
-  - npm remove -g esy
   - npm install --global esy@next
   - esy install
   - esy build
