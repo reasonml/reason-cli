@@ -58,7 +58,7 @@
   },
   "homepage": "https://github.com/reasonml/reason-cli#readme",
   "dependencies": {
-    "@esy-ocaml/reason": "3.0.5",
+    "@esy-ocaml/reason": "3.1.0",
     "@esy-ocaml/rtop": "3.0.5",
     "@esy-ocaml/rebuild": "3.0.5",
     "ocaml": "~4.2.3001",
