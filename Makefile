@@ -46,15 +46,11 @@ to be pushed under a tag to remote.
 2. git show HEAD
 		Make sure you approve of what will be pushed to tag $(VERSION)-$(RELEASE_TAG)
 
-3. git push origin HEAD:branch-$(VERSION)-$(RELEASE_TAG)
-		Push a release branch if needed.
+3. Test a local install of the package before publishing:
+	  npm install -g ./_release/bin-darwin/
 
-4. [REQUIRED] git push origin $(VERSION)-$(RELEASE_TAG)
-		Push a release tag.
+4. Follow the README instructions for publishing to npm.
 
-You can test install the release by running:
-
-		npm install "$(ORIGIN)#$(VERSION)-$(RELEASE_TAG)"
 
 > Note: If you are pushing an update to an existing tag, you might need to add -f to the push command.
 

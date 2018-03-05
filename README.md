@@ -100,92 +100,30 @@ npm install -g esy@0.0.62
 
 Now you can use `make release TYPE=...` command.
 
-For *dev* releases (an installation process will download a copy of Esy, a set of
-its deps and perform a build):
+For *binary* releases (an installation process will just copy prebuilt binaries
+to the installation location):
 
 ```sh
-make release TYPE=dev
-```
-
-For *pack* releases (an installation process will perform only build, all deps
-are bundled with the release):
-
-```sh
-make release TYPE=pack
-```
-
-For *bin* releases (an installation process will just copy prebuilt binaries to
-the installation location):
-
-```sh
+rm -rf ./_release # Start fresh
 make release TYPE=bin
+cd _release/bin-darwin  #or bin-linux if you're on linux
 ```
 
-After you've performed the release build you can release it:
+Edit the `package.json` version to include the "prerelease" hyphen the
+scope/name you wish to publish `reason-cli` under.  Typically this will be
+appending `-darwin` or `-linux` to the version number like:
 
-### Using `pack` to build on isolated network host (using `npm -g` on the destination):
-
-```sh
-git clone git@github.com:reasonml/reason-cli.git
-cd reason-cli
-npm remove -g esy
-npm install -g esy@0.0.62
-make build-release TYPE=pack
-cd _release/pack
-npm pack
-npm install --global ./reason-cli-VERSION.tgz
+```json
+{
+  "name": "reason-cli",
+  "version": "3.1.0-darwin",
+  ...
 ```
 
-You cannot move the installation once you have installed it into a location
-(global or local). To move the package, uninstall it and reinstall it from the
-new location. You can, however, install it anywhere you like.
-
-### Using `pack` to build on isolated network host (without `npm`):
-
-If you do not have `npm` installed on the destination host, then the setup is
-largely the same but instead of the final `npm install ./package` command you
-can simply extract `release.tar.gz` to the installation directory of your
-choosing and then invoke the `postinstall.sh` yourself. Again, don't move the
-package once it's installed.
-
-On build host:
-
-```sh
-git clone git@github.com:reasonml/reason-cli.git
-cd reason-cli
-npm install -g esy@0.0.62
-make build-release TYPE=pack
-cd _release/pack
-npm pack
+```
+npm publish
 ```
 
-On target host:
-
-```sh
-tar xzf reason-cli-VERSION.tgz
-cd package
-./postinstall.sh
-```
-
-Then you can simply invoke the binaries as part of a build script elsewhere, or
-include the binary locations for `refmt` in your `bsconfig`.
-
-```sh
-/path/to/package/.bin/refmt
-```
-
-#### Debugging
-
-After installing globally, you can put something like this in your `.bashrc` and all the underlying
-toolchain binaries will be in your path, without having to go through the `npm` bin
-links redirection. This is useful for debugging purposes:
-
-```
-export ESY_EJECT__STORE=`cat /path/to/global/reason-cli/records/recordedClientInstallStorePath.txt`
-PREV_SHELL="$SHELL"
-source /path/to/global/reason-cli/.cache/_esy/build-eject/eject-env
-export SHELL="$PREV_SHELL"
-```
 
 ## More Info
 
