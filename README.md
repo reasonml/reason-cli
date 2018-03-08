@@ -26,7 +26,7 @@ following releases. Sorry.** (If you are having trouble, you can download the ta
 
 ### 2. Install your editor plugins
 
-Pick your favorite editor plugin [here](https://reasonml.github.io/guide/editor-tools/editors-plugins#officially-supported-editors)
+Pick your favorite editor plugin [here](https://reasonml.github.io/docs/en/editor-plugins.html#officially-supported-editors)
 
 ### 3. Updating when needed
 
