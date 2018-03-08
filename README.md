@@ -18,23 +18,13 @@ following releases. Sorry.** (If you are having trouble, you can download the ta
 
 ### New Syntax (3)
 
-| type     | platform  | install command                                                                                 | Notes   |
-|:--------:|-----------|-------------------------------------------------------------------------------------------------|---------|
-| `binary` | **macOS**   | `npm install -g https://github.com/reasonml/reason-cli/archive/3.0.4-bin-darwin.tar.gz` | Installs Binaries |
-| `binary` | **Linux** | `npm install -g https://github.com/reasonml/reason-cli/archive/3.0.4-bin-linux.tar.gz`  | Installs Binaries |
+| type     | platform  | install command                          | Notes             |
+|:--------:|-----------|------------------------------------------|-------------------|
+| `binary` | **macOS** | `npm install -g reason-cli@3.1.0-darwin` | Installs Binaries |
+| `binary` | **Linux** | `npm install -g reason-cli@3.1.0-linux`  | Installs Binaries |
 | ---      |**Windows**| Please see https://github.com/reasonml/reasonml.github.io/issues/195
 
-(Or `yarn global add https://github.com/reasonml/reason-cli/archive/3.0.4-bin-darwin.tar.gz`, etc.)
-
-### Old Syntax (2)
-
-| type     | platform  | install command                                                                                 | Notes   |
-|:--------:|-----------|-------------------------------------------------------------------------------------------------|---------|
-| `binary` | **macOS**   | `npm install -g https://github.com/reasonml/reason-cli/archive/beta-v-1.13.7-bin-darwin.tar.gz` | Installs Binaries |
-| `binary` | **Linux** | `npm install -g https://github.com/reasonml/reason-cli/archive/beta-v-1.13.7-bin-linux.tar.gz`  | Installs Binaries |
-| ---      |**Windows**| Please see https://github.com/reasonml/reasonml.github.io/issues/195
-
-(Or `yarn global add https://github.com/reasonml/reason-cli/archive/beta-v-1.13.7-bin-darwin.tar.gz`, etc.)
+(Or `yarn global add reason-cli@3.1.0-darwin`, etc.)
 
 **The installation requires glibc >=3.4.21**. If you're on macOS, you should be good to go. If you're on Ubuntu, reason-cli requires Ubuntu **16.04**. Otherwise the postinstall might fail.
 
@@ -49,7 +39,7 @@ to uninstall the old reason-cli first.
 
 ```
 npm uninstall -g reason-cli
-npm install -g git://github.com/reasonml/reason-cli.git#beta-v-1.13.7-bin-darwin
+npm install -g reason-cli@3.1.0-darwin
 ```
 
 ### Optional: Install as local developer tool:
@@ -72,6 +62,9 @@ in your path:
 ## Advanced
 
 ### Optional `dev`/`pack` releases:
+
+**Note**: this section might be stale.
+
 There are also two other types of releases, `dev` and `pack`.
 
 - **`dev`**: Live on the bleeding edge and help us find bugs earlier. When
