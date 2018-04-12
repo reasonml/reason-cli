@@ -55,6 +55,8 @@ in your path:
 - `ocamlc`/`ocamlopt`
 - `ocamlfind`
 
+**Note**: `ocamlrun`, `ocamlc`, `ocamlopt`,and `ocamlfind` are no longer installed in version 3.1.0.
+
 ## Advanced
 
 ### Optional `dev`/`pack` releases:
