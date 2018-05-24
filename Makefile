@@ -11,7 +11,7 @@ build-release:
 	@# Program "fails" if unstaged changes.
 	@git diff --exit-code || (echo "" && echo "!!You have unstaged changes. Please clean up first." && exit 1)
 	@git diff --cached --exit-code || (echo "" && echo "!!You have staged changes. Please reset them or commit them first." && exit 1);
-	@esy release $(TYPE)
+	@esy release
 
 # Releases to Github
 release: build-release
