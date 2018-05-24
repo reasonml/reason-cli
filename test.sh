@@ -9,7 +9,6 @@ which rtop
 which utop
 which refmt
 which refmttype
-which reopt
 which rebuild
 which reactjs_jsx_ppx_v2
 which reactjs_jsx_ppx_v3
@@ -20,7 +19,6 @@ rtop ----where
 utop ----where
 refmt ----where
 refmttype ----where
-reopt ----where
 rebuild ----where
 reactjs_jsx_ppx_v2 ----where
 reactjs_jsx_ppx_v3 ----where
