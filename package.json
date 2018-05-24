@@ -39,7 +39,6 @@
         "utop",
         "refmt",
         "refmttype",
-        "rebuild",
         "reactjs_jsx_ppx_v2",
         "reactjs_jsx_ppx_v3"
       ],
@@ -63,7 +62,6 @@
   "dependencies": {
     "@esy-ocaml/reason": "3.2.0",
     "@esy-ocaml/rtop": "3.2.0",
-    "@esy-ocaml/rebuild": "3.0.5",
     "ocaml": "~4.2.3001",
     "@esy-ocaml/merlin": "*"
   }

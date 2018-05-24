@@ -51,32 +51,7 @@ in your path:
 - `ocamlmerlin`
 - `ocamlmerlin-reason`
 - `refmt`
-- `ocamlrun`
-- `ocamlc`/`ocamlopt`
-- `ocamlfind`
-
-## Advanced
-
-### Optional `dev`/`pack` releases:
-
-**Note**: this section might be stale.
-
-There are also two other types of releases, `dev` and `pack`.
-
-- **`dev`**: Live on the bleeding edge and help us find bugs earlier. When
-  installed, it downloads sources, packs them into a bundle, and then builds
-  them from source - all on the client.
-
-- **`pack`**: (Not yet released) (experimental) Builds a *prepacked* bundle of
-  sources on the client. Suitable for offline installations, CI, isolated
-  networks, and environments that require building on host.
-
-| type | install command                                                                   | Notes   |
-|:----:|-----------------------------------------------------------------------------------|---------|
-| **`dev`** | `npm install -g https://github.com/reasonml/reason-cli/archive/beta-v-1.13.7-dev.tar.gz`    | Downloads+Packs Source, Builds Source |
-| **`pack`** | Not yet distributed. You can create your own release - see [releaseUtils/README.md](./releaseUtils/README.md)  | Builds Prepacked Source |
-
-
+- `rtop`
 
 ### Releasing
 
@@ -84,17 +59,18 @@ You need `esy@0.0.62` installed globally: (First remove any existing global esy 
 
 ```sh
 npm remove -g esy
-npm install -g esy@0.0.62
+npm install -g esy@preview
 ```
 
-Now you can use `make release TYPE=...` command.
+Now you can use `make release` command.
 
 For *binary* releases (an installation process will just copy prebuilt binaries
 to the installation location):
 
 ```sh
 rm -rf ./_release # Start fresh
-make release TYPE=bin
+esy install # Make sure there were no changes to lockfile after running this.
+make release
 cd _release/bin-darwin  #or bin-linux if you're on linux
 ```
 
