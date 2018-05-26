@@ -14,10 +14,10 @@ especially on slower internet. If npm is stuck and doesn't produce any
 errors then it's probably just downloading it. This will be fixed in the
 following releases. Sorry.** (If you are having trouble, you can download the tarball to your machine separately, and run `npm install path/to/tarball`, to install from the local file).
 
-| type     | platform  | install command                          | Notes             |
-|:--------:|-----------|------------------------------------------|-------------------|
-| `binary` | **macOS** | `npm install -g reason-cli@3.1.0-darwin` | Installs Binaries |
-| `binary` | **Linux** | `npm install -g reason-cli@3.1.0-linux`  | Installs Binaries |
+| type     | platform  | install command                          |
+|:--------:|-----------|------------------------------------------|
+| `binary` | **macOS** | `npm install -g reason-cli@3.2.0-darwin` |
+| `binary` | **Linux** | `npm install -g reason-cli@3.2.0-linux`  |
 | ---      |**Windows**| Please see https://github.com/reasonml/reasonml.github.io/issues/195
 
 (Or `yarn global add reason-cli@3.1.0-darwin`, etc.)
@@ -35,7 +35,7 @@ to uninstall the old reason-cli first.
 
 ```
 npm uninstall -g reason-cli
-npm install -g reason-cli@3.1.0-darwin
+npm install -g reason-cli@3.2.0-darwin
 ```
 
 ### Optional: Install as local developer tool:
@@ -55,7 +55,7 @@ in your path:
 
 ### Releasing
 
-You need `esy@0.0.62` installed globally: (First remove any existing global esy you have)
+You need `esy@preview` installed globally: (First remove any existing global esy you have)
 
 ```sh
 npm remove -g esy
@@ -64,14 +64,12 @@ npm install -g esy@preview
 
 Now you can use `make release` command.
 
-For *binary* releases (an installation process will just copy prebuilt binaries
-to the installation location):
 
 ```sh
 rm -rf ./_release # Start fresh
 esy install # Make sure there were no changes to lockfile after running this.
 make release
-cd _release/bin-darwin  #or bin-linux if you're on linux
+cd _release/
 ```
 
 Edit the `package.json` version to include the "prerelease" hyphen the
@@ -84,6 +82,8 @@ appending `-darwin` or `-linux` to the version number like:
   "version": "3.1.0-darwin",
   ...
 ```
+
+Then publish it.
 
 ```
 npm publish
