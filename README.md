@@ -14,11 +14,11 @@ especially on slower internet. If npm is stuck and doesn't produce any
 errors then it's probably just downloading it. This will be fixed in the
 following releases. Sorry.** (If you are having trouble, you can download the tarball to your machine separately, and run `npm install path/to/tarball`, to install from the local file).
 
-| type     | platform  | install command                          |
-|:--------:|-----------|------------------------------------------|
-| `binary` | **macOS** | `npm install -g reason-cli@3.2.0-darwin` |
-| `binary` | **Linux** | `npm install -g reason-cli@3.2.0-linux`  |
-| ---      |**Windows**| Please see https://github.com/reasonml/reasonml.github.io/issues/195
+| platform  | install command                          |
+|-----------|------------------------------------------|
+| **macOS** | `npm install -g reason-cli@3.2.0-darwin` |
+| **Linux** | `npm install -g reason-cli@3.2.0-linux`  |
+|**Windows**| Please see https://github.com/reasonml/reasonml.github.io/issues/195
 
 (Or `yarn global add reason-cli@3.1.0-darwin`, etc.)
 
