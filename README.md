@@ -7,12 +7,6 @@ Reason toolchain packaged for npm.
 
 ## Install
 
-### 1. Choose your platform
-
-**The package's size is rather big. It takes a while to download,
-especially on slower internet. If npm is stuck and doesn't produce any
-errors then it's probably just downloading it. This will be fixed in the
-following releases. Sorry.** (If you are having trouble, you can download the tarball to your machine separately, and run `npm install path/to/tarball`, to install from the local file).
 
 | platform  | install command                          |
 |-----------|------------------------------------------|
@@ -22,13 +16,21 @@ following releases. Sorry.** (If you are having trouble, you can download the ta
 
 (Or `yarn global add reason-cli@3.1.0-darwin`, etc.)
 
+
+**The package's size is rather big. It takes a while to download,
+especially on slower internet. If npm is stuck and doesn't produce any
+errors then it's probably just downloading it. This will be fixed in the
+following releases. Sorry.**
+
 **The installation requires glibc >=3.4.21**. If you're on macOS, you should be good to go. If you're on Ubuntu, reason-cli requires Ubuntu **16.04**. Otherwise the postinstall might fail.
 
-### 2. Install your editor plugins
+If you are having trouble, you can download the tarball to your machine separately, and run `npm install path/to/tarball`, to install from the local file.
+
+### Install your editor plugins
 
 Pick your favorite editor plugin [here](https://reasonml.github.io/docs/en/editor-plugins.html#officially-supported-editors)
 
-### 3. Updating when needed
+### Updating:
 
 Just reinstall over the previously installed package. It's usually a good idea
 to uninstall the old reason-cli first.
