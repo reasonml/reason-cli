@@ -1,5 +1,5 @@
 {
-  "hash": "e67ac72ef57cc19af6ae08190da85301",
+  "hash": "660b9a2661df7d29bb666d8bb2591427",
   "root": "reason-cli@path:.",
   "node": {
     "reason-cli@path:.": {
@@ -11,7 +11,7 @@
         "opam": null
       },
       "dependencies": [
-        "@esy-ocaml/merlin@3.0.5005", "@esy-ocaml/reason@3.3.0",
+        "@esy-ocaml/merlin@3.0.5005", "@esy-ocaml/reason@3.3.2",
         "@esy-ocaml/rtop@3.3.0", "ocaml@4.2.3004"
       ]
     },
@@ -639,18 +639,18 @@
         "opam": null
       },
       "dependencies": [
-        "@esy-ocaml/esy-installer@0.0.0", "@esy-ocaml/reason@3.3.0",
+        "@esy-ocaml/esy-installer@0.0.0", "@esy-ocaml/reason@3.3.2",
         "@esy-ocaml/substs@0.0.1", "@opam/jbuilder@opam:transition",
         "@opam/ocamlfind@opam:1.8.0", "@opam/result@opam:1.3",
         "@opam/utop@opam:2.2.0"
       ]
     },
-    "@esy-ocaml/reason@3.3.0": {
+    "@esy-ocaml/reason@3.3.2": {
       "record": {
         "name": "@esy-ocaml/reason",
-        "version": "3.3.0",
+        "version": "3.3.2",
         "source":
-          "archive:https://registry.npmjs.org/@esy-ocaml/reason/-/reason-3.3.0.tgz#sha1:8d282f5cc5c569b8b5ca5ef4203050d070febd5b",
+          "archive:https://registry.npmjs.org/@esy-ocaml/reason/-/reason-3.3.2.tgz#sha1:93dc0916811f0c79114fd06be800b78132847095",
         "files": [],
         "opam": null
       },
