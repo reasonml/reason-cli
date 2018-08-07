@@ -8,10 +8,6 @@
   "scripts": {
     "test": "bash ./test.sh"
   },
-  "resolutions": {
-    "**/@opam/lwt": "3.3.0",
-    "**/@opam/ocaml-migrate-parsetree": "1.0.10"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/reasonml/reason-cli.git"
@@ -60,8 +56,8 @@
   },
   "homepage": "https://github.com/reasonml/reason-cli#readme",
   "dependencies": {
-    "@esy-ocaml/reason": "3.2.0",
-    "@esy-ocaml/rtop": "3.2.0",
+    "@esy-ocaml/reason": "3.3.0",
+    "@esy-ocaml/rtop": "3.3.0",
     "ocaml": "~4.2.3001",
     "@esy-ocaml/merlin": "*"
   }

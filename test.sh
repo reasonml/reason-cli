@@ -12,14 +12,15 @@ which refmttype
 which reactjs_jsx_ppx_v2
 which reactjs_jsx_ppx_v3
 
-ocamlmerlin ----where
-ocamlmerlin-reason ----where
-rtop ----where
-utop ----where
-refmt ----where
-refmttype ----where
-reactjs_jsx_ppx_v2 ----where
-reactjs_jsx_ppx_v3 ----where
+# re-enable after esy@0.2.5 is released
+# ocamlmerlin ----where
+# ocamlmerlin-reason ----where
+# rtop ----where
+# utop ----where
+# refmt ----where
+# refmttype ----where
+# reactjs_jsx_ppx_v2 ----where
+# reactjs_jsx_ppx_v3 ----where
 
 refmt --version
 ocamlmerlin -version
