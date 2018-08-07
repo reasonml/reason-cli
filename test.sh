@@ -10,7 +10,6 @@ which utop
 which refmt
 which refmttype
 which reactjs_jsx_ppx_v2
-which reactjs_jsx_ppx_v3
 
 # re-enable after esy@0.2.5 is released
 # ocamlmerlin ----where
@@ -20,7 +19,6 @@ which reactjs_jsx_ppx_v3
 # refmt ----where
 # refmttype ----where
 # reactjs_jsx_ppx_v2 ----where
-# reactjs_jsx_ppx_v3 ----where
 
 refmt --version
 ocamlmerlin -version
