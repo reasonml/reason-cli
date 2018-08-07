@@ -35,8 +35,7 @@
         "utop",
         "refmt",
         "refmttype",
-        "reactjs_jsx_ppx_v2",
-        "reactjs_jsx_ppx_v3"
+        "reactjs_jsx_ppx_v2"
       ],
       "NOTES": [
         "Make the release as lean as you want! Just remove packed binary zips until the executables",
