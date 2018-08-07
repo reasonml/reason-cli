@@ -50,7 +50,8 @@
         "*conf_which-*",
         "*conf_m4-*",
         "*cppo-*",
-        "*jbuilder-*"
+        "*jbuilder-*",
+        "*dune-*"
       ]
     }
   },
