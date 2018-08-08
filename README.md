@@ -14,7 +14,7 @@ Reason toolchain packaged for npm.
 | **Linux** | `npm install -g reason-cli@latest-linux`  |
 |**Windows**| Please see https://github.com/reasonml/reasonml.github.io/issues/195
 
-(Or `yarn global add reason-cli@3.1.0-darwin`, etc.)
+(Or `yarn global add reason-cli@latest-macos`, etc.)
 
 
 **The package's size is rather big. It takes a while to download,
@@ -37,7 +37,7 @@ to uninstall the old reason-cli first.
 
 ```
 npm uninstall -g reason-cli
-npm install -g reason-cli@3.2.0-darwin
+npm install -g reason-cli@latest-macos
 ```
 
 #### Included Binaries
@@ -70,7 +70,7 @@ builds that succeed.
 5. Extract the release locally: `tar -xvf reason-cli.tar.gz`.
 6. `cd package`
 7. Edit the version number in `package.json` to be `3.3.2-linux` or
-   `3.3.2-darwin` (adjust for the version and platform you downloaded for
+   `3.3.2-macos` (adjust for the version and platform you downloaded for
    accordingly).
 8. `npm publish`
 
