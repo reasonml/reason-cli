@@ -1,7 +1,7 @@
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 
 cache_key: &cache_key
-  v1-dependencies-{{ arch }}-{{ checksum "package.json" }}-{{ checksum "esy.lock.json" }}
+  v2-dependencies-{{ arch }}-{{ checksum "package.json" }}-{{ checksum "esy.lock.json" }}
 
 steps: &steps
 - checkout
@@ -52,7 +52,7 @@ version: 2
 jobs:
   macos:
     macos:
-      xcode: "9.0"
+      xcode: "9.2.0"
 
     working_directory: *working_directory
     environment: *environment
