@@ -5,11 +5,20 @@ cache_key: &cache_key
 
 steps: &steps
 - checkout
+
 - run:
     name: Setup environment variables
     command: |
       echo 'export NPM_CONFIG_PREFIX="$HOME/.npm-global"' >> $BASH_ENV
       echo 'export PATH="$NPM_CONFIG_PREFIX/bin:$PATH"' >> $BASH_ENV
+      echo "export RELEASE_OS=$(uname | tr '[A-Z]' '[a-z]')" >> $BASH_ENV
+
+- run:
+    name: Ensure rsync is installed
+    command: |
+      if [ "$RELEASE_OS" = "linux" ]; then
+        sudo apt-get install -qy rsync;
+      fi
 
 # Download and cache dependencies
 - restore_cache:
