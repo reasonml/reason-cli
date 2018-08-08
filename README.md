@@ -10,8 +10,8 @@ Reason toolchain packaged for npm.
 
 | platform  | install command                          |
 |-----------|------------------------------------------|
-| **macOS** | `npm install -g reason-cli@3.2.0-darwin` |
-| **Linux** | `npm install -g reason-cli@3.2.0-linux`  |
+| **macOS** | `npm install -g reason-cli@latest-macos` |
+| **Linux** | `npm install -g reason-cli@latest-linux`  |
 |**Windows**| Please see https://github.com/reasonml/reasonml.github.io/issues/195
 
 (Or `yarn global add reason-cli@3.1.0-darwin`, etc.)
@@ -75,6 +75,14 @@ builds that succeed.
 8. `npm publish`
 
 Repeat steps 1-8 for both linux and macos builds.
+
+9. Update dist tags:
+   ```
+   npm dist-tags add reason-cli@3.3.2-linux latest-linux
+   npm dist-tags add reason-cli@3.3.2-macos latest-macos
+   ```
+   (adjust for the version and platform you downloaded for accordingly)
+
 
 
 ### Releasing (without CI):
