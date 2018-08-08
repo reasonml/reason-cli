@@ -40,11 +40,6 @@ npm uninstall -g reason-cli
 npm install -g reason-cli@3.2.0-darwin
 ```
 
-### Optional: Install as local developer tool:
-`reason-cli` now supports being installed as a dev-time dependency in an `npm`
-project. Simply omit the `-g` flag. The binaries will show up in your
-`node_modules/.bin` directory.
-
 #### Included Binaries
 
 When installed with `npm install -g`, `reason-cli` places the following tools
@@ -57,39 +52,28 @@ in your path:
 
 ### Releasing
 
-You need `esy@preview` installed globally: (First remove any existing global esy you have)
+Repeat the following for both most recent reason-cli linux and macos circle CI
+builds that succeed.
 
-```sh
-npm remove -g esy
-npm install -g esy@preview
-```
+1. Grab the results from the **Artifacts** tab on the CircleCI build results
+   for the build of the platform you want to release.
+2. Verify the release can be installed: `npm remove -g reason-cli && npm install reason-cli.tar.gz`
+3. Make sure `rtop` works.
+4. **Uninstall** the release you just installed: `npm remove -g reason-cli`
+   (otherwise npm freaks out).
+5. Extract the release locally: `tar -xvf reason-cli.tar.gz`.
+6. `cd package`
+7. Edit the version number in `package.json` to be `3.3.2-linux` or
+   `3.3.2-darwin` (adjust for the version and platform you downloaded for
+   accordingly).
+8. `npm publish`
 
-Now you can use `make release` command.
+Repeat steps 1-8 for both linux and macos builds.
 
 
-```sh
-rm -rf ./_release # Start fresh
-esy install # Make sure there were no changes to lockfile after running this.
-make release
-cd _release/
-```
+### Releasing (without CI):
 
-Edit the `package.json` version to include the "prerelease" hyphen the
-scope/name you wish to publish `reason-cli` under.  Typically this will be
-appending `-darwin` or `-linux` to the version number like:
-
-```json
-{
-  "name": "reason-cli",
-  "version": "3.1.0-darwin",
-  ...
-```
-
-Then publish it.
-
-```
-npm publish
-```
+You can just recreate what the circle CI steps do locally and then perform the steps above.
 
 
 ## More Info
