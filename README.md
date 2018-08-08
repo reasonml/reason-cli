@@ -50,14 +50,20 @@ in your path:
 - `refmt`
 - `rtop`
 
-### Releasing
+### Releasing (For Maintainers):
 
 Repeat the following for both most recent reason-cli linux and macos circle CI
 builds that succeed.
 
-1. Grab the results from the **Artifacts** tab on the CircleCI build results
-   for the build of the platform you want to release.
-2. Verify the release can be installed: `npm remove -g reason-cli && npm install reason-cli.tar.gz`
+
+0. Bump the versions/config in `package.json` to your liking, and make sure to
+   locally run `esy install` to regenerate any lockfiles. Send a commit with
+   those lockfiles and config changes.
+1. When that diff builds on `master`, grab the results from the **Artifacts**
+   tab on the CircleCI build results for the build of the platform you want to
+   release.
+2. Verify the release can be installed: `npm remove -g reason-cli && npm
+   install reason-cli.tar.gz`
 3. Make sure `rtop` works.
 4. **Uninstall** the release you just installed: `npm remove -g reason-cli`
    (otherwise npm freaks out).
