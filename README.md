@@ -10,12 +10,11 @@ Reason toolchain packaged for npm.
 
 | platform  | install command                          |
 |-----------|------------------------------------------|
-| **macOS** | `npm install -g reason-cli@latest-macos` |
-| **Linux** | `npm install -g reason-cli@latest-linux`  |
+| **macOS** | `yarn global add reason-cli@latest-macos` |
+| **Linux** | `yar nglobal add reason-cli@latest-linux`  |
 |**Windows**| Please see https://github.com/reasonml/reasonml.github.io/issues/195
 
-(Or `yarn global add reason-cli@latest-macos`, etc.)
-
+_For `npm` users, use `npm install -g reason-cli@latest-macos` or `@latest-linux` instead_.
 
 **The package's size is rather big. It takes a while to download,
 especially on slower internet. If npm is stuck and doesn't produce any
