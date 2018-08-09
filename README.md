@@ -11,7 +11,7 @@ Reason toolchain packaged for npm.
 | platform  | install command                          |
 |-----------|------------------------------------------|
 | **macOS** | `yarn global add reason-cli@latest-macos` |
-| **Linux** | `yar nglobal add reason-cli@latest-linux`  |
+| **Linux** | `yarn global add reason-cli@latest-linux`  |
 |**Windows**| Please see https://github.com/reasonml/reasonml.github.io/issues/195
 
 _For `npm` users, use `npm install -g reason-cli@latest-macos` or `@latest-linux` instead_.
