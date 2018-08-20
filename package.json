@@ -30,6 +30,7 @@
     "release": {
       "releasedBinaries": [
         "ocamlmerlin",
+        "ocamlmerlin-server",
         "ocamlmerlin-reason",
         "rtop",
         "utop",
